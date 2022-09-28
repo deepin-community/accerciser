@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="event_monitor_plugin" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">4. Le greffon « Détecteur d'événements »</title>
+    <link type="next" xref="quick_select_plugin"/>
+    <desc>Surveiller les événements accessibles quand ils surviennent</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Le greffon « Détecteur d'événements »</title>
+  <p>Le greffon « Détecteur d'événements » affiche les <link href="http://accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html">événements AT-SPI</link> au fur et à mesure de leur survenue dans les applications figurant dans le <link xref="desktop_tree_view">Panneau de l'arborescence des applications</link> d'<app>Accerciser</app>. Ce greffon est utile pour explorer la dynamique d'une interface d'application et vérifier quels éléments accessibles sont en rapport avec quels événements AT-SPI.</p>
+
+  <figure>
+    <title>Le greffon « Détecteur d'événements »</title>
+    <desc>Le greffon « Détecteur d'événements » permet d'afficher les événements AT-SPI et d'établir leur relation avec des éléments accessibles.</desc>
+    <media type="image" mime="image/png" width="700" height="500" src="figures/event_monitor_plugin.png">
+      <p>Le greffon « Détecteur d'événements » permet d'afficher les événements AT-SPI et d'établir leur relation avec des éléments accessibles.</p>
+    </media>
+  </figure>
+
+  <section id="running_event_monitor_plugin">
+    <title>Exécution du greffon « Détecteur d'événements »</title>
+    <p>Quand vous ouvrez le greffon « Détecteur d'événements », vous voyez une liste de cases à cocher représentant les différentes classes d'événements AT-SPI couverts par le greffon :</p>
+
+    <list>
+      <item>
+        <p>document</p>
+      </item>
+      <item>
+        <p>focus</p>
+      </item>
+      <item>
+        <p>mouse</p>
+      </item>
+      <item>
+        <p>object</p>
+      </item>
+      <item>
+        <p>terminal</p>
+      </item>
+      <item>
+        <p>window</p>
+      </item>
+    </list>
+
+    <p>Si vous cochez une classe, tous ses types d'événements seront surveillés par le greffon. Les classes se présentent en structures arborescentes ; vous pouvez donc affiner votre sélection en les déployant et en ne sélectionnant que les types d'événements qui vous intéressent vraiment.</p>
+    <p>Si vous voulez surveiller tous les types d'événements AT-SPI, cliquez sur le bouton <cmd>Tout sélectionner</cmd>. De même, si vous voulez effacer tous les types d'événements actuellement sélectionnés, cliquez sur le bouton <cmd>Effacer la sélection</cmd>.</p>
+
+    <note style="tip">
+      <p>En ne sélectionnant que quelques types d'événement par surveillance, vous aurez une sortie d'affichage plus claire.</p>
+    </note>
+
+    <p>Un autre façon d'affiner la surveillance des événements est de sélectionner la source des événements. Par défaut, l'option Source <cmd>Tout</cmd> est sélectionnée, indiquant que les événements AT-SPI de toutes les applications seront surveillés. Si vous ne voulez surveiller qu'une seule application, sélectionnez-la dans le Panneau de l'arborescence des applications et cliquez sur le bouton radio Source <cmd>Application sélectionnée</cmd>. De même, si vous ne voulez sélectionner qu'un élément accessible et tous ses descendants correspondants, sélectionnez-le dans le Panneau de l'arborescence des applications et cliquez sur le bouton radio Source <cmd>Élément accessible sélectionné</cmd>.</p>
+
+    <p>Après avoir sélectionné des types d'événements et défini une option Source, le greffon « Détecteur d'événements » démarre automatiquement la surveillance des événements AT-SPI parce que le bouton <cmd>Détecteur d'événements</cmd> est enfoncé par défaut. Quand vous voulez interrompre la surveillance, cliquez sur le bouton <cmd>Détecteur d'événements</cmd>. Cliquez à nouveau sur ce bouton pour relancer la surveillance.</p>
+    
+    <p>À chaque survenue d'événement, le greffon « Détecteur d'événements » indique la source et l'application. L'activation du lien pour l'un de ces éléments le sélectionnera dans le panneau des applications.</p>
+
+    <p>Si vous voulez sauvegarder la sortie produite par le greffon « Détecteur d'événements », appuyez tout simplement sur le bouton <cmd>Enregistrer</cmd>. Pour effacer l'écran de sortie, cliquez sur le bouton <cmd>Effacer</cmd>.</p>
+  </section>
+</page>

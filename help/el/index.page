@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="el">
+  <info>
+    <title type="text">Accerciser</title>
+    <title type="link">Εισαγωγή στο <app>Accerciser</app></title>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title><media type="image" mime="image/png" its:translate="no" src="figures/accerciser-logo.png">
+      <span its:translate="yes"><app>Accerciser</app> λογότυπο</span>
+    </media> <app>Accerciser</app></title>
+  <note style="important">
+    <title>Πριν ξεκινήσετε</title>
+    <p>Διαβάστε τη <link xref="help:gnome-help/a11y">Βοήθεια γενικής πρόσβασης</link></p>
+  </note>
+  <section id="getting_started" style="2column">
+    <title>Ξεκινώντας</title>
+  </section>
+  <section id="examining_a11y" style="2column">
+    <title>Εξετάζοντας την Προσιτότητα μιας εφαρμογής</title>
+  </section>
+  <section id="advanced" style="2column">
+    <title>Προχωρημένα θέματα</title>
+  </section>
+</page>

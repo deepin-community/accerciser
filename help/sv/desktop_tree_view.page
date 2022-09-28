@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="desktop_tree_view" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">1. Programträdvy</title>
+    <link type="next" xref="interface_viewer_plugin"/>
+    <desc>Utforska skrivbordets åtkomsthierarki</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>Programträdvy</title>
+
+  <p><app>Accerciser</app>s gränssnitt innehåller en trädvy, programträdvyn, som täcker alla åtkomliga program som för närvarande körs på skrivbordet. För att skapa denna trädvy använder <app>Accerciser</app> AT-SPI:s registerdemon. Denna demon ansvarar för att hålla koll på alla åtkomliga program på skrivbordet och vidarebefordra X-händelser över AT-SPI D-Bus. Efter att alla åtkomliga program hämtats representerar <app>Accerciser</app> vart och ett av dem som en hierarkisk struktur med expanderbara noder.</p>
+
+  <figure>
+    <title>Programträdvy</title>
+    <desc><app>Accerciser</app>s programträdvy representerar gränssnittet för varje åtkomligt program som körs på skrivbordet som en komponent med en hierarkisk struktur.</desc>
+    <media type="image" mime="image/png" width="400" height="600" src="figures/tree_view_accerciser.png">
+      <p><app>Accerciser</app>s programträdvy representerar gränssnittet för varje åtkomligt program som körs på skrivbordet som en komponent med en hierarkisk struktur.</p>
+    </media>
+  </figure>
+
+
+  <p>Den första noden för varje program som är representerat i denna trädvy är programmet självt. Då du expanderar en nod kan du se alla dess underkomponenter vilket möjliggör en hierarkisk vy över programmets gränssnitt. För varje nod tillhandahåller <app>Accerciser</app> grundläggande information så som dess namn, roll och antalet barnnoder.</p>
+
+  <note style="caution">
+    <p>Var medveten om att noder med många barnnoder kan ta lång tid att expandera.</p>
+  </note>
+
+  <section id="bookmarking">
+    <title>Bokmärka objekt i programträdvyn</title>
+    <p><app>Accerciser</app> möjliggör att bokmärka objekt i programträdvyn för senare undersökning. Detta är till hjälp när målprogrammet måste startas om - till exempel att det har byggts om. För att bokmärka ett objekt, markera det och klicka <guiseq><gui>Bokmärken</gui><gui>Lägg till bokmärke</gui></guiseq> eller tryck <keyseq><key>Ctrl</key><key>d</key></keyseq>.</p>
+    <p>Bokmärken till åtkomliga objekt i <app>Accerciser</app> definieras av ett programnamn och en ”sökväg” i programmets interna åtkomsthierarki till den bokmärkta åtkomliga komponenten. När målprogrammet är i ett annat tillstånd - d.v.s. multipla ramar på toppnivå - är sökvägen kanske inte korrekt. Bokmärken kan hanteras genom att gå till redigeringsdialogen för bokmärken via <guiseq><gui>Bokmärken</gui><gui>Redigera bokmärken</gui></guiseq>.</p>
+  </section>
+
+</page>

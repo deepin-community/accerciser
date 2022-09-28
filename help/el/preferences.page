@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">4. Προτιμήσεις</title>
+    <!-- link type="next" xref="event_monitor_plugin" /-->
+    <desc>Προσαρμογή προτιμήσεων του <app>Accerciser</app></desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Ρύθμιση του <app>Accerciser</app></title>
+  <p>
+    To configure plugins, hotkeys, and highlighting, do either <keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui>
+    <gui>Preferences</gui></guiseq> to open a dialog.
+  </p>
+
+  <section id="plugin">
+    <title>Ρύθμιση των πρόσθετων</title>
+    <p>Αφού ανοίξετε το διάλογο των προτιμήσεων, θα βρείτε μια λίστα με τα διαθέσιμα πρόσθετα, με τα αντίστοιχα κουτιά επιλογής στην καρτέλα "Πρόσθετα". Για να ενεργοποιήσετε ή να απενεργοποιήσετε ένα πρόσθετο, κάντε κλικ στο κουτί. Μόνο τα ενεργά πρόσθετα μπορούν να χρησιμοποιηθούν από τη διεπαφή του <app>Accerciser</app>.</p>
+    <p>Κάνοντας δεξί κλικ σε ένα πρόσθετο σας δίνετε η ευκαιρία να διαλέξετε την τοποθεσία του: "Πάνω μπάρα", "Κάτω μπάρα", και "Νέα προβολή". Επιλέγοντας "Νέα προβολή" δημιουργείται ένα νέο παράθυρο για το πρόσθετο.</p>
+
+    <note style="tip">
+      <p>Μπορείτε να παρακάμψετε τις προτιμήσεις σύροντας ένα πρόσθετο από τη μια τοποθεσία στην άλλη.</p>
+    </note>
+  </section>
+
+  <section id="global_hotkey">
+    <title>Ρύθμιση καθολικών συντομεύσεων    </title>
+    <p>Μερικά στοιχεία του <app>Accerciser</app> μπορεί να ενεργοποιούν συγκεκριμένες λειτουργίες μέσω συντομεύσεων. Ένα παράδειγμα είναι το <link xref="quick_select_plugin">πρόσθετο γρήγορης επιλογής</link>. Ο συνδυασμός των συντομεύσεων της κάθε λειτουργίας μπορεί να αλλάξει από τις Προτιμήσεις, στην καρτέλα "Καθολικές συντομεύσεις". Σε αυτή την καρτέλα, θα βρείτε μια λίστα με όλες τις λειτουργίες για τις οποίες μπορούν να ρυθμιστούν συντομεύσεις. Χρησιμοποιήστε τα κουτιά επιλογής <cmd>ctrl</cmd>, <cmd>alt</cmd>, και <cmd>shift</cmd> για να τα ενεργοποιήσετε ή για να τα απενεργοποιήσετε.</p>
+
+   </section>
+
+   <section id="highlighting">
+     <title>Ρύθμιση επισήμανσης του γραφικού συστατικού</title>
+     <p>
+       Some of <app>Accerciser</app>'s elements, such as the global hotkey <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>,
+       highlight a specific widget in a target application. The highlighting duration, border color, and fill color can
+       be customized via the Preferences dialog, under the "Highlighting" tab.
+     </p>
+   </section>
+</page>

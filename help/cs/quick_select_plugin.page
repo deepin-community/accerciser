@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="quick_select_plugin" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">5. Zásuvný modul pro rychlý výběr</title>
+    <link type="next" xref="api_browser_plugin"/>
+    <desc>Jak vyhledat objekty, které potřebujete.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Zásuvný modul pro rychlý výběr</title>
+  <p>Zásuvný modul Rychlý výběr nemá viditelné uživatelské rozhraní jako ostatní výchozí zásuvné moduly <app>Accerciser</app> – namísto toho přidává schopnost rychlého výběru položek ve <link xref="desktop_tree_view">stromovém zobrazení aplikací</link> pomocí globálních klávesových zkratek. Původně byly tyto klávesové zkratky přímo součástí základního kódu aplikace <app>Accerciser</app>, ale později byly odděleny do zásuvného modulu Rychlý výběr.</p>
+  <p>Zásuvný modul Rychlý výběr poskytuje dvě globální klávesové zkratky. Zmáčknutím <keyseq><key>Ctrl</key><key>Alt</key><key>A</key></keyseq> vyberete poslední zaměřený zpřístupněný widget v stromovém zobrazení aplikací. Zmáčknutím <keyseq><key>Ctrl</key><key>Alt</key><key>/</key></keyseq> vyberete zpřístupněný widget nacházející se pod ukazatelem ve stromovém zobrazení aplikací, přičemž se zároveň zvýrazní v cílové aplikaci.</p> 
+</page>

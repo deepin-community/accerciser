@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">4. Préférences</title>
+    <!-- link type="next" xref="event_monitor_plugin" /-->
+    <desc>Personnaliser les préférences d'<app>Accerciser</app></desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Configuration d'<app>Accerciser</app></title>
+  <p>
+    To configure plugins, hotkeys, and highlighting, do either <keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui>
+    <gui>Preferences</gui></guiseq> to open a dialog.
+  </p>
+
+  <section id="plugin">
+    <title>Configuration des greffons</title>
+    <p>Après l'ouverture de la boîte de dialogue des préférences, vous trouverez, dans l'onglet « Greffons », la liste de tous les greffons disponibles, avec les cases à cocher correspondantes. Pour activer ou désactiver un greffon, cochez ou décochez sa case. L'interface <app>Accerciser</app> n'autorise l'accès qu'aux seuls greffons actifs.</p>
+    <p>Le clic-droit sur un greffon permet de choisir son emplacement : « Tableau de bord du haut », « Tableau de bord du bas » et « Nouvelle vue ». Le choix « Nouvelle vue » crée une nouvelle fenêtre pour le greffon.</p>
+
+    <note style="tip">
+      <p>Il est possible de court-circuiter le dialogue des préférences en utilisant le glisser-déposer pour déplacer un greffon d'un emplacement à un autre.</p>
+    </note>
+  </section>
+
+  <section id="global_hotkey">
+    <title>Configuration des raccourcis clavier globaux</title>
+    <p>Certains éléments d'<app>Accerciser</app> activent des fonctions par l'intermédiaire de raccourcis clavier. Un exemple est le greffon <link xref="quick_select_plugin">Sélection rapide</link>. La combinaison de touches pour chaque fonction peut être modifiée en passant par la boîte de dialogue des Préférences, dans l'onglet « Raccourcis généraux ». Dans cet onglet, on trouve une liste de tous les composants susceptibles d'être configurés pour un raccourci clavier. Utilisez les cases <cmd>Ctrl</cmd>, <cmd>Alt</cmd> et <cmd>Maj</cmd> pour activer ou désactiver ces modificateurs.</p>
+
+   </section>
+
+   <section id="highlighting">
+     <title>Configuration de la surbrillance des éléments</title>
+     <p>
+       Some of <app>Accerciser</app>'s elements, such as the global hotkey <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>,
+       highlight a specific widget in a target application. The highlighting duration, border color, and fill color can
+       be customized via the Preferences dialog, under the "Highlighting" tab.
+     </p>
+   </section>
+</page>

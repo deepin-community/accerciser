@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="uk">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_accerciser"/>
+    <title type="sort">1. Для чого призначено Accerciser?</title>
+    <desc>Інтерактивний оглядач підтримки допоміжних технологій</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Для чого призначено <app>Accerciser</app>?</title>
+  <p><app>Accerciser</app> є інтерактивним провідником по елементах доступності, який створено за допомогою Python. Він використовує бібліотеку «Постачальника послуг інтерфейсу зручних технологій» (AT-SPI) для спостереження та контролю графічних елементів, дозволяючи перевірити, чи програма дає вірну інформацію для технологій зручності та каркасів автоматизованої перевірки. <app>Accerciser</app> постачається із набором додатків, який можна використовувати для створення спеціалізованих представлень інформації про доступність.</p>
+
+  <p>Типово, головний інтерфейс <app>Accerciser</app> складається з трьох розділів: панелі ієрархічного перегляду із усією ієрархією доступності стільничного середовища, а саме <link xref="desktop_tree_view">панелі перегляду ієрархії програм</link>, і двох панелей додатків. Якщо ви хочете бачити усі додатки на одній панелі, поділивши інтерфейс <app>Accerciser</app> на два розділи замість трьох, натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>T</key></keyseq>. Щоб знову поділити вікно на три розділи, натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>T</key></keyseq> ще раз.</p>
+
+  <note style="tip">
+    <p>Переконайтеся, що у вашому стільничному середовищі увімкнено підтримку доступності. Якщо підтримку не буде увімкнено, <app>Accerciser</app> не зможе працювати належним чином.</p>
+  </note>
+
+  <figure>
+    <title><app>Accerciser</app></title>
+    <desc>Типовий інтерфейс <app>Accerciser</app>.</desc>
+    <media type="image" mime="image/png" src="figures/accerciser-view.png">
+      <p>Типовий інтерфейс <app>Accerciser</app>.</p>
+    </media>
+  </figure>
+
+  <section id="intended_audience">
+    <title>Коло призначення <app>Accerciser</app></title>
+    <p><app>Accerciser</app> може задовольнити потреби багатьох різних категорій користувачів. Розробники інтерфейсів користувачів можуть скористатися програмою, щоб переконатися, що їхні програми надають усі можливості крізь AT-SPI. Розробники допоміжних технологій можуть переглянути, який доступ надає AT-SPI для їхніх програм. Розробники автоматичних систем перевірки інтерфейсу користувача можуть скористатися <app>Accerciser</app>, оскільки програма надає доступ до різних подій, яких можна очікувати від цільової програми.</p>
+  </section>
+
+  <section id="accerciser_plugin_architecture">
+    <title>Архітектура додатків <app>Accerciser</app></title>
+    <p>Архітектура <app>Accerciser</app> є розширюваною і засновано на додатках. Код ядра є доволі малим. Більшу частину можливостей програми реалізовано за допомогою типових додатків:</p>
+    <list>
+      <item>
+        <p><link xref="interface_viewer_plugin">Перегляд інтерфейсу</link> — додаток, за допомогою якого ви зможете вивчати інтерфейси AT-SPI, які надаються усіма доступними віджетами цільової програми.</p>
+      </item>
+      <item>
+        <p><link xref="validator_plugin">Перевірка AT-SPI</link> — додаток, який застосовує тести для перевірки доступності цільової програми.</p>
+      </item>
+      <item>
+        <p><link xref="event_monitor_plugin">Монітор подій</link> — додаток, який показує події AT-SPI, сигнали про які видаються цільовою програмою, коли трапляються ці події.</p>
+      </item>
+      <item>
+        <p><link xref="quick_select_plugin">Швидке виділення</link> — додаток, який надає доступ до загальних клавіатурних скорочень для швидкого вибору доступних віджетів на панелі перегляду ієрархії програм <app>Accerciser</app>.</p>
+      </item>
+      <item>
+        <p><link xref="api_browser_plugin">Огляд API</link> — додаток, який показує інтерфейси, методи та атрибути, які доступні для кожного доступного віджета цільової програми.</p>
+      </item>
+      <item>
+        <p><link xref="ipython_plugin">Консоль IPython</link> — додаток, який надає доступ до повної інтерактивної командної оболонки Python із доступом до вибраних доступних віджетів цільової програми.</p>
+      </item>
+    </list>
+  </section>
+
+
+  <section id="more_about_gnome_accessibility">
+    <title>Докладніше про доступність</title>
+    <p>Доступність є базовою характеристикою, яка має стосуватися усіх аспектів стільничного середовища. Щоб досягти доступності у GNOME, було розроблено декілька бібліотек, зокрема ATK і AT-SPI. Хоча ці бібліотеки походять з GNOME, ними можна скористатися і в інших стільничних середовищах. Щоб дізнатися більше про бібліотеки доступності для систем GNU/UNIX, зверніться до таких джерел:</p>
+    <list>
+      <item>
+        <p><link href="http://developer.gnome.org/atk/">Набір інструментів доступності ATK</link> — ATK надає доступ до набору інтерфейсів доступності, які реалізовано іншими наборами інструментів та програмами. За допомогою інтерфейсів ATK засоби доступності мають повний доступ до перегляду і керування запущеними програмами.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/at-spi-cspi/stable/">AT-SPI</link> — AT-SPI є основним службовим інтерфейсом крізь який допоміжні технології надсилають запити і отримують сповіщення від запущених програм. Додаткові матеріали можна знайти у довіднику <link href="http://accessibility.kde.org/developer/atk.php#coreclasses">спільноти розробників технологій доступності KDE</link>.</p>
+      </item>
+      <item>
+        <p><link href="https://help.gnome.org/users/gnome-help/stable/a11y.html">Настанови з доступності для стільничного середовища GNOME</link> — підручник для усіх, хто цікавиться тим, як у стільничному середовищі GNOME реалізовано підтримку потреб користувачів із обмеженими можливостями.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/accessibility-devel-guide/stable/">Підручник розробника систем доступності GNOME</link> — підручник для розробників, які хочуть забезпечити у своїх програма доступність для якнайширшої аудиторії користувачів.</p>
+      </item>
+      <item>
+        <p><link href="https://wiki.gnome.org/Accessibility">Проєкт доступності GNOME</link> — Проєкт доступності GNOME містить посилання на наведені вище підручники, а також багато корисних посилань для користувачів, розробників та системних адміністраторів.</p>
+      </item>
+    </list>
+  </section>
+
+</page>

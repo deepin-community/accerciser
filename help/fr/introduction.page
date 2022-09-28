@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_accerciser"/>
+    <title type="sort">1. À propos d'« Accerciser »</title>
+    <desc>Un explorateur d'accessibilité interactif</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>À propos d'<app>Accerciser</app></title>
+  <p><app>Accerciser</app> est un explorateur d'accessibilité interactif écrit en langage Python. Il utilise la bibliothèque AT-SPI pour inspecter, examiner et interagir avec les éléments graphiques, vous permettant ainsi de vérifier si une application fournit des informations correctes aux techniques d'assistance et aux environnements de tests automatisés. <app>Accerciser</app> est fourni avec un lot de greffons que vous pouvez utiliser pour créer un affichage personnalisé des informations d'accessibilité.</p>
+
+  <p>
+    By default, <app>Accerciser</app>'s main interface is comprised of three sections:
+    a tree view of the entire desktop accessible hierarchy, namely <link xref="desktop_tree_view">
+    Application Tree View</link>, and two plugin areas. If you prefer to see all plugins in a single
+    area, dividing <app>Accerciser</app>'s interface in two sections instead of three, press <keyseq><key>ctrl
+    </key><key>t</key></keyseq>. To re-divide it in three sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again.
+  </p>
+
+  <note style="tip">
+    <p>Assurez-vous que la prise en charge de l'accessibilité est activée pour votre ordinateur, sinon <app>Accerciser</app> ne fonctionnera pas comme prévu.</p>
+  </note>
+
+  <figure>
+    <title><app>Accerciser</app></title>
+    <desc>Interface par défaut d'<app>Accerciser</app>.</desc>
+    <media type="image" mime="image/png" src="figures/accerciser-view.png">
+      <p>Interface par défaut d'<app>Accerciser</app>.</p>
+    </media>
+  </figure>
+
+  <section id="intended_audience">
+    <title>Public visé par <app>Accerciser</app></title>
+    <p><app>Accerciser</app> répond aux besoins de publics variés. Les développeurs d'interface utilisateur l'utilisent pour s'assurer que tous les éléments de leurs applications sont transmis à AT-SPI. Les développeurs de technologies d'assistance peuvent voir ce que AT-SPI fournit à leurs applications. Les développeurs de testeurs d'interfaces utilisateur automatisés trouvent avantage à utiliser <app>Accerciser</app> puisqu'il montre les différents événements qui pourraient être attendus de leur application cible.</p>
+  </section>
+
+  <section id="accerciser_plugin_architecture">
+    <title>L'architecture greffon d'<app>Accerciser</app></title>
+    <p><app>Accerciser</app> a une architecture extensible, basée sur des greffons. Le noyau de son code est particulièrement petit et la plupart de ses caractéristiques proviennent des greffons par défaut :</p>
+    <list>
+      <item>
+        <p>
+          <link xref="interface_viewer_plugin">Interface Viewer</link> - A plugin that lets you explore the AT-SPI 
+          interfaces provided by each accessible widget of a target application.
+        </p>
+      </item>
+      <item>
+        <p><link xref="validator_plugin">Validateur AT-SPI</link> : un greffon qui effectue des tests pour vérifier l'accessibilité d'une application cible.</p>
+      </item>
+      <item>
+        <p><link xref="event_monitor_plugin">Détecteur d'événements</link> : un greffon qui affiche les événements AT-SPI émis par une application cible au fur et à mesure.</p>
+      </item>
+      <item>
+        <p><link xref="quick_select_plugin">Sélection rapide</link> : un greffon qui fournit des raccourcis clavier globaux pour la sélection rapide de composants graphiques accessibles dans le panneau de l'arborescence des applications d'<app>Accerciser</app>.</p>
+      </item>
+      <item>
+        <p><link xref="api_browser_plugin">Navigateur d'API</link> : un greffon qui affiche les interfaces, les méthodes et les attributs disponibles sur chaque composant graphique accessible d'une application cible.</p>
+      </item>
+      <item>
+        <p><link xref="ipython_plugin">Console IPython</link> : un greffon qui fournit un shell Python interactif, complet, avec accès aux composants graphiques sélectionnés d'une application cible.</p>
+      </item>
+    </list>
+  </section>
+
+
+  <section id="more_about_gnome_accessibility">
+    <title>Informations supplémentaires sur l'accessibilité</title>
+    <p>L'accessibilité est une valeur fondamentale qui touche tous les aspects d'un environnement de bureau. Pour favoriser son application à GNOME, des bibliothèques ont été développées, comme ATK et AT-SPI. Bien qu'elles tirent leur origine de GNOME, ces bibliothèques sont maintenant utilisées par d'autres environnements de bureau. Pour en savoir plus à propos des bibliothèques d'accessibilité, consultez :</p>
+    <list>
+      <item>
+        <p><link href="http://developer.gnome.org/atk/">ATK Accessibility Toolkit</link> : ATK fournit l'ensemble des interfaces d'accessibilité mises en œuvre par d'autres boîtes à outils et applications. En utilisant les interfaces ATK, les outils d'accessibilité accèdent pleinement à la visualisation et au contrôle des applications en cours de fonctionnement.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/at-spi-cspi/stable/">AT-SPI</link> : AT-SPI est l'interface de service principale par laquelle les technologies d'assistance questionnent et reçoivent des notifications des applications en cours de fonctionnement. Une documentation complémentaire est disponible dans <link href="http://accessibility.kde.org/developer/atk.php#coreclasses">KDE Accessibility Development Community</link>.</p>
+      </item>
+      <item>
+        <p><link href="http://help.gnome.org/users/gnome-access-guide/stable/">Guide d'accessibilité du bureau GNOME</link> : un guide pour tous ceux qui sont intéressés par la façon dont le bureau GNOME prend en charge les besoins des utilisateurs souffrant de handicaps.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/accessibility-devel-guide/stable/">Guide d'accessibilité du bureau GNOME pour les développeurs</link> : un guide pour les développeurs qui veulent s'assurer que leurs applications sont accessibles au plus grand nombre d'utilisateurs.</p>
+      </item>
+      <item>
+        <p><link href="http://wiki.gnome.org/Accessibility">GNOME Accessibility Project</link> : le projet d'accessibilité GNOME comprend les guides décrits plus haut ainsi que beaucoup d'autres liens utiles pour les utilisateurs, les développeurs et les administrateurs de systèmes.</p>
+      </item>
+    </list>
+  </section>
+
+</page>

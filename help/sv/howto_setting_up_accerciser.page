@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_setting_up_accerciser" xml:lang="sv">
+<info>
+  <link type="guide" xref="index#getting_started"/>
+  <link type="next" xref="desktop_tree_view"/>
+  <title type="sort">2. Hur man installerar och kör <app>Accerciser</app></title>
+  <title type="link">Konfigurera <app>Accerciser</app></title>
+    <desc>Installera och köra <app>Accerciser</app> på ditt system</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>Konfigurera <app>Accerciser</app></title>
+
+    <p>Se om din distribution redan har paketerat <app>Accerciser</app>. Om detta är fallet kan du installera det via dess pakethanterare. Annars kan du följa avsnittet nedan för att installera <app>Accerciser</app> manuellt.</p>
+
+    <section id="installing_accerciser_manually">
+      <title>Installera <app>Accerciser</app> manuellt</title>
+       <p>För att installera <app>Accerciser</app> manuellt behöver du först hämta det. <app>Accerciser</app>s källkod kan antingen hämtas från <link href="http://ftp.gnome.org/pub/GNOME/sources/accerciser/">FTP:n på gnome.org</link> eller klonas från <link href="https://gitlab.gnome.org/GNOME/accerciser">GIT-arkivet på gnome.org</link>.</p>
+
+      <note style="caution">
+        <p>Om du inte använder GNOME 3 är det möjligt att <app>Accerciser</app> version 3 eller senare inte är kompatibel med din miljö.</p>
+      </note>
+
+
+      <p>Efter att ha hämtat <app>Accerciser</app>, installera det med följande kommandon:</p>
+      <steps>
+        <item><p><cmd>cd accerciser</cmd></p></item>
+        <item><p><cmd>./autogen.sh # eller ./configure för förstagångsinstallation</cmd></p></item>
+        <item><p><cmd>make</cmd></p></item>
+        <item><p><cmd>sudo make install # eller make install som root</cmd></p></item>
+      </steps>
+      <p>Om du har problem med att installera <app>Accerciser</app> på ditt system är det troligt att något av dess beroenden saknas. Kontrollera <link href="https://live.gnome.org/Accerciser/#Requirements"> <app>Accerciser</app>s wikisida</link> för att säkerställa att du har alla beroenden korrekt installerade.</p>
+    </section>
+ 
+    <section id="running_accerciser">
+      <title>Köra <app>Accerciser</app></title>
+        <p>För att starta <app>Accerciser</app>, skriv <cmd>accerciser</cmd> i ett terminalfönster eller i Kör-dialogen och tryck sedan <key>Retur</key>.</p>
+        <p>Efter det kan du använda <app>Accerciser</app> för att inspektera alla åtkomliga objekt som visas i <link xref="desktop_tree_view">programträdvyn</link>s hierarki. Välj ett objekt och utforska det med ett av <app>Accerciser</app>s instick.</p>
+    </section>
+</page>

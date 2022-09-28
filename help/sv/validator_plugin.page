@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">3. Standardinstick för validerare</title>
+    <link type="next" xref="event_monitor_plugin"/>
+    <desc>Testa ett program för behov av hjälpmedel</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>AT-SPI-validerarinstick</title>
+  <p>Insticket AT-SPI-validerare genererar en rapport med hjälpmedelsproblem som relaterar till målprogrammet. För varje fel inkluderar rapporten svårighetsnivå och en kort beskrivning.</p>
+   <figure>
+    <title>AT-SPI-validerarinstick</title>
+    <desc>Insticket AT-SPI-validerare genererar användbara rapporter för att verifiera åtkomligheten för att målprogram.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>Insticket AT-SPI-validerare genererar användbara rapporter för att verifiera åtkomligheten för att målprogram.</p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Köra insticket AT-SPI-validerare</title>
+      <p>För att köra insticket AT-SPI-validerare, välj ett objekt i programträdvyn. Då kommer valideringen att generera en rapport med avseende på det valda objektet och alla dess underkomponenter i trädhierarkin.</p>
+
+      <p>Efter att ett objekt är valt, välj ett valideringsschema i kombinationsrutan och tryck på knappen <cmd>Validera</cmd> för att generera rapporten. Om du vill avbryta körningen, tryck på knappen <cmd>Validera</cmd> igen.</p>
+
+      <p>Den genererade rapporten är interaktiv. Du kan därför dubbelklicka på de fel som hittats för att kontrollera vilken av målprogrammets komponenter som orsakar det. Motsvarande komponent kommer då att synas som markerad i <link xref="desktop_tree_view">programträdvyn</link> och färgmarkerad i målprogrammet.</p>  
+      <p>Om du vill spara den genererade rapporten i ditt system, klicka då på <cmd>Spara</cmd>-knappen. För att rensa valideringsskärmen, tryck på knappen <cmd>Töm</cmd>.</p>
+      <p>För att få mer information om ett fel i den genererade rapporten, säkerställ att det motsvarande objektet är markerat och tryck på knappen <cmd>Hjälp</cmd>. Det kommer att öppna en hjälpsida i din standardwebbläsare.</p>        
+  </section>
+</page>

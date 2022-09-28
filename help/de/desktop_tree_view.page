@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="desktop_tree_view" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">1. Anwendungs-Baumansicht</title>
+    <link type="next" xref="interface_viewer_plugin"/>
+    <desc>Erkunden der barrierefreien Hierarchie der Arbeitsumgebung</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>Anwendungs-Baumansicht</title>
+
+  <p>Die Oberfläche von <app>Accerciser</app> beinhaltet eine Baumansicht mit dem Namen Anwendungs-Baumansicht, welche alle barrierefreien Anwendungen, welche gerade laufen, abdeckt. Um diese Baumansicht zu erstellen, verwendet <app>Accerciser</app> den Registry-Dämon von AT-SPI. Dieser Dämon dient dazu, alle barrierefreien Anwendung in der Arbeitsumgebung zu beobachten und Versand von X-Ereignissen über den AT-SPI D-Bus zu ermöglichen. Nachdem alle barrierefreien Anwendungen erfasst wurden, stellt <app>Accerciser</app> diese in einer ausklappbaren hierarchischen Struktur dar.</p>
+
+  <figure>
+    <title>Anwendungs-Baumansicht</title>
+    <desc>Die Anwendungs-Baumansicht von <app>Accerciser</app> zeigt die Oberfläche von jeder barrierefreien Anwendung, welche in der Arbeitsumgebung läuft, als ein Widget in der hierarchischen Struktur.</desc>
+    <media type="image" mime="image/png" width="400" height="600" src="figures/tree_view_accerciser.png">
+      <p>Die Anwendungs-Baumansicht von <app>Accerciser</app> zeigt die Oberfläche von jeder barrierefreien Anwendung, welche in der Arbeitsumgebung läuft, als ein Widget in der hierarchischen Struktur.</p>
+    </media>
+  </figure>
+
+
+  <p>Der erste Knoten einer jeden Anwendung in dieser Baumansicht stellt die Anwendung selbst dar. Wenn Sie einen Knoten erweitern, können Sie alle ihre Widgets sehen, was eine hierarchische Ansicht der Oberfläche einer Anwendung ermöglicht. Für jeden Knoten stellt <app>Accerciser</app> einige grundsätzliche Informationen zur Verfügung, wie den Namen, die Funktionen und die Anzahl der Unterelemente.</p>
+
+  <note style="caution">
+    <p>Beachten Sie, dass Knoten mit vielen Unterelementen viel Zeit zum Erweitern brauchen.</p>
+  </note>
+
+  <section id="bookmarking">
+    <title>Lesezeichen für Objekte in der Anwendungs-Baumansicht anlegen</title>
+    <p>
+      <app>Accerciser</app> allows bookmarking items in the Application Tree View for later examining. This is helpful when
+      the target application must be restarted - after rebuilding it, for example. To bookmark an item, select it and do
+      <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press <keyseq><key>Ctrl</key><key>d</key></keyseq>. 
+    </p>
+    <p>Lesezeichen für Accessibles in <app>Accerciser</app> sind durch einen Anwendungsnamen und einen »Pfad« zum Accessible-Lesezeichen in der internen Accessible-Hierarchie der Anwendung definiert. Wenn die Zielanwendung mehrere Zustände hat, zum Beispiel bei mehreren Frames in der obersten Ebene, könnte dieser Pfad inkorrekt sein. Lesezeichen können verwaltet werden, indem Sie den Lesezeichendialog mittels <guiseq><gui>Lesezeichen</gui><gui>Lesezeichen verwalten</gui></guiseq> öffnen.</p>
+  </section>
+
+</page>

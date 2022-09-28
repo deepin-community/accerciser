@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ipython_plugin" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">2. Zásuvný modul IPython</title>
+    <link type="next" xref="howto_write_a_plugin"/>
+    <desc>Co dělat, když vše ostatní selže.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Zásuvný modul s konzolou IPython</title>
+  <p>Zásuvný modul Konzola IPython umožňuje komunikaci v reálném čase s položkou vybranou ve <link xref="desktop_tree_view">stromovém zobrazení aplikací</link>. Vzhledem k tomu, že u tohoto zásuvného modulu se jedná o interaktivní shell jazyka Python, můžete dle potřeb importovat libovolný modul Python.</p>
+
+  <note style="tip">
+    <p>Ujistěte se, že máte ve svém systému nainstalován samostatný balíček IPython. Bez něj nebude zásuvný modul Konzola IPython správně fungovat.</p>
+  </note>
+  
+  <section id="running_ipython_plugin">
+    <title>Spuštění zásuvného modulu Konzola IPython</title>
+    <p>Zásuvný modul Konzola IPython spustíte tak, že vyberete položku podporující přístupnost uvedenou ve stromovém zobrazení aplikací, tj. buď přímo aplikaci nebo widget. V zásuvném modulu pak bude vybraná položka odpovídat proměnné „acc“.</p>
+    <p>Zmáčknutím klávesy <key>Tab</key> získáte návrhy na doplnění aktuálního příkazu v konzole, což se může hodit při vyhledávání metod pyatspi.</p>  
+
+  <figure>
+    <title>Zkoumání vybrané položky pomocí zásuvného modulu Konzola IPython</title>
+    <desc>Zásuvný modul Konzola IPython vám umožňuje zkoumat metody, konstanty a vlastnosti vztahující se k vybrané položce ve stromovém zobrazení aplikací.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/IPython_plugin.png">
+      <p>Zásuvný modul Konzola IPython vám umožňuje zkoumat metody, konstanty a vlastnosti vztahující se k vybrané položce ve stromovém zobrazení aplikací.</p>
+    </media>
+  </figure>
+
+  <note style="tip">
+    <p>Po napsáním <cmd>help(acc)</cmd> v konzole IPython se vám zobrazí užitečná dokumentace vztahující se k vybrané položce s podporou přístupnosti.</p>
+  </note>
+  </section>
+</page>

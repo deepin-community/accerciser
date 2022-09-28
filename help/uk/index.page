@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="uk">
+  <info>
+    <title type="text">Accerciser</title>
+    <title type="link">Вступ до <app>Accerciser</app></title>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title><media type="image" mime="image/png" its:translate="no" src="figures/accerciser-logo.png">
+      <span its:translate="yes">Логотип <app>Accerciser</app></span>
+    </media> <app>Accerciser</app></title>
+  <note style="important">
+    <title>Передмова</title>
+    <p>Ознайомтеся із <link xref="help:gnome-help/a11y">довідкою щодо універсального доступу</link></p>
+  </note>
+  <section id="getting_started" style="2column">
+    <title>Основи роботи</title>
+  </section>
+  <section id="examining_a11y" style="2column">
+    <title>Перевірка доступності програми</title>
+  </section>
+  <section id="advanced" style="2column">
+    <title>Додаткові теми</title>
+  </section>
+</page>

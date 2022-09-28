@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="api_browser_plugin" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">1. Le greffon « Navigateur d'API »</title>
+    <link type="next" xref="ipython_plugin"/>
+    <desc>Vérifier les interfaces, les méthodes et les propriétés</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Greffon « Navigateur d'API »</title>
+  <p>Étant donné un composant graphique accessible sélectionné dans le <link xref="desktop_tree_view">Panneau de l'arborescence des applications</link>, le greffon « Navigateur d'API » affiche les interfaces AT-SPI qu'il met en œuvre, ainsi que ses méthodes et ses propriétés.</p>
+
+  <figure>
+    <title>Greffon « Navigateur d'API »</title>
+    <desc>Le greffon « Navigateur d'API » permet de vérifier les interfaces, les méthodes et les propriétés d'un composant graphique accessible cible dans une application.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/api_browser.png">
+      <p>Le greffon « Navigateur d'API » permet de vérifier les interfaces, les méthodes et les propriétés d'un composant graphique accessible cible dans une application.</p>
+    </media>
+  </figure>
+
+  <section id="running_api_browser_plugin">
+    <title>Exécution du greffon Navigateur d'API</title>
+    <p>Pour exécuter le greffon « navigateur d'API », sélectionnez un composant graphique accessible dans le panneau de l'arborescence des applications. Le fait de double-cliquer sur un composant graphique le met en surbrillance dans l'interface de l'application et vous pouvez ainsi être sûr qu'un certain composant graphique est bien celui que vous recherchiez.</p>
+    <p>Après cela, sélectionnez l'une des interfaces du composant graphique dans la liste déroulante. Toutes les méthodes publiques de l'interface sélectionnée sont visibles dans la colonne de gauche du greffon. Toutes les propriétés publiques et leur valeur correspondante, s'affichent dans la colonne de droite du greffon.</p>  
+    <p>Par défaut, le « Navigateur d'API » masque les méthodes privées et les propriétés. Pour les voir, décochez la case <cmd>Masquer les attributs privés</cmd>. Pour les masquer à nouveau, cochez la case.</p>
+  </section>
+</page>

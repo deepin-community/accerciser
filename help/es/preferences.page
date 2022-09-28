@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">4. Preferencias</title>
+    <!-- link type="next" xref="event_monitor_plugin" /-->
+    <desc>Personalizar las preferencias de <app>Accerciser</app></desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Configurar <app>Accerciser</app></title>
+  <p>Para configurar los complementos, las teclas rápidas y el resaltado, pulse <key>Ctrl</key>+<key>p</key> o <guiseq><gui>Editar</gui><gui>Preferencias</gui></guiseq> para abrir un diálogo.</p>
+
+  <section id="plugin">
+    <title>Configurar complementos</title>
+    <p>Después de abrir el diálogo de preferencias, encontrará una lista de complementos disponibles, con sus correspondientes casillas, en la pestaña «Complementos». Para activar o desactivar un complemento, conmute su casilla. Sólo se puede acceder a los complementos activos a través de la interfaz de <app>Accerciser</app>.</p>
+    <p>Una pulsación con el botón derecho sobre un complemento dado le permite elegir su ubicación: «Panel superior», «Panel inferior» y «Nueva vista». Al seleccionar «Nueva vista» se crea una ventana nueva para el complemento.</p>
+
+    <note style="tip">
+      <p>Puede omitir el diálogo de preferencias usando arrastrar y soltar para mover un complemento desde una ubicación hasta otra.</p>
+    </note>
+  </section>
+
+  <section id="global_hotkey">
+    <title>Configurar teclas rápidas globales</title>
+    <p>Algunos elementos en <app>Accerciser</app> puede activar ciertas funcionalidades mediante teclas rápidas. Un ejemplo es el <link xref="quick_select_plugin">complemento de selección rápida</link>. La combinación de teclas rápidas para cada funcionalidad se puede cambiar en el diálogo de preferencias, en la pestaña «Teclas rápidas globales». En esta pestaña encontrará una lista de todas las características para las que se pueden configurar las teclas rápidas. Use las casillas <cmd>Ctrl</cmd>, <cmd>Alt</cmd>, y <cmd>Mayús</cmd> para activar o desactivar estos modificadores.</p>
+
+   </section>
+
+   <section id="highlighting">
+     <title>Configurar el resaltado de widgets</title>
+     <p>Algunos elementos de <app>Accerciser</app>, como la tecla rápida global <key>Ctrl</key>+<key>Alt</key>+<key>/</key>, resaltan un widget específico en la aplicación objetivo. La duración del resaltado, el color del borde y el color de relleno se pueden personalizar en el diálogo de preferencias, en la pestaña «Resaltado».</p>
+   </section>
+</page>

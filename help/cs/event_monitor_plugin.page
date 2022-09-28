@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="event_monitor_plugin" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">4. Zásuvný modul pro sledování událostí</title>
+    <link type="next" xref="quick_select_plugin"/>
+    <desc>Jak sledovat události přístupnosti, které se objeví.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Zásuvný modul pro sledování událostí</title>
+  <p>Zásuvný modul Sledování událostí umožňuje zobrazit <link href="http://accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html">události AT-SPI</link> tak, jak se postupně objevují v aplikacích, které vidíte ve <link xref="desktop_tree_view">stromovém zobrazení aplikací</link> v aplikaci <app>Accerciser</app>. Zásuvný modul je vhodný ke zkoumání dynamických záležitostí uživatelského rozhraní aplikací a k ověřování, které widgety souvisí se kterými událostmi AT-SPI.</p>
+
+  <figure>
+    <title>Zásuvný modul pro sledování událostí</title>
+    <desc>Zásuvný moudul Sledování událostí umožňuje zobrazit události AT-SPI a zjistit jejich sounáležitost se zpřístupněnými widgety.</desc>
+    <media type="image" mime="image/png" width="700" height="500" src="figures/event_monitor_plugin.png">
+      <p>Zásuvný moudul Sledování událostí umožňuje zobrazit události AT-SPI a zjistit jejich sounáležitost se zpřístupněnými widgety.</p>
+    </media>
+  </figure>
+
+  <section id="running_event_monitor_plugin">
+    <title>Spuštění zásuvného modulu pro sledování událostí</title>
+    <p>Když otevřete zásuvný modul Sledování událostí, můžete vidět seznam zaškrtávacích políček představujících všechny možné třídy událostí AT-SPI pokryté tímto zásuvným modulem:</p>
+
+    <list>
+      <item>
+        <p>dokument</p>
+      </item>
+      <item>
+        <p>zaměření</p>
+      </item>
+      <item>
+        <p>myš</p>
+      </item>
+      <item>
+        <p>objekt</p>
+      </item>
+      <item>
+        <p>terminál</p>
+      </item>
+      <item>
+        <p>okno</p>
+      </item>
+    </list>
+
+    <p>Když třídu zaškrtnete, budou zásuvným modulem sledovány typy jejích událostí. Třídy jsou prezentovány ve stromové struktuře, takže můžete svůj vyběr upřesnit rozbalením dané třídy a zaškrtnutím jen typů událostí, které vás opravdu zajímají.</p>
+    <p>V případě, že chcete sledovat všechny možné typy událostí AT-SPI, zmáčkněte tlačítko <gui>Vybrat vše</gui>. Obdobně, pokud chcete zrušit výběr všech vybraných typů událostí, zmáčkněte tlačítko <gui>Zrušit výběr</gui>.</p>
+
+    <note style="tip">
+      <p>Zvolte si ke sledování raději jen pár událostí, aby byl výpis přehledný.</p>
+    </note>
+
+    <p>Jiným způsobem, jak sledování upřesnit, je volba zdroje události. Ve výchozím stavu je jak zdroj vybráno <gui>Vše</gui>, což znamená, že jsou sledovány události AT-SPI ze všech aplikací. Když chcete prozkoumat jen jednu aplikaci, vyberte ji ve stromovém zobrazení aplikací a ve volbě zdroje klikněte na <gui>Vybraná aplikace</gui>. Obdobně, když chcete sledovat jen jeden zpřístupněný widget a jeho potomky, vyberte jej ve stomovém zobrazení aplikací a jako zdroj zvolte <gui>Vybraný widget</gui>.</p>
+
+    <p>Po vybrání typu události a určení zdroje začne zásuvný modul automaticky sledovat události AT-SPI, protože tlačítko <gui>Sledovat události</gui> je ve výchozím stavu zmáčknuté. Kdykoliv sledování chcete zastavit, klikněte na toto tlačítko. Opětovným kliknutím spustíte sledování odznovu.</p>
+    
+    <p>U každé příchozí události určí zásuvný modul Sledování událostí její zdroj a aplikaci. Aktivací odkazu vedoucího na některou z těchto položek se daná položka vybere v zobrazení stromu aplikací.</p>
+
+    <p>Pokud chcete uložit výstup vygenerovaný zásuvným modulem Sledování událostí, stačí zmáčknout tlačítko <gui>Uložit</gui>. Pro smazání výstupní obrazovky musíte kliknout na tlačítko <gui>Vymazat</gui>.</p>
+  </section>
+</page>

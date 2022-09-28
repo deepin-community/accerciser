@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="desktop_tree_view" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">1. Δενδρική προβολή εφαρμογών</title>
+    <link type="next" xref="interface_viewer_plugin"/>
+    <desc>Εξερευνώντας την προσιτή ιεραρχία της επιφάνειας εργασίας σας</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Δενδρική προβολή εφαρμογών</title>
+
+  <p>Η διεπαφή του <app>Accerciser</app> περιέχει μια προβολή δέντρου, με όνομα δενδρική προβολή εφαρμογών, που περιέχει όλες τις προσιτές εφαρμογές που εκτελούνται στην επιφάνεια εργασίας. Για να δημιουργήσετε αυτή την προβολή δέντρου, το <app>Accerciser</app> χρησιμοποιεί την υπηρεσία καταχωρήσεων AT-SPI. Αυτή η υπηρεσία είναι υπεύθυνη για την καταγραφή όλων των προσιτών εφαρμογών της επιφάνειας εργασίας και την προώθηση των γεγονότων στον X μέσω του AT-SPI D-Bus. Αφού ληφθούν όλες οι προσιτές εφαρμογές, το <app>Accerciser</app> εμφανίζει κάθε εφαρμογή ως μια ιεραρχημένη δομή με επεκταμένους κόμβους.</p>
+
+  <figure>
+    <title>Δενδρική προβολή εφαρμογών</title>
+    <desc>Η Δενδρική προβολή εφαρμογών του <app>Accerciser</app> αντιπροσωπεύει τη διεπαφή της κάθε εκτελούμενης εφαρμογής στην επιφάνεια εργασίας ως μια ιεραρχημένη δομή γραφικών συστατικών.</desc>
+    <media type="image" mime="image/png" width="400" height="600" src="figures/tree_view_accerciser.png">
+      <p>Η Δενδρική προβολή εφαρμογών του <app>Accerciser</app> αντιπροσωπεύει τη διεπαφή της κάθε εκτελούμενης εφαρμογής στην επιφάνεια εργασίας ως μια ιεραρχημένη δομή γραφικών συστατικών.</p>
+    </media>
+  </figure>
+
+
+  <p>Ο πρώτος κόμβος της κάθε εφαρμογής που αντιπροσωπεύετε στη δενδρική προβολή είναι η ίδια η εφαρμογή. Όταν επεκτείνετε έναν κόμβο, μπορείτε να δείτε όλα τα θυγατρικά του γραφικού συστατικού, επιτρέποντας την ιεραρχική προβολή της διεπαφής της εφαρμογής. Για κάθε κόμβο, το <app>Accerciser</app> παρέχει μερικές βασικές πληροφορίες, όπως το όνομα, τον ρόλο και τον αριθμό των θυγατρικών.</p>
+
+  <note style="caution">
+    <p>Θα πρέπει να γνωρίζετε ότι κόμβοι με αρκετά θυγατρικά θέλουν αρκετή ώρα για να επεκταθούν.</p>
+  </note>
+
+  <section id="bookmarking">
+    <title>Προσθήκη σελιδοδεικτών σε αντικείμενα στη δενδρική προβολή εφαρμογών</title>
+    <p>
+      <app>Accerciser</app> allows bookmarking items in the Application Tree View for later examining. This is helpful when
+      the target application must be restarted - after rebuilding it, for example. To bookmark an item, select it and do
+      <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press <keyseq><key>Ctrl</key><key>d</key></keyseq>. 
+    </p>
+    <p>Οι σελιδοδείκτες σε προσιτά αντικείμενα στο Accerciser ορίζονται από ένα όνομα εφαρμογής και ένα "μονοπάτι" στην εσωτερική ιεραρχία προσβάσεων της εφαρμογής προς την επιλεγμένη πρόσβαση. Όταν η εν λόγω εφαρμογή είναι σε διαφορετική φάση (π.χ. πολλαπλά πλαίσια πρώτου πλαισίου) τότε το μονοπάτι μπορεί να μην είναι σωστό. </p>
+  </section>
+
+</page>

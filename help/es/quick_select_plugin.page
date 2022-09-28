@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="quick_select_plugin" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">5. Complemento de selección rápida</title>
+    <link type="next" xref="api_browser_plugin"/>
+    <desc>Ubicando el objeto que necesita</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Complemento de selección rápida</title>
+  <p>El complemento de selección rápida no proporciona una interfaz visible coma la de los otros complementos de <app>Accerciser</app>; en su lugar, añade características para seleccionar elementos rápidamente en la <link xref="desktop_tree_view">vista en árbol de la aplicación</link> mediante teclas rápidas globales. Originalmente, estas teclas rápidas formaban parte del núcleo del código de <app>Accerciser</app>, pero posteriormente se pasaron al complemento de selección rápida.</p>
+  <p>El complemento de selección rápida proporciona dos teclas rápidas globales. Pulsar <key>Ctrl</key>+<key>Alt</key>+<key>a</key> selecciona el último widget accesible con el foco en la vista en árbol de la aplicación. Pulsar <key>Ctrl</key>+<key>alt</key>+<key>/</key> selecciona el widget accesible debajo del puntero en la vista en árbol de la aplicación y lo resalta en la aplicación objetivo.</p> 
+</page>

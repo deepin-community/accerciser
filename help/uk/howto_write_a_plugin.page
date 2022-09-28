@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_write_a_plugin" xml:lang="uk">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">3. Написання нових додатків</title>
+    <link type="next" xref="preferences"/>
+    <desc>Розширення можливостей <app>Accerciser</app> бажаними для вас функціями</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Написання додатків до <app>Accerciser</app></title>
+  <p>Розширення можливостей <app>Accerciser</app> за допомогою додатків стало простішим з часу написання <link href="https://wiki.gnome.org/Apps/Accerciser/PluginTutorial">цих настанов</link>. Зважаючи на те, що у настановах було надано дуже докладне пояснення щодо цього питання, цей розділ складається, в основному, з початкового тексту настанов із простими редагуваннями і оновленнями.</p>
+  <p>В <app>Accerciser</app> передбачено підтримку трьох базових типів додатків:</p>
+  <list>
+    <item>
+      <p>Базові додатки — ці додатки є похідними від базового класу Plugin. У них не передбачено видимого інтерфейсу, але вони можуть розширювати функціональні можливості <app>Accerciser</app>.</p>
+    </item>
+    <item>
+      <p>Консольні додатки — ці додатки виводять прості дані до текстової області на вкладці додатка. Не плутайте ці доддати із <link xref="ipython_plugin">додатком консолі IPython</link> з пакунка з програмою.</p>
+    </item>
+    <item>
+      <p>Додатки поля перегляду — основна частина типових додатків <app>Accerciser</app>. Ці додатки мають нетиповий графічний інтерфейс, який буде показано у вкладці.</p>
+    </item>
+  </list>
+
+  <section id="base_plugin">
+    <title>Створення базового додатка</title>
+    <p>Ми створимо спрощену версію <link xref="quick_select_plugin">додатка швидкого вибору</link>. Цей додаток вибере останній сфокусований доступний об'єкт при натисканні комбінації клавіш <keyseq><key>Ctrl</key><key>Alt</key><key>E</key></keyseq>.</p>
+    <p>По-перше, ми скористаємося рядками імпортування:</p>
+    <code>
+      from accerciser.plugin import Plugin
+      import gtk
+      import pyatspi
+    </code>
+    <p>Далі, ми створимо клас як похідний від базового класу Plugin і визначимо деякі обов'язкові атрибути класу:</p>
+    <code>
+      class FocusSelect(Plugin):
+        plugin_name = 'Focus Select'
+        plugin_description = 'Allows selecting last focused accessible.'
+    </code>
+    <p>Тепер ми перевизначимо метод init, у якому ви встановимо загальну клавіатурну дію для вибору останнього доступного об'єкта, зареєструємо засіб очікування на подію для події «focus» і встановимо для змінної екземпляра <cmd>last_focused</cmd> значення <cmd>None</cmd>.</p>
+    <code>
+      def init(self):
+        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+        self.global_hotkeys = [('Inspect last focused accessible',
+                                self.inspectLastFocused,
+                                gtk.keysyms.e,
+                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]
+        self.last_focused = None
+    </code>
+    <p>Зауважте, що змінна екземпляра <cmd>global_hotkeys</cmd> є списком кортежів. Кожен кортеж є записом загальної дії клавіатурного скорочення, що складається з опису дії і бажаного методу для виклику, символу клавіш комбінації та маски модифікаторів клавіш.</p>
+    <p>У зворотному виклику події «focus» ми визначаємо змінну екземпляра <cmd>last_focused</cmd> доступним об'єктом, який щойно видав подію «focus».</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if not self.isMyApp(event.source):
+          self.last_focused = event.source
+    </code>
+    <p>У зворотному виклику дії клавіатурного скорочення ми оновлюємо загальний для програми вузол останнім фокусованим доступним об'єктом, якщо його було записано:</p>
+    <code>
+      def inspectLastFocused(self):
+        if self.last_focused:
+          self.node.update(self.last_focused)
+    </code>
+  </section>
+  <section id="console_plugin">
+    <title>Створення консольного додатка</title>
+    <p>Ми створимо консольний додаток для показу змін у фокусуванні, які видаються доступним об'єктом із роллю «кнопка» — пам'ятайте, що за допомогою <app>Accerciser</app> доволі просто перевірити роль будь-якого запису; ви можете виконати перевірку, наприклад, за допомогою <link xref="desktop_tree_view">панелі перегляду ієрархії програм</link>.</p>
+    <p>Потрібні рядки імпортування:</p>
+    <code>
+      from accerciser.plugin import ConsolePlugin
+      import pyatspi
+    </code>
+    <p>Далі, ми додаємо визначення класу із назвою та описом додатка:</p> 
+    <code>
+      class PushButtonFocus(ConsolePlugin):
+        plugin_name = 'Push Button Focus'
+        plugin_description = 'Print event when pushbutton get\'s focus.'
+    </code>
+    <p>Ми перевизначаємо метод init додаванням засобу очікування на події реєстру:</p>
+    <code>
+       def init(self):
+         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+    </code>
+    <p>У методі зворотного виклику буде виведено усі події кнопки.</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:
+          self.appendText(str(event)+'\n')
+    </code>
+  </section>
+  <section id="viewport_plugin">
+    <title>Створення додатка панелі перегляду</title>
+    <p>Ми створимо додаток поля перегляду, який уможливлює швидке тестування дії «клацання» у доступних об'єктах, у яких передбачено підтримку інтерфейс Action AT-SPI і які мають дію із назвою «click». Це буде проста кнопка, як у відповідь на натискання виконуватиме дію «клацання» у доступному об'єкті.</p>
+    <p>Спочатку, декілька рядків обов'язкових імпортувань:</p>
+    <code>
+      import gtk
+      from accerciser.plugin import ViewportPlugin
+    </code>
+    <p>Далі, визначення класу із назвою та описом:</p>
+    <code>
+      class Clicker(ViewportPlugin):
+        plugin_name = 'Clicker'
+        plugin_description = 'Test the "click" action in relevant accessibles.'
+    </code>
+    <p>Ми перевизначаємо метод init із додаванням певного графічного інтерфейсу і з'єднуємо зворотний виклик із сигналом для кнопки. Ми використовуємо контейнер вирівнювання для уможливлення центрування кнопки у вкладці додатка без зайвого заповнення кнопкою усього простору панелі додатка. Зауважте, що змінна екземпляра <cmd>plugin_area</cmd> містить gtk.Frame, який можна заповнити усіма віджетами додатка.</p>
+    <code>
+       def init(self):
+         alignment = gtk.Alignment(0.5,0.5,0,0)
+         self.click_button = gtk.Button('Click me!')
+         alignment.add(self.click_button)
+         self.plugin_area.add(alignment)
+
+         self.click_button.connect('clicked', self.onClick)
+
+         self.show_all()
+    </code>
+    <p>Ми також створили зручний метод, який повертає список підтримуваних дій поточного вибраного доступного об'єкта — якщо у ньому не передбачено підтримки інтерфейсу Action, він повертає порожній список:</p> 
+    <code>
+       def accSupportedActions(self):
+       try:
+         ai = self.node.acc.queryAction()
+       except NotImplementedError:
+         action_names = []
+       else:
+         action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+       return action_names
+    </code>
+    <p>У базовому класі додатків є метою, який називається onAccChanged і який викликають кожного разу, коли вибраний доступний об'єкт цільової програми змінюється. Ми перевизначимо його встановленням кнопки, яка реагуватиме лише, якщо поточний доступний об'єкт має дію «клацання»:</p>
+    <code>
+       def onAccChanged(self, acc):
+         has_click = 'click' in self.accSupportedActions()
+         self.click_button.set_sensitive(has_click)
+    </code>
+    <p>Метод зворотного виклику для «натискання» кнопки виконує дію «натискання» для доступного об'єкта. Оскільки цей зворотний виклик можна викликати, лише якщо кнопка є чутливою, нам не слід перейматися перевіркою, чи має поточний доступний об'єкт дію «клацання».</p>
+    <code>
+      def onClick(self, button):
+        ai = self.node.acc.queryAction()
+        action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+        ai.doAction(action_names.index('click'))
+    </code>
+   </section>
+</page>

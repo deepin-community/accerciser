@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_accerciser"/>
+    <title type="sort">1. Co je to Accerciser?</title>
+    <desc>Interaktivní průzkumník přístupnosti.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Co je to <app>Accerciser</app>?</title>
+  <p><app>Accerciser</app> je interaktivní průzkumník přístupnosti pro pracovní prostředí GNOME napsaný v jazyce Python. Využívá knihovnu AT-SPI ke zkoumání a ovládání widgetů, což vám umožňuje kontrolovat, jestli aplikace předává správné informace nástrojům přístupnosti a automatizovat testy základních konstrukcí. <app>Accerciser</app> přichází se sadou zásuvných modulů, které můžete použít k vytvoření vlastního zobrazení informací o přístupnosti.</p>
+
+  <p>Ve výchozím stavu je hlavní část uživatelského rozhraní aplikace <app>Accerciser</app> složena ze tří částí: stromového zobrazení hierarchie přístupnosti celého pracovního prostředí (nazývá se <link xref="desktop_tree_view">stromové zobrazení aplikací</link>) a dvou oblastní zásuvných modulů. Pokud chcete vidět všechny zásuvné moduly raději jen v jedné oblasti, zmáčkněte <keyseq><key>Ctrl</key><key>T</key></keyseq> a uživatelské rozhraní se rozdělí jen na dvě části. Pro opětovné rozdělení na tři části, zmáčkněte <keyseq><key>Ctrl</key><key>T</key></keyseq> znovu.</p>
+
+  <note style="tip">
+    <p>Ujistěte se, že je ve vašem pracovním prostředí povolena podpora přístupnosti. V případě, že není, nebude <app>Accerciser</app> pracovat podle očekávání.</p>
+  </note>
+
+  <figure>
+    <title><app>Accerciser</app></title>
+    <desc>Výchozí uživatelské rozhraní aplikace <app>Accerciser</app></desc>
+    <media type="image" mime="image/png" src="figures/accerciser-view.png">
+      <p>Výchozí uživatelské rozhraní aplikace <app>Accerciser</app></p>
+    </media>
+  </figure>
+
+  <section id="intended_audience">
+    <title>Cílová skupina aplikace <app>Accerciser</app></title>
+    <p><app>Accerciser</app> odpovídá na potřeby širokého publika. Vývojáři uživatelského rozhraní jej používají k ujištění, že jejich aplikace poskytuje všechy své vlastnosti přes AT-SPI. Vývojáři technologí přístupnosti mohou vidět, co AT-SPI poskytuje jejich aplikacím. Vývojáři automatizovaných testů uživatelského rozhraní najdou v aplikaci <app>Accerciser</app> užitek proto, že odhaluje různé události, které mohou být očekávány od jejich cílové aplikace.</p>
+  </section>
+
+  <section id="accerciser_plugin_architecture">
+    <title>Architektura zásuvných modulů <app>Accerciser</app></title>
+    <p><app>Accerciser</app> má rozšiřitelnou architekturu založenou na zásuvných modulech. Kód jádra je docela malý a většinu funkcí zajišťují výchozí zásuvné moduly:</p>
+    <list>
+      <item>
+        <p>
+          <link xref="interface_viewer_plugin">Interface Viewer</link> - A plugin that lets you explore the AT-SPI 
+          interfaces provided by each accessible widget of a target application.
+        </p>
+      </item>
+      <item>
+        <p><link xref="validator_plugin">Ověřování přes AT-SPI</link> – Zásuvný moudul který používá testy k ověření přístupnosti cílové aplikace.</p>
+      </item>
+      <item>
+        <p><link xref="event_monitor_plugin">Sledování událostí</link> – Zásuvný modul, který zobrazuje události AT-SPI vyslané cílovou událostí při jejich vzniku.</p>
+      </item>
+      <item>
+        <p><link xref="quick_select_plugin">Rychlý výběr</link> – Zásuvný modul, který poskytuje globální horké klávesy pro rychlý výběr zpřístupněných widgetů ve stromovém zobrazení aplikací, které <app>Accerciser</app> vidí.</p>
+      </item>
+      <item>
+        <p><link xref="api_browser_plugin">Prohlížeč API</link> – Zásuvný modul, který zobrazuje rozhraní, metody a vlastnosti dostupné u každého z přístupných widgetů v cílové aplikaci.</p>
+      </item>
+      <item>
+        <p><link xref="ipython_plugin">Konzola IPython</link> – Zásuvný modul, který poskytuje úplný interaktivní shell jazyka Python s přístupem k vybraným zpřístupněným widgetům v cílové aplikaci.</p>
+      </item>
+    </list>
+  </section>
+
+
+  <section id="more_about_gnome_accessibility">
+    <title>Více o přístupnosti</title>
+    <p>Přístupnost je klíčová vlastnost, která by se měla dotýkat všech aspektů pracovního prostředí. Aby toho bylo dosaženo v GNOME, byly vyvinuty některé knihovny, jako je ATK a AT-SPI. Přestože tyto knihovny pocházejí z GNOME, jsou dne používány i jinými pracovními prostředími. Jestli se chcete o knihovnách přístupnosti pro systémy GNU/UNIX dozvědět více, podívejte se na:</p>
+    <list>
+      <item>
+        <p><link href="http://developer.gnome.org/atk/">Sada nástrojů přístupnosti ATK</link> – ATK poskytuje sadu rozhraní přístupnosti, která implementují ostatní sady nástrojů a aplikace. Díky rozhraním ATK mají nástroje přístupnosti úplný přístup k zobrazení a řízení běžících aplikací.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/at-spi-cspi/stable/">AT-SPI</link> – Jedná se o hlavní rozhraní služby, pomocí které se technologie přístupnosti dotazují běžících aplikací a získávají od nich upozornění. Další materiál najdete u <link href="http://accessibility.kde.org/developer/atk.php#coreclasses">komunity pro vývoj přístupnosti KDE</link>.</p>
+      </item>
+      <item>
+        <p><link href="https://help.gnome.org/users/gnome-help/stable/a11y.html">Příručka přístupnosti pracovního prostředí GNOME</link> – Příručka pro všechny, kteří se zajímají o to, jak pracovní prostředí GNOME podporuje potřeby uživatelů s postižením.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/accessibility-devel-guide/stable/">Příručka přístupnosti GNOME pro vývojáře</link> – Jedná se o příručku pro vývojáře, kteří chtějí mít jistotu, že jejich aplikace bude přístupná pro široký okruh uživatelů.</p>
+      </item>
+      <item>
+        <p><link href="https://wiki.gnome.org/Accessibility">Projetk přístupnosti GNOME</link> – Zahrnuje příručky uvedené výše plus další odkazy užitečné pro uživatele, vývojáře a správce systémů.</p>
+      </item>
+    </list>
+  </section>
+
+</page>

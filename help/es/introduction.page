@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_accerciser"/>
+    <title type="sort">1. ¿Qué es Accerciser?</title>
+    <desc>Un examinador de accesibilidad interactivo</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>¿Qué es <app>Accerciser</app>?</title>
+  <p><application>Accerciser</application> es un examinador de accesibilidad interactivo escrito en Python. Usa la biblioteca AT-SPI para inspeccionar, examinar e interaccionar con los widgets, permitiéndole comprobar si una aplicación proporciona la información correcta a las tecnologías de asistencia y entornos de trabajo de prueba automáticos. <application>Accerciser</application> incluye un conjunto complementos que puede usar para crear vistas personalizadas de la información de accesibilidad.</p>
+
+  <p>De manera predeterminada, la interfaz principal de <app>Accerciser</app> se compone de tres seccione: una vista en árbol de la jerarquía completa de accesibles del escritorio, llamada <link xref="desktop_tree_view"> vista en árbol de la aplicación</link>, y dos áreas de complementos. Si prefiere ver todos los complementos en una única área, divida la interfaz de <app>Accerciser</app> en dos secciones, en lugar de en tres, pulse <key>Ctrl </key>+<key>t</key>. Para volver a dividirla en tres secciones, simplemente pulse <keyseq><key>Ctrl</key><key>t</key></keyseq> otra vez.</p>
+
+  <note style="tip">
+    <p>Asegúrese de que el soporte de accesibilidad está activado en su escritorio; si no lo está, <app>Accerciser</app> no funcionará como se espera.</p>
+  </note>
+
+  <figure>
+    <title><app>Accerciser</app></title>
+    <desc>Interfaz predeterminada de <app>Accerciser</app>.</desc>
+    <media type="image" mime="image/png" src="figures/accerciser-view.png">
+      <p>Interfaz predeterminada de <app>Accerciser</app>.</p>
+    </media>
+  </figure>
+
+  <section id="intended_audience">
+    <title>Público objetivo de <app>Accerciser</app></title>
+    <p><app>Accerciser</app> se ajusta a las necesidades de diferentes públicos objetivo. Los desarrolladores de interfaces de usuario lo usan para asegurarse de que sus aplicaciones proporcionan todas sus características a través de At-SPI. Los desarrolladores de tecnologías de asistencia pueden ver qué proporciona AT-SPI a sus aplicaciones. Los desarrolladores de pruebas de IU automatizadas encuentra beneficioso a <app>Accerciser</app> ya que expone diferentes eventos que se podrían esperar de su aplicación objetivo.</p>
+  </section>
+
+  <section id="accerciser_plugin_architecture">
+    <title>Arquitectura de complementos de <app>Accerciser</app></title>
+    <p><app>Accerciser</app> tiene una arquitectura extensible basada en complementos. El núcleo de su código es bastante pequeño y la mayoría de sus características son parte de los complementos predeterminados:</p>
+    <list>
+      <item>
+        <p><link xref="interface_viewer">Visor de interfaces</link>: un complemento que le permite examinar las interfaces AT-SPI proporcionadas por cada widget accesible en una aplicación objetivo.</p>
+      </item>
+      <item>
+        <p><link xref="validator_plugin">Validador AT-SPI</link>: un complemento que aplica pruebas para verificar la accesibilidad de una aplicación objetivo.</p>
+      </item>
+      <item>
+        <p><link xref="event_monitor_plugin">Monitor de eventos</link>: un complemento que muestra eventos AT-SPI emitidos por una aplicación objetivo, según suceden.</p>
+      </item>
+      <item>
+        <p><link xref="quick_select_plugin">Selección rápida</link>: Un complemento que proporciona teclas rápidas globales para seleccionar rápidamente widgets accesibles en la vista en árbol de la aplicación de <app>Accerciser</app>.</p>
+      </item>
+      <item>
+        <p><link xref="api_browser_plugin">Examinador API</link>: un complemento que muestra las interfaces, métodos y atributos disponibles en cada widget accesible de una aplicación objetivo.</p>
+      </item>
+      <item>
+        <p><link xref="ipython_plugin">Consola IPython</link>: un complemento que proporciona una shell Python completa e interactiva con acceso a los widgets accesibles seleccionados de una aplicación objetivo.</p>
+      </item>
+    </list>
+  </section>
+
+
+  <section id="more_about_gnome_accessibility">
+    <title>Más acerca de accesibilidad</title>
+    <p>La accesibilidad es un valor esencial que debe abarcar todos los aspectos de un entorno de escritorio. Para ayudar a lograrlo en GNOME, se han desarrollado algunas bibliotecas como ATK y AT-SPI. Aunque se crearon en GNOME, estas bibliotecas se usan también en otros entornos de escritorio. Para aprender más sobre bibliotecas de accesibilidad para sistemas GNU/Linux, puede consultar:</p>
+    <list>
+      <item>
+        <p><link href="http://developer.gnome.org/atk/">Kit de herramientas de accesibilidad ATK</link>: ATK proporciona un conjunto de interfaces de accesibilidad implementadas por otros kits de herramientas y aplicaciones. Usando las interfaces ATK, las herramientas de accesibilidad tienen acceso completo para ver y controlar las aplicaciones en ejecución</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/at-spi-cspi/stable/">AT-SPI</link>: AT-SPI es la interfaz de servicio principal a la que consultan las tecnologías de asistencia y que recibe notificaciones de las aplicaciones en ejecución. Puede encontrar material adicional en la <link href="http://accessibility.kde.org/developer/atk.php#coreclasses">comunidad de desarrollo de accesibilidad de KDE</link>.</p>
+      </item>
+      <item>
+        <p><link href="https://help.gnome.org/users/gnome-help/stable/a11y.html">Guía de accesibilidad del escritorio GNOME</link>: una guía para cualquiera que esté interesado en cómo soporta el escritorio GNOME las necesidades de usuarios con discapacidades.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/accessibility-devel-guide/stable/">Guía de accesibilidad para desarrolladores </link>: una guía para desarrolladores que quieren asegurarse de que sus aplicaciones son accesibles para la mayor parte del público usuario.</p>
+      </item>
+      <item>
+        <p><link href="https://wiki.gnome.org/Accessibility">Proyecto de accesibilidad de GNOME</link>: el proyecto de accesibilidad de GNOME incluye las guías mencionadas anteriormente junto con muchos otros enlaces útiles para usuarios, desarrolladores y administradores de sistemas.</p>
+      </item>
+    </list>
+  </section>
+
+</page>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_setting_up_accerciser" xml:lang="fr">
+<info>
+  <link type="guide" xref="index#getting_started"/>
+  <link type="next" xref="desktop_tree_view"/>
+  <title type="sort">2. Comment installer et lancer <app>Accerciser</app></title>
+  <title type="link">Paramétrage d'<app>Accerciser</app></title>
+    <desc>Installer et exécuter <app>Accerciser</app> sur votre système</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Paramétrage d'<app>Accerciser</app></title>
+
+    <p>Vérifiez si un paquet <app>Accerciser</app> existe pour votre distribution. Si c'est le cas, vous pouvez l'installer en passant par votre gestionnaire de paquets, sinon suivez les instructions ci-dessous pour l'installer manuellement.</p>
+
+    <section id="installing_accerciser_manually">
+      <title>Installation manuelle d'<app>Accerciser</app></title>
+       <p>
+        To install <app>Accerciser</app> manually, you will need to download it first. <app>Accerciser</app>'s
+        source code can either be downloaded from <link href="http://ftp.gnome.org/pub/GNOME/sources/accerciser/">the gnome.org 
+        FTP site</link> or cloned from <link href="https://gitlab.gnome.org/GNOME/accerciser">the gnome.org GIT repository</link>.
+      </p>
+
+      <note style="caution">
+        <p>Si vous n'utilisez pas GNOME 3, vous constaterez qu'<app>Accerciser</app> version 3 ou ultérieure n'est pas compatible avec votre environnement.</p>
+      </note>
+
+
+      <p>Après avoir téléchargé <app>Accerciser</app>, installez-le en utilisant les commandes suivantes :</p>
+      <steps>
+        <item><p><cmd>cd accerciser</cmd></p></item>
+        <item><p><cmd>./autogen.sh # ou ./configure pour une première installation</cmd></p></item>
+        <item><p><cmd>make</cmd></p></item>
+        <item><p><cmd>sudo make install # ou make install en tant que root</cmd></p></item>
+      </steps>
+      <p>Si vous rencontrez des problèmes lors de l'installation d'<app>Accerciser</app> sur votre système, il est vraisemblable que certaines de ses dépendances manquent. Consultez le <link href="https://live.gnome.org/Accerciser/#Requirements">wiki d'<app>Accerciser</app></link> pour vous assurer que vous avez bien installé toutes les dépendances.</p>
+    </section>
+ 
+    <section id="running_accerciser">
+      <title>Exécution d'<app>Accerciser</app></title>
+        <p>Pour démarrer <app>Accerciser</app>, saisissez <cmd>accerciser</cmd> dans un terminal ou dans la boîte de dialogue Exécuter puis, appuyez sur <key>Entrée</key>.</p>
+        <p>Après cela, vous pouvez utiliser <app>Accerciser</app> pour inspecter les éléments accessibles présents dans la hiérarchie du <link xref="desktop_tree_view">panneau de l'arborescence des applications</link>. Sélectionnez un élément et explorez-le en utilisant l'un des greffons d'<app>Accerciser</app>.</p>
+    </section>
+</page>

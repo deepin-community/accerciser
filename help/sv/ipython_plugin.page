@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ipython_plugin" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">2. IPython-instick</title>
+    <link type="next" xref="howto_write_a_plugin"/>
+    <desc>När allt annat misslyckas</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>IPython-konsolinstick</title>
+  <p>IPython-konsolinstick tillåter realtidsinteraktion med ett valt objekt i <link xref="desktop_tree_view">programträdvyn</link>. Eftersom IPython-konsolinsticket är ett interaktivt Python-skal kan du importera vilka Python-moduler du vill.</p>
+
+  <note style="tip">
+    <p>Säkerställ att du har det fristående paketet IPython installerat på ditt system. Annars kommer IPython-konsolinsticket inte att fungera korrekt.</p>
+  </note>
+  
+  <section id="running_ipython_plugin">
+    <title>Köra insticket IPython-konsol</title>
+    <p>För att köra IPython-konsolinsticket, välj ett av de åtkomliga objekten som listas i programträdvyn - antingen ett program eller en komponent. I insticket, välj ett objekt som motsvarar variabeln ”acc”.</p>
+    <p>Att trycka på <key>Tab</key> visar kompletteringar för aktuellt kommando i konsolen, vilket kan vara användbart för att upptäcka pyatspi-metoder.</p>  
+
+  <figure>
+    <title>Undersöka valda objekt med IPython-konsolinstick</title>
+    <desc>IPython-konsolinstick låter dig undersöka metoder, konstanter och egenskaper som är relaterade till ett valt objekt i programträdvyn.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/IPython_plugin.png">
+      <p>IPython-konsolinstick låter dig undersöka metoder, konstanter och egenskaper som är relaterade till ett valt objekt i programträdvyn.</p>
+    </media>
+  </figure>
+
+  <note style="tip">
+    <p>Att skriva in <cmd>help(acc)</cmd> i IPython-konsolinsticket visar en del användbar dokumentation om motsvarande markerat åtkomligt objekt.</p>
+  </note>
+  </section>
+</page>

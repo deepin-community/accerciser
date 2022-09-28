@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="api_browser_plugin" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">1. Complemento Examinador API</title>
+    <link type="next" xref="ipython_plugin"/>
+    <desc>Verificar interfaces, métodos y propiedades</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Complemento Examinador API</title>
+  <p>Dado un «widget» accesible seleccionado en la <link xref="desktop_tree_view">vista en árbol de la aplicación</link>, el complemento Examinador API muestra sus interfaces AT-SPI implementadas, junto con sus métodos y propiedades.</p>
+
+  <figure>
+    <title>Complemento Examinador API</title>
+    <desc>El complemento Examinador API le permite verificar interfaces, métodos y propiedades soportados por el widget accesible objetivo en la aplicación.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/api_browser.png">
+      <p>El complemento Examinador API le permite verificar interfaces, métodos y propiedades soportados por el widget accesible objetivo en la aplicación.</p>
+    </media>
+  </figure>
+
+  <section id="running_api_browser_plugin">
+    <title>Ejecutar el complemento Examinador API</title>
+    <p>Para ejecutar el complemento Examinador API, seleccione un «widget» accesible en la Vista en árbol de la aplicación. Pulsar dos veces sobre un «widget» lo resalta en la interfaz de la aplicación, de tar forma que puede estar seguro del «widget» que está buscando.</p>
+    <p>Después de ello, seleccione una de las interfaces del «widget» en la caja combinada. Se listarán, en la columna de la izquierda del complemento, todos los métodos públicos de la interfaz seleccionada. Se listarán, en la columna de la derecha del complemento, todas las propiedades públicas, con sus correspondientes valores.</p>  
+    <p>De manera predeterminada, el complemento «Examinador API» oculta los métodos y las propiedades privadas. Para listarlos, desmarque la casilla <cmd>Ocultar los atributos privados</cmd>. Para volver a ocultarlos, selecciona esta casilla de nuevo.</p>
+  </section>
+</page>

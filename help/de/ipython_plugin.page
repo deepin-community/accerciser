@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ipython_plugin" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">2. IPython-Plugin</title>
+    <link type="next" xref="howto_write_a_plugin"/>
+    <desc>Falls alles andere scheitert</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>IPython-Konsole-Plugin</title>
+  <p>Das IPython-Konsolen-Plugin macht Echtzeit-Interaktion mit einem ausgewählten Objekt in der <link xref="desktop_tree_view">Anwendungsbaumansicht</link> möglich. Weil das IPython-Konsolen-Plugin eine interaktive Python-Shell ist, können Sie alle Python-Module importieren, die Sie wollen.</p>
+
+  <note style="tip">
+    <p>Stellen Sie sicher, dass das Paket IPython auf Ihrem System installiert ist. Andernfalls wird das Plugin IPython-Console nicht richtig funktionieren.</p>
+  </note>
+  
+  <section id="running_ipython_plugin">
+    <title>Das IPython-Konsole-Plugin ausführen</title>
+    <p>Um das IPyton-Konsolen-Plugin zu starten, wählen Sie eines der barrierefreien Objekte in der Anwendungsbaumansicht aus - entweder eine Anwendung oder ein Widget. Im Plugin ist das ausgewählte Objekt dann über die Variable »acc« erreichbar.</p>
+    <p>Drücken Sie <key>Tabulatortaste</key>, um sich Vervollständigungen zum aktuellen Befehl in der Konsole anzeigen zu lassen. Dies kann nützlich sein, um pyatspi-Funktionen auszuprobieren.</p>  
+
+  <figure>
+    <title>Ausgewählte Objekte mit dem IPyton-Konsolen-Plugin untersuchen</title>
+    <desc>Mit dem IPyton-Konsolen-Plugin können Sie Funktionen, Konstanten und Eigenschaften eines ausgewählten Objekts in der Anwendungsbaumansicht erforschen.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/IPython_plugin.png">
+      <p>Mit dem IPyton-Konsolen-Plugin können Sie Funktionen, Konstanten und Eigenschaften eines ausgewählten Objekts in der Anwendungsbaumansicht erforschen.</p>
+    </media>
+  </figure>
+
+  <note style="tip">
+    <p>Tippen Sie <cmd>help(acc)</cmd> im IPyton-Konsolen-Plugin, um eine nützliche Dokumentation über das dazugehörige ausgewählte und barrierefreie Objekt anzuzeigen.</p>
+  </note>
+  </section>
+</page>

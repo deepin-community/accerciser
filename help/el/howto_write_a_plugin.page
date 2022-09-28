@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_write_a_plugin" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">3. Γράφοντας νέες πρόσθετες λειτουργίες</title>
+    <link type="next" xref="preferences"/>
+    <desc>Επέκταση του <app>Accerciser</app> με τις επιθυμητές σας λειτουργίες</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Γράφοντας πρόσθετα για το <app>Accerciser</app></title>
+  <p>Η επέκταση του <app>Accerciser</app> με νέα πρόσθετα έγινε ευκολότερη χάρη σε αυτόν τον <link href="https://wiki.gnome.org/Apps/Accerciser/PluginTutorial">οδηγό</link>. Δεδομένου ότι παρέχει μια πολύ λεπτομερή εξήγηση σχετικά με το θέμα, η ενότητα αυτή αποτελείται από το πρωτότυπο περιεχόμενό του και έγιναν μόνο απλές εκδόσεις και ενημερώσεις.</p>
+  <p>Το <app>Accerciser</app> υποστηρίζει τρεις βασικούς τύπους πρόσθετων λειτουργιών:</p>
+  <list>
+    <item>
+      <p>Βασικά πρόσθετα - Αυτά τα πρόσθετα προέρχονται από την κλάση των βασικών πρόσθετων. Δεν παρέχουν μια ορατή διεπαφή, αλλά προσφέρουν επιπρόσθετη λειτουργικότητα στο <app>Accerciser</app>.</p>
+    </item>
+    <item>
+      <p>Πρόσθετα κονσόλας - Αυτά τα πρόσθετα εμφανίζουν την έξοδο της κονσόλας σε μια περιοχή κειμένου στην καρτέλα ενός πρόσθετου. Μην το μπερδεύετε με το <link xref="ipython_plugin">πρόσθετο κονσόλας IPython</link>.</p>
+    </item>
+    <item>
+      <p>Πρόσθετα προβολής - Είναι η πλειονότητα των προεπιλεγμένων προσθέτων του <app>Accerciser</app>. Προσφέρουν μια προσαρμοσμένη γραφική διεπαφή σε μια καρτέλα.</p>
+    </item>
+  </list>
+
+  <section id="base_plugin">
+    <title>Δημιουργία μιας βασικής πρόσθετης λειτουργίας</title>
+    <p>
+      We will create a simplified version of the <link xref="quick_select_plugin">Quick Select Plugin</link>. 
+      This plugin will select the last focused accessible when pressing <keyseq><key>ctrl</key><key>alt</key><key>e</key></keyseq>.
+    </p>
+    <p>Αρχικά, οι εισαγωγικές γραμμές που θα χρησιμοποιήσουμε είναι:</p>
+    <code>
+      from accerciser.plugin import Plugin
+      import gtk
+      import pyatspi
+    </code>
+    <p>Στη συνέχεια θα παράξουμε μια νέα κλάση από την κλάση της βάσης, και θα ορίσουμε κάποια βασικά ορίσματα στην κλάση:</p>
+    <code>
+      class FocusSelect(Plugin):
+        plugin_name = 'Focus Select'
+        plugin_description = 'Allows selecting last focused accessible.'
+    </code>
+    <p>Τώρα θα διαγράψουμε την αρχική μέθοδο, στην οποία θα ορίσουμε το καθολικό κλειδί ενέργειας για την επιλογή του τελευταίου προσβάσιμου αντικειμένου. Θα εγγράψουμε ένα listener για το συμβάν "focus" και θα ορίσουμε τη μεταβλητή <cmd>last_focused</cmd> σε <cmd>None</cmd>.</p>
+    <code>
+      def init(self):
+        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+        self.global_hotkeys = [('Inspect last focused accessible',
+                                self.inspectLastFocused,
+                                gtk.keysyms.e,
+                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]
+        self.last_focused = None
+    </code>
+    <p>Παρατηρείστε ότι η μεταβλητή <cmd>global_hotkeys</cmd> είναι μια σειρά από λίστες. Κάθε σειρά αντιστοιχεί σε μια καθολική ενέργεια συντόμευσης, αποτελούμενη από μια περιγραφή της ενέργειας, την επιθυμητή μέθοδο κλήσης, ένα σύμβολο για το πάτημα του πλήκτρου και τον τροποποιητή κλειδιού.</p>
+    <p>Στο γεγονός επανάκλησης "focus", αντιστοιχούμε τη μεταβλητή <cmd>last_focused</cmd> στο προσιτό αντικείμενο που δημιούργησε το γεγονός "focus".</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if not self.isMyApp(event.source):
+          self.last_focused = event.source
+    </code>
+    <p>Στην ενέργεια επανάκλησης της συντόμευσης, ενημερώνουμε τον κόμβο της εφαρμογής με το τελευταίο εστιασμένο προσιτό αντικείμενο, οπότε έχουμε:</p>
+    <code>
+      def inspectLastFocused(self):
+        if self.last_focused:
+          self.node.update(self.last_focused)
+    </code>
+  </section>
+  <section id="console_plugin">
+    <title>Δημιουργία πρόσθετης λειτουργίας κονσόλας</title>
+    <p>Θα δημιουργήσουμε ένα πρόσθετο κονσόλα που θα εμφανίζει τις αλλαγές εστίασης που δημιουργούνται από ένα προσιτό αντικείμενο με ρόλο "push button" - θυμηθείτε πως είναι εύκολο να ελέγξετε ποιος είναι ο ρόλος οποιοδήποτε αντικειμένου στο <app>Accerciser</app>. Για παράδειγμα, μπορείτε να το επιβεβαιώσετε στη <link xref="desktop_tree_view">δενδρική προβολή των εφαρμογών</link>.</p>
+    <p>Οι απαιτούμενες εισαγωγικές γραμμές είναι:</p>
+    <code>
+      from accerciser.plugin import ConsolePlugin
+      import pyatspi
+    </code>
+    <p>Μετά θα ορίσουμε μια κλάση, με το όνομα του πρόσθετου και μια περιγραφή:</p> 
+    <code>
+      class PushButtonFocus(ConsolePlugin):
+        plugin_name = 'Push Button Focus'
+        plugin_description = 'Print event when pushbutton get\'s focus.'
+    </code>
+    <p>Αντικαθιστούμε την αρχική μέθοδο προσθέτοντας έναν εγγεγραμμένο listener:</p>
+    <code>
+       def init(self):
+         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+    </code>
+    <p>Στη μέθοδο επανάκλησης, εκτυπώνονται όλα τα γεγονότα πατήματος των πλήκτρων. </p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:
+          self.appendText(str(event)+'\n')
+    </code>
+  </section>
+  <section id="viewport_plugin">
+    <title>Δημιουργία πρόσθετης λειτουργίας προβολής</title>
+    <p>Θα δημιουργήσουμε ένα πρόσθετο προβολής που επιτρέπει τη γρήγορη δοκιμή της ενέργειας "click" στα προσβάσιμα αρχεία που υποστηρίζουν την ενέργεια διεπαφής AT-SPI και έχουν μια ενέργεια με όνομα "click". Θα είναι ένα απλό κουμπί, που μόλις πατηθεί, θα κάνει την ενέργεια του "click" στο αντικείμενο.</p>
+    <p>Αρχικά, μερικές υποχρεωτικές εισαγωγικές γραμμές:</p>
+    <code>
+      import gtk
+      from accerciser.plugin import ViewportPlugin
+    </code>
+    <p>Στη συνέχεια, μια κλάση ορισμού, με όνομα και περιγραφή:</p>
+    <code>
+      class Clicker(ViewportPlugin):
+        plugin_name = 'Clicker'
+        plugin_description = 'Test the "click" action in relevant accessibles.'
+    </code>
+    <p>Αντικαθιστούμε την αρχική μέθοδο με την κατασκευή γραφικού περιβάλλοντος, και συνδέουμε τη μεθόδο επανάκλησης του κουμπιού με το σήμα. Χρησιμοποιούμε τη στοίχιση για να κεντραριστεί το κουμπί στην καρτέλα του πρόσθετου, χωρίς να καταλαμβάνει ολόκληρο τον ελεύθερο χώρο. Παρατηρήστε ότι η μεταβλητή <cmd>plugin_area</cmd> περιέχει το gtk.</p>
+    <code>
+       def init(self):
+         alignment = gtk.Alignment(0.5,0.5,0,0)
+         self.click_button = gtk.Button('Click me!')
+         alignment.add(self.click_button)
+         self.plugin_area.add(alignment)
+
+         self.click_button.connect('clicked', self.onClick)
+
+         self.show_all()
+    </code>
+    <p>Δημιουργήσαμε μια εύκολη μέθοδο που επιστρέφει μια λίστα των υποστηριζόμενων ενεργειών του επιλεγμένου προσβάσιμου αντικειμένου - αν δεν υποστηρίζει την ενέργεια διεπαφής επιστρέφει μια κενή λίστα: </p> 
+    <code>
+       def accSupportedActions(self):
+       try:
+         ai = self.node.acc.queryAction()
+       except NotImplementedError:
+         action_names = []
+       else:
+         action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+       return action_names
+    </code>
+    <p>Η κλάση των βασικών πρόσθετων έχει τη μέθοδο onAccChanged που καλείται κάθε φορά που αλλάζει το προσιτό αντικείμενο της επιθυμητής εφαρμογής. Θα το αντικαταστήσουμε ορίζοντας το κουμπί να είναι μόνο ενεργό όταν το τρέχον αντικείμενο έχει την ενέργεια "click":</p>
+    <code>
+       def onAccChanged(self, acc):
+         has_click = 'click' in self.accSupportedActions()
+         self.click_button.set_sensitive(has_click)
+    </code>
+    <p>Η μέθοδος επανάκλησης για το κουμπί "clicked" εκτελεί την ενέργεια "click" για το προσιτό αντικείμενο. Από τη στιγμή που η επανάκληση μπορεί να καλεστεί μόνο όταν το κουμπί είναι ενεργό, δεν χρειάζεται να ανησυχείτε αν το τρέχον προσιτό αντικείμενο ένα την ενέργεια "click" ;</p>
+    <code>
+      def onClick(self, button):
+        ai = self.node.acc.queryAction()
+        action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+        ai.doAction(action_names.index('click'))
+    </code>
+   </section>
+</page>

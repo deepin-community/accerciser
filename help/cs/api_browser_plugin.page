@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="api_browser_plugin" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">1. Zásuvný modul pro prohlížení API</title>
+    <link type="next" xref="ipython_plugin"/>
+    <desc>Jak ověřit rozhraní, metody a vlastnosti.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Zásuvný modul pro prohlížení API</title>
+  <p>Když je ve <link xref="desktop_tree_view">stromovém zobrazení aplikací</link> udán zpřístupněný widget, zásuvný modul Prohlížeč API zobrazí jeho implementovaná rozhraní AT-SPI v podobě jeho metod a vlastností.</p>
+
+  <figure>
+    <title>Zásuvný modul pro prohlížení API</title>
+    <desc>Zásuvný modul Prohlížeč API vám umožňuje ověřit rozhraní, metody a vlastnosti cílového zpřístupněného widgetu v aplikaci.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/api_browser.png">
+      <p>Zásuvný modul Prohlížeč API vám umožňuje ověřit rozhraní, metody a vlastnosti cílového zpřístupněného widgetu v aplikaci.</p>
+    </media>
+  </figure>
+
+  <section id="running_api_browser_plugin">
+    <title>Spuštění zásuvného modulu pro prohlížení API</title>
+    <p>Zásuvný modul Prohližeč API spusíte tak, že vyberete zpřístupněný widget ve stromovém zobrazení aplikací. Dvojitým kliknutím se widget zvýrazní v uživatelském rozhraní aplikace, díky čemuž se můžete ujistit, že se opravdu jedná o widget, který jste hledali.</p>
+    <p>Následně v rozbalovacím seznamu vyberte jedno z rozhraní widgetu. Všechny veřejné metody vybraného rozhraní budou vypsány v levém sloupci zásuvného modulu. Všechny veřejné vlastnosti, i s jejich příslušnými hodnotami, budou vypsány v pravém sloupci zásuvného modulu.</p>  
+    <p>Ve výchozím stavu zásuvný modul Prohlížeč API skrývá privátní metody a vlastnosti. Pokud je chcete v seznamu vidět, zruště zaškrtnutí políčka <gui>Skrýt privátní atributy</gui>. Pro opětovné skrytí políčko znovu zaškrtněte.</p>
+  </section>
+</page>

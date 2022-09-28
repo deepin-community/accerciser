@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="interface_viewer_plugin" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">2. Le greffon « Navigateur d'interface »</title>
+    <link type="next" xref="validator_plugin"/>
+    <desc>Examiner votre mise en œuvre de l'accessibilité</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Greffon « Navigateur d'interface »</title>
+
+  <p>Le greffon « Navigateur d'interface » affiche les informations et les contrôles fournis par les interfaces AT-SPI présentes dans chaque élément accessible du <link xref="desktop_tree_view">Panneau de l'arborescence des applications</link>. Après avoir sélectionné un élément, utilisez ce greffon pour passer rapidement en revue les interfaces prises en charge par cet élément, pour récupérer toutes les informations des interfaces et pour manipuler l'élément en utilisant toutes les méthodes des interfaces.</p>
+
+  <figure>
+    <title>Examen d'un menu avec le greffon « Navigateur d'interface »</title>
+    <desc>Un élément étant sélectionné dans le Panneau de l'arborescence des applications, toutes ses interfaces AT-SPI s'affichent comme réactives dans le greffon « Navigateur d'interface ». Celles qui ne sont pas prises en compte sont grisés, comme les interfaces Application et Collection dans la figure ci-dessus.</desc>
+    <media type="image" mime="image/png" width="800" height="450" src="figures/interface_viewer_plugin.png">
+      <p>Un élément étant sélectionné dans le Panneau de l'arborescence des applications, toutes ses interfaces AT-SPI s'affichent comme réactives dans le greffon « Navigateur d'interface ». Celles qui ne sont pas prises en compte sont grisés, comme les interfaces Application et Collection dans la figure ci-dessus.</p>
+    </media>
+  </figure>
+
+  <section id="running_interface_viewer">
+    <title>Exécution du greffon « Navigateur d'interface  »</title>
+    <p>La première étape pour l'exécution du greffon « Navigateur d'interface » est la sélection d'un élément dans le <link xref="desktop_tree_view"> Panneau de l'arborescence des applications</link>. Après cela, toutes les interfaces couvertes par le greffon s'affichent dans le panneau des greffons. Les interfaces mises en œuvre par l'élément sélectionné sont réactives et vous pourrez ainsi cliquer sur chacune d'elles pour récupérer ses informations ou interagir avec les méthodes disponibles. Les interfaces suivantes peuvent être explorées dans <app>Accerciser</app>, en supposant que l'élément sélectionné les met en œuvre :</p>
+    <list>
+      <item>
+        <p>Accessible : cette interface affiche le nombre des fils de l'élément sélectionné (nombre d'éléments fils), la description, les états, les relations et les attributs.</p>
+      </item>
+      <item>
+        <p>Action : cette interface affiche toutes les actions pouvant être réalisées par l'élément sélectionné. Pour chaque interface, vous verrez son nom, comme « Appuyer (press) » ou « Cliquer (click) », suivi d'une description et d'une touche associée, si elles existent. Si vous sélectionnez une action, le bouton « Effectuer l'action » devient réactif. Appuyez sur ce bouton pour voir l'élément effectuer l'action sélectionnée.</p>
+      </item>
+      <item>
+        <p>Application  : cette interface peut être mise en œuvre par les éléments ayant un rôle « application ». Il est bon de souligner que les éléments avec un rôle « application » n'implémentent pas forcément cette interface. Si l'élément sélectionné la gère, l'interface affichera son ID et, si elles existent, sa boîte à outils et sa version.</p>
+      </item>
+      <item>
+        <p>Composant : cette interface affiche la position absolue de l'élément sélectionné (selon le système de coordonnées du bureau), la position relative (selon le système de coordonnées de la fenêtre), la taille, le type de couche, le MDI-Z-order (un entier court indiquant l'ordre d'empilage du composant dans la couche MDI), et l'alpha (si « l'alpha blending » (simulation de transparence) est utilisé).</p>
+      </item>
+      <item>
+        <p>Document : cette interface affiche les attributs de document de l'élément sélectionné et une description de son emplacement, si elle existe.</p>
+      </item>
+      <item>
+        <p>Hypertexte : cette interface affiche la liste de tous les hyperliens hypertextes de l'élément sélectionné. Pour chaque hyperlien, l'interface fournit le nom, l'URI, le début (l'indice de début de l'hyperlien dans l'hypertexte) et la fin (l'indice de fin de l'hyperlien dans l'hypertexte).</p>
+      </item>
+      <item>
+        <p>Image : cette interface affiche la description de l'élément sélectionné (ou « aucune description » si elle n'est pas définie), la taille, la position (selon le système de coordonnées du bureau) et la locale (langue), si elle existe.</p>
+      </item>
+      <item>
+        <p>Sélection : cette interface affiche tous les éléments fils sélectionnables de l'élément sélectionné. Si l'élément sélectionné est une barre de menu avec les options « Fichier », « Édition », « Affichage » et « Aide », et que toutes sont sélectionnables, alors elles seront listées dans cette interface. Si vous cliquez sur l'une des options de la liste, par exemple « Fichier », et que vous voulez la supprimer, cliquez simplement sur le bouton « Effacer » en dessous de la liste.</p>
+      </item>
+      <item>
+        <p>Contenu de flux : cette interface affiche les types de contenu de l'élément sélectionné et leurs URI correspondantes.</p>
+      </item>
+      <item>
+        <p>Tableau : cette interface affiche la légende et le résumé de l'élément sélectionné, les lignes (nombre de lignes), les colonnes (nombre de colonnes), les lignes sélectionnées (nombre de lignes sélectionnées) et les colonnes sélectionnées (nombre de colonnes sélectionnées). Pour une cellule sélectionnée, l'interface affiche son en-tête de ligne et de colonne et ses extensions.</p>
+      </item>
+      <item>
+        <p>Texte : cette interface affiche le contenu du texte de l'élément sélectionné, qui peut être modifié, et ses attributs. Les attributs de base sont le décalage (le nombre de caractères du texte) et la justification. Pour voir d'éventuels attributs CSS, cochez la case « Inclure les valeurs par défaut ».</p>
+      </item>
+      <item>
+        <p>Valeur : cette interface affiche la valeur actuelle de l'élément sélectionné, la valeur minimale autorisée, la valeur maximale autorisée et l'incrément minimal lors d'une modification de valeur (ou zéro si cette valeur ne peut pas être déterminée). La valeur actuelle peut être changée manuellement grâce à un bouton compteur.</p>
+      </item> 
+    </list>
+  </section>
+</page>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="interface_viewer_plugin" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">2. Schnittstellenanzeige-Plugin</title>
+    <link type="next" xref="validator_plugin"/>
+    <desc>Untersuchen Ihrer Umsetzung der Barrierefreiheit</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>Schnittstellenanzeige-Plugin</title>
+
+  <p>Das Schnittstellenanzeige-Plugin zeigt Informationen und die Kontrolle, welche von der AT-SPI-Schnittstelle zur Verfügung gestellt werden, für jedes barrierefreie Objekt der <link xref="desktop_tree_view">Anwendungsbaumansicht</link>. Nachdem Sie ein Objekt angewählt haben, können Sie dieses Plugin verwenden, um schnell die Schnittstellen zu untersuchen, die das Objekt zur Verfügung stellt, Informationen über jede Schnittstelle zu erhalten oder das Objekt durch die Funktionen der Schnittstelle zu bearbeiten.</p>
+
+  <figure>
+    <title>Ein Menü mit dem Schnittstellenanzeige-Plugin untersuchen</title>
+    <desc>Indem Sie ein Objekt in der Anwendungsbaumansicht auswählen, werden alle ihre AT-SPI-Schnittstellen im Schnittstellenanzeige-Plugin anklickbar angezeigt. Nicht unterstützte Schnittstellen werden grau dargestellt, z.B. die Anwendungs- und Zeichensatzschnittstelle im Bild oben.</desc>
+    <media type="image" mime="image/png" width="800" height="450" src="figures/interface_viewer_plugin.png">
+      <p>Indem Sie ein Objekt in der Anwendungsbaumansicht auswählen, werden alle ihre AT-SPI-Schnittstellen im Schnittstellenanzeige-Plugin anklickbar angezeigt. Nicht unterstützte Schnittstellen werden grau dargestellt, z.B. die Anwendungs- und Zeichensatzschnittstelle im Bild oben.</p>
+    </media>
+  </figure>
+
+  <section id="running_interface_viewer">
+    <title>Das Schnittstellenanzeige-Plugin ausführen</title>
+    <p>Der erste Schritt, um das Schnittstellenanzeige-Plugin auszuführen, ist ein Objekt in der <link xref="desktop_tree_view"> Anwendungsbaumansicht</link> auszuwählen. Danach werden Ihnen alle AT-SPI-Schnittstellen, welche durch das Plugin abgedeckt werden, in dem Plugin-Feld aufgelistet. Die Schnittstellen, welche das ausgewählte Programm umgesetzt hat, sind anklickbar, sodass Sie auf jede von diesen klicken können, um entweder die Informationen, die sie zur Verfügung stellt, zu erhalten oder mit den vorhandenen Funktionen zu interagieren. Die folgenden Schnittstellen können in <app>Accerciser</app> erforscht werden, angenommen, das ausgewählte Objekt unterstützt sie:</p>
+    <list>
+      <item>
+        <p>Accessible - Diese Schnittstelle zeigt die Anzahl der Unterelemente (Kinder-Widgets) des gewählten Objekts, die Beschreibung, Zustände, Beziehungen und Attribute.</p>
+      </item>
+      <item>
+        <p>Aktion - Diese Schnittstelle zeigt alle Aktionen, die mit dem gewählten Objekt ausgeführt werden können. Für jede Schnittstelle wird der Name wie zum Beispiel »drücken« oder »klicken« angezeigt, sowie eine Beschreibung und gegebenenfalls eine Tastenkombination. Wenn Sie eine Aktion auswählen, so wird der Knopf »Aktion ausführen« aktiv. Klicken Sie auf diesen Knopf, um das Objekt die gewählte Aktion ausführen zu lassen.</p>
+      </item>
+      <item>
+        <p>Anwendung - Diese Schnittstelle kann von Objekten mit der Rolle »Anwendung« implementiert werden. Man muss bedenken, dass Objekte mit der Rolle »Anwendung« nicht zwangsweise diese Schnittstelle implementieren. Wenn das gewählte Objekte sie implementiert, so zeigt die Schnittstelle dessen Kennung (ID) und gegebenenfalls den Werkzeugsatz und die Version.</p>
+      </item>
+      <item>
+        <p>Komponente - Diese Schnittstelle zeigt die absolute Position des gewählten Objekts (im Bezug auf das Koordinatensystem der Arbeitsumgebung), die relative Position (im Bezug auf das Koordinatensystem des Fensters), Größe, Ebenentyp, MDI-Z-Reihenfolge (eine Ganzzahl, welche die Stapelreihenfolge der Komponente im MDI-Stapel angibt) und Alpha (falls Alpha-Transparenz verwendet wird).</p>
+      </item>
+      <item>
+        <p>Dokument - Diese Schnittstelle zeigt die Dokumentattribute des gewählten Objekts und gegebenenfalls die Beschreibung der Spracheinstellung.</p>
+      </item>
+      <item>
+        <p>Hypertext - Diese Schnittstelle zeigt eine Liste mit allen Hypertext-Verweisen des gewählten Objekts. Für jeden Verweis legt die Schnittstelle den Namen, die Adresse, Start (der Index im Hypertext, auf den der Verweis zeigt) und Ende fest (der Index im Hypertext, an dem der Verweis endet).</p>
+      </item>
+      <item>
+        <p>Bild - diese Schnittstelle zeigt die Beschreibung des gewählten Objekts (oder »keine Beschreibung«, falls nicht vorhanden), die Größe, die Position (im Bezug auf das Koordinatensystem der Arbeitsumgebung) und gegebenenfalls die Spracheinstellung.</p>
+      </item>
+      <item>
+        <p>Auswahl - diese Schnittstelle zeigt alle wählbaren Unterelemente des gewählten Objekts. Wenn das gewählte Objekte eine Menüleiste mit den Optionen »Datei«, »Bearbeiten«, »Ansicht« und »Hilfe« ist und alle wählbar sind, dann werden Sie in dieser Schnittstelle aufgelistet. Wenn Sie eine gelistete Option anklicken, zum Beispiel »Datei«, und diese leeren möchten, klicken Sie auf den Knopf »Löschen« unter der Liste.</p>
+      </item>
+      <item>
+        <p> 
+          Streamable Content - This interface shows the selected item's content types and their corresponding URIs.
+        </p>
+      </item>
+      <item>
+        <p>
+          Table - This interface shows the selected item's caption and summary, rows (number of rows), columns (number of columns),
+          selected rows (number of selected rows), and selected columns (number of selected columns). For a selected cell, the 
+          interface shows its row's and column's header and extents.
+        </p>
+      </item>
+      <item>
+        <p>Text - Diese Schnittstelle zeigt den Text-Kontext des gewählten Objekts, welcher bearbeitbar sein kann, und dessen Attribute. Die grundlegenden Attribute sind »offset« (Die Anzahl der Buchstaben des Textes) und »justification« (Ausrichtung). Klicken Sie in das Ankreuzfeld »Vorgaben einschließen«, um alle möglichen CSS-Attribute zu sehen.</p>
+      </item>
+      <item>
+        <p>
+          Value - This interface shows the selected item's current value, minimum allowed value, maximum allowed value, and
+          the minimum increment by which the value may be changed (or zero if this value cannot be determined). The current
+          value can be manually changed via a spin button.
+        </p>
+      </item> 
+    </list>
+  </section>
+</page>

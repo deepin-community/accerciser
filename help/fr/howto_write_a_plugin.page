@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_write_a_plugin" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">3. Écriture de nouveaux greffons</title>
+    <link type="next" xref="preferences"/>
+    <desc>Extension d'<app>Accerciser</app> avec vos propres fonctions</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Écriture de greffons pour <app>Accerciser</app></title>
+  <p>L'extension d'<app>Accerciser</app> par de nouveaux greffons est devenue beaucoup plus simple depuis que <link href="http://wiki.gnome.org/Apps/Accerciser/PluginTutorial">ce tutoriel</link> a été écrit. Étant donné qu'il fournit des explications détaillées sur le sujet, la section présente reprend son contenu d'origine, avec seulement quelques petites modifications et mises à jour.</p>
+  <p><app>Accerciser</app> prend en charge trois types de greffons :</p>
+  <list>
+    <item>
+      <p>Les greffons de base : ces greffons dérivent de la classe de base des greffons. Ils ne fournissent pas d'interface visible mais peuvent apporter des fonctionnalités supplémentaires à <app>Accerciser</app>.</p>
+    </item>
+    <item>
+      <p>Les greffons de console : ces greffons offrent une simple sortie console dans une zone de texte d'un onglet du greffon. Ne pas confondre avec le <link xref="ipython_plugin">Greffon console IPython</link> fourni avec l'application.</p>
+    </item>
+    <item>
+      <p>Les greffons avec fenêtre d'affichage : c'est la majorité des greffons par défaut d'<app>Accerciser</app>. Ils offrent une interface graphique personnalisée dans un onglet.</p>
+    </item>
+  </list>
+
+  <section id="base_plugin">
+    <title>Création d'un greffon de base</title>
+    <p>
+      We will create a simplified version of the <link xref="quick_select_plugin">Quick Select Plugin</link>. 
+      This plugin will select the last focused accessible when pressing <keyseq><key>ctrl</key><key>alt</key><key>e</key></keyseq>.
+    </p>
+    <p>Pour commencer, les lignes d'importation que nous utiliserons sont :</p>
+    <code>
+      from accerciser.plugin import Plugin
+      import gtk
+      import pyatspi
+    </code>
+    <p>Ensuite, nous dériverons une nouvelle classe depuis la classe de base Plugin et assignerons quelques attributs de classe obligatoires :</p>
+    <code>
+      class FocusSelect(Plugin):
+        plugin_name = 'Focus Select'
+        plugin_description = 'Allows selecting last focused accessible.'
+    </code>
+    <p>Nous allons maintenant redéfinir la méthode init, dans laquelle nous paramétrerons une action de touche générale pour sélectionner le dernier élément accessible ayant été sélectionné, enregistrer un listener d'événement pour l'événement « focus », et fixer la variable d'instance <cmd>last_focused</cmd> à <cmd>None</cmd>.</p>
+    <code>
+      def init(self):
+        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+        self.global_hotkeys = [('Inspect last focused accessible',
+                                self.inspectLastFocused,
+                                gtk.keysyms.e,
+                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]
+        self.last_focused = None
+    </code>
+    <p>Notez que la variable d'instance <cmd>global_hotkeys</cmd> est une liste de tuples. Chaque tuple est une action raccourci général, composée d'une description de l'action, de la méthode à appeler, d'un symbole de touche d'appui-touche, et d'un masque de modification de touche.</p>
+    <p>Dans le rappel de l'événement « focus », nous attribuons la variable d'instance <cmd>last_focused</cmd> à l'élément accessible qui vient juste d'émettre l'événement « focus ».</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if not self.isMyApp(event.source):
+          self.last_focused = event.source
+    </code>
+    <p>Dans l'appel en retour de l'action raccourci, nous mettons à jour le nœud global de l'application avec le dernier élément accessible sélectionné, si nous l'avons enregistré :</p>
+    <code>
+      def inspectLastFocused(self):
+        if self.last_focused:
+          self.node.update(self.last_focused)
+    </code>
+  </section>
+  <section id="console_plugin">
+    <title>Création d'un greffon Console</title>
+    <p>Nous allons créer un greffon console pour afficher les changements de focus émis par un élément accessible avec un rôle « bouton-poussoir ». Souvenez-vous qu'il est facile de vérifier le rôle d'un quelconque élément avec <app>Accerciser</app> ; vous pouvez le faire dans le <link xref="desktop_tree_view">Panneau de l'arborescence des applications</link>, par exemple.</p>
+    <p>Les lignes d'importation nécessaires sont :</p>
+    <code>
+      from accerciser.plugin import ConsolePlugin
+      import pyatspi
+    </code>
+    <p>Puis nous ajoutons une définition de classe, avec un nom de greffon et une description :</p> 
+    <code>
+      class PushButtonFocus(ConsolePlugin):
+        plugin_name = 'Push Button Focus'
+        plugin_description = 'Print event when pushbutton get\'s focus.'
+    </code>
+    <p>Nous redéfinissons la méthode init en ajoutant un listener de registre :</p>
+    <code>
+       def init(self):
+         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+    </code>
+    <p>Dans la méthode de rappel, tous les événements des boutons poussoirs sont affichés.</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:
+          self.appendText(str(event)+'\n')
+    </code>
+  </section>
+  <section id="viewport_plugin">
+    <title>Création d'un greffon avec fenêtre d'affichage</title>
+    <p>Nous allons créer un greffon avec fenêtre d'affichage qui permet de tester rapidement l'action « click » dans les éléments accessibles qui prennent en charge l'interface AT-SPI Action et qui possèdent une action appelée « click ». Ce sera un simple bouton qui, une fois cliqué, effectue l'action « click » dans l'accessible.</p>
+    <p>Tout d'abord, quelques lignes d'importation obligatoires :</p>
+    <code>
+      import gtk
+      from accerciser.plugin import ViewportPlugin
+    </code>
+    <p>Ensuite, une définition de classe, avec un nom et une description :</p>
+    <code>
+      class Clicker(ViewportPlugin):
+        plugin_name = 'Clicker'
+        plugin_description = 'Test the "click" action in relevant accessibles.'
+    </code>
+    <p>Nous redéfinissons la méthode init en ajoutant quelques termes de construction d'UI et en connectant un rappel à un signal pour le bouton. Nous utilisons un conteneur d'alignement pour permettre le centrage du bouton dans l'onglet greffon et ne pas occuper tout l'espace du greffon. Notez que la variable d'instance <cmd>plugin_area</cmd> contient un gtk.Frame qui peut être rempli de tous les composants graphiques du greffon.</p>
+    <code>
+       def init(self):
+         alignment = gtk.Alignment(0.5,0.5,0,0)
+         self.click_button = gtk.Button('Click me!')
+         alignment.add(self.click_button)
+         self.plugin_area.add(alignment)
+
+         self.click_button.connect('clicked', self.onClick)
+
+         self.show_all()
+    </code>
+    <p>Nous avons aussi créé une méthode pratique qui renvoie une liste des actions gérées par l'élément accessible actuellement sélectionné. S'il ne gère pas l'interface Action, cela renvoie une liste vide :</p> 
+    <code>
+       def accSupportedActions(self):
+       try:
+         ai = self.node.acc.queryAction()
+       except NotImplementedError:
+         action_names = []
+       else:
+         action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+       return action_names
+    </code>
+    <p>La classe greffon de base possède une méthode appelée onAccChanged qui est appelée à chaque fois que l'élément accessible sélectionné dans l'application cible change. Nous allons la redéfinir pour que le bouton ne soit réactif que lorsque l'élément accessible actuel possède l'action « click » :</p>
+    <code>
+       def onAccChanged(self, acc):
+         has_click = 'click' in self.accSupportedActions()
+         self.click_button.set_sensitive(has_click)
+    </code>
+    <p>La méthode de rappel pour le bouton cliqué réalise l'action « click » sur l'élément accessible. Puisque ce rappel ne peut être effectué que lorsque le bouton est réactif, nous ne devons pas nous préoccuper de savoir si l'accessible actuel possède l'action « click » :</p>
+    <code>
+      def onClick(self, button):
+        ai = self.node.acc.queryAction()
+        action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+        ai.doAction(action_names.index('click'))
+    </code>
+   </section>
+</page>

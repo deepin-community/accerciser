@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="fr">
+  <info>
+    <title type="text">Accerciser</title>
+    <title type="link">Introduction à <app>Accerciser</app></title>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title><media type="image" mime="image/png" its:translate="no" src="figures/accerciser-logo.png">
+      <span its:translate="yes">Logo d'<app>Accerciser</app></span>
+    </media> <app>Accerciser</app></title>
+  <note style="important">
+    <title>Avant de commencer</title>
+    <p>Lisez l'<link xref="help:gnome-help/a11y">aide de l'accès universel</link></p>
+  </note>
+  <section id="getting_started" style="2column">
+    <title>Premiers pas</title>
+  </section>
+  <section id="examining_a11y" style="2column">
+    <title>Examen de l'accessibilité d'une application</title>
+  </section>
+  <section id="advanced" style="2column">
+    <title>Thèmes avancés</title>
+  </section>
+</page>

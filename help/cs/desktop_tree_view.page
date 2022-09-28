@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="desktop_tree_view" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">1. Stromové zobrazení aplikací</title>
+    <link type="next" xref="interface_viewer_plugin"/>
+    <desc>Jak prozkoumat hierarchii přístupnosti pracovního prostředí.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Stromové zobrazení aplikací</title>
+
+  <p>Uživatelské rozhraní aplikace <app>Accerciser</app> obsahuje stromové zobrazení nazývané „stromové zobrazení aplikací“, ve kterém jsou všechny aplikace podporující přístupnost a aktuálně běžící v pracovním prostředí. K vytvoření tohoto stromového zobrazení využívá <app>Accerciser</app> registračního démona AT-SPI. Tento démon je zodpovědný za sledování všech aplikací v pracovním prostředí podporujících přístupnost a za předávání událostí X přes sběrnici D-Bus AT-SPI. Všechny zpřístupněné aplikace, které <app>Accerciser</app> objeví, zobrazí v hierarchické struktuře s rozbalovacími uzly.</p>
+
+  <figure>
+    <title>Stromové zobrazení aplikací</title>
+    <desc>Stromové zobrazení aplikací v aplikaci <app>Accerciser</app> představuje v podobě hierarchické struktury widgetů uživatelská rozhraní aplikací, které podporují zpřístupnění a zrovna běží v pracovním prostředí</desc>
+    <media type="image" mime="image/png" width="400" height="600" src="figures/tree_view_accerciser.png">
+      <p>Stromové zobrazení aplikací v aplikaci <app>Accerciser</app> představuje v podobě hierarchické struktury widgetů uživatelská rozhraní aplikací, které podporují zpřístupnění a zrovna běží v pracovním prostředí</p>
+    </media>
+  </figure>
+
+
+  <p>První uzel ve stromovém zobrazení aplikací představuje vždy samotnou aplikaci. Když jej rozbalíte, zobrazí se všechny její synovské widgety, díky čemuž můžete vidět hierarchii uživatelského rozhraní aplikace. U každého uzlu poskytuje <app>Accerciser</app> některé základní informace, jako je název položky, její role a počet potomků.</p>
+
+  <note style="caution">
+    <p>Vezměta na vědomí, že u uzlů s mnoha potomky může rozbalení trvat dlouho.</p>
+  </note>
+
+  <section id="bookmarking">
+    <title>Přidávání položek ve stromovém zobrazení aplikací do záložek</title>
+    <p><app>Accerciser</app> umožňuje přidávat zpřístupněné položky ve stromovém zobrazení aplikací do záložek, abyste je mohli zkoumat později. To je užitečné například, pokud je nutné zkoumanou aplikaci restartovat po její novém sestavení. Když chcete položku přidat do záložek, vyberte ji a zvolte <guiseq><gui>Záložky</gui><gui>Přidat záložku</gui></guiseq> nebo zmáčkněte <keyseq><key>Ctrl</key><key>D</key></keyseq>.</p>
+    <p>Záložky ke zpřístupněným položkám jsou v aplikaci <app>Accerciser</app> definovány pomocí názvu aplikace a „cesty“ v interní hierarchii zpřístupnění aplikace. Když je cílová aplikace v rozdílném stavu, tzn. více rámů nejvyšší úrovně, může být cesta nesprávná. Záložky je možné spravovat pomocí dialogového okna pro úpravu záložek, které najdete pod <guiseq><gui>Záložky</gui> <gui>Upravit záložky</gui></guiseq>.</p>
+  </section>
+
+</page>

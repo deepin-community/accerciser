@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="es">
+  <info>
+    <title type="text">Accerciser</title>
+    <title type="link">Introducción a <app>Accerciser</app></title>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title><media type="image" mime="image/png" its:translate="no" src="figures/accerciser-logo.png">
+      <span its:translate="yes">Logo de <app>Accerciser</app></span>
+    </media> <app>Accerciser</app></title>
+  <note style="important">
+    <title>Antes de comenzar</title>
+    <p>Lea la <link xref="help:gnome-help/a11y">ayuda del acceso universal</link></p>
+  </note>
+  <section id="getting_started" style="2column">
+    <title>Inicio</title>
+  </section>
+  <section id="examining_a11y" style="2column">
+    <title>Examinar la accesibilidad de una aplicación</title>
+  </section>
+  <section id="advanced" style="2column">
+    <title>Temas avanzados</title>
+  </section>
+</page>

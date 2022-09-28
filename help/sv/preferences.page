@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">4. Inställningar</title>
+    <!-- link type="next" xref="event_monitor_plugin" /-->
+    <desc>Anpassa <app>Accerciser</app>s inställningar</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>Konfigurera <app>Accerciser</app></title>
+  <p>För att konfigurera instick, snabbknappar och färgmarkering, tryck antingen på <keyseq><key>ctrl</key><key>p</key></keyseq> eller <guiseq><gui>Redigera</gui> <gui>Inställningar</gui></guiseq> för att öppna en dialog.</p>
+
+  <section id="plugin">
+    <title>Konfigurera instick</title>
+    <p>Efter att ha öppnat dialogen Inställningar kommer du att se en lista över alla tillgängliga instick, med motsvarande kryssrutor, under fliken ”Instick”. För att aktivera eller inaktivera ett instick, växla dess kryssruta. Endast aktiva instick kan nås via <app>Accerciser</app>s gränssnitt.</p>
+    <p>Att högerklicka på ett givet instick låter dig välja dess plats: ”Överpanel”, ”Nederpanel” och ”Ny vy”. Att välja ”Ny vy” skapar ett nytt fönster för insticket.</p>
+
+    <note style="tip">
+      <p>Du kan förbigå dialogen Inställningar genom att dra och släppa för att flytta ett instick från en plats till en annan.</p>
+    </note>
+  </section>
+
+  <section id="global_hotkey">
+    <title>Att konfigurera allmänna snabbtangenter</title>
+    <p>Vissa element i <app>Accerciser</app> kan aktivera vissa funktioner via snabbtangenter. Ett exempel är insticket <link xref="quick_select_plugin">Snabbväljare</link>. Snabbtangentskombinationen för varje funktion kan ändras via Inställningsdialogen, under fliken ”Allmänna snabbtangenter”. Under denna flik hittar du en lista över alla funktioner för vilka snabbtangenter kan konfigureras. Använd kryssrutorna <cmd>ctrl</cmd>, <cmd>alt</cmd> och <cmd>skift</cmd> för att aktivera eller inaktivera dessa modifierare.</p>
+
+   </section>
+
+   <section id="highlighting">
+     <title>Konfigurera komponenters markering</title>
+     <p>Vissa av <app>Accerciser</app>s komponenter, så som den allmänna snabbtangenten <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>, markerar en specifik komponent i ett målprogram. Varaktigheten för markeringen, ramfärgen och fyllnadsfärgen kan anpassas via dialogen Inställningar under fliken ”Markering”.</p>
+   </section>
+</page>

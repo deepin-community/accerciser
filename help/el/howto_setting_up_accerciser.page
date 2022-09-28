@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_setting_up_accerciser" xml:lang="el">
+<info>
+  <link type="guide" xref="index#getting_started"/>
+  <link type="next" xref="desktop_tree_view"/>
+  <title type="sort">2. Πως να εγκαταστήσετε και να εκτελέσετε το <app>Accerciser</app></title>
+  <title type="link">Ρύθμιση του <app>Accerciser</app></title>
+    <desc>Εγκατάσταση και εκτέλεση του <app>Accerciser</app> στο σύστημα σας</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Ρύθμιση του <app>Accerciser</app></title>
+
+    <p>Ελέγξτε αν η διανομή σας έχει πακετοποιήσει το <app>Accerciser</app>. Αν το χει κάνει, μπορείτε να το εγκαταστήσετε από τον διαχειριστή πακέτων. Διαφορετικά, μπορείτε να εγκαταστήσετε χειροκίνητα το <app>Accerciser</app>.</p>
+
+    <section id="installing_accerciser_manually">
+      <title>Χειροκίνητη εγκατάσταση του <app>Accerciser</app></title>
+       <p>
+        To install <app>Accerciser</app> manually, you will need to download it first. <app>Accerciser</app>'s
+        source code can either be downloaded from <link href="http://ftp.gnome.org/pub/GNOME/sources/accerciser/">the gnome.org 
+        FTP site</link> or cloned from <link href="https://gitlab.gnome.org/GNOME/accerciser">the gnome.org GIT repository</link>.
+      </p>
+
+      <note style="caution">
+        <p>Αν δεν χρησιμοποιείτε το GNOME 3, μπορεί να βρείτε ότι η έκδοση 3 ή παλαιότερη του <app>Accerciser</app> δεν είναι συμβατή με το περιβάλλον εργασίας σας.</p>
+      </note>
+
+
+      <p>Μετά τη λήψη του <app>Accerciser</app>, κάντε το εγκατάσταση χρησιμοποιώντας τις ακόλουθες συσκευές:</p>
+      <steps>
+        <item><p><cmd>cd accerciser</cmd></p></item>
+        <item><p><cmd>./autogen.sh # ή ./configure για την πρώτη εγκατάσταση</cmd></p></item>
+        <item><p><cmd>make</cmd></p></item>
+        <item><p><cmd>sudo make install # ή make install ως root</cmd></p></item>
+      </steps>
+      <p>Αν αντιμετωπίσετε προβλήματα στην εγκατάσταση του <app>Accerciser</app> στο σύστημα σας, είναι πιθανό να λείπουν μερικές από τις εξαρτήσεις του. Ελέγξτε το <link href="https://live.gnome.org/Accerciser/#Requirements">wiki του <app>Accerciser</app></link> για να σιγουρευτείτε πως έχετε εγκαταστήσει όλες τις εξαρτήσεις.</p>
+    </section>
+ 
+    <section id="running_accerciser">
+      <title>Εκτέλεση του <app>Accerciser</app></title>
+        <p>Για να ξεκινήσετε το <app>Accerciser</app>, πληκτρολογήστε στο τερματικό <cmd>accerciser</cmd>  ή στον διάλογο Εκτέλεση πατήστ το <key>Return</key>.</p>
+        <p>Μετά από αυτό, μπορείτε να χρησιμοποιήσετε το <app>Accerciser</app> για να επιθεωρήσετε οποιδήποτε προσβάσιμο αντικείμενο που εμφανίζεται στην ιεραρχία της <link xref="desktop_tree_view">δενδρικής προβολής εφαρμογών</link>. Επιλέξτε ένα αντικείμενο και ερευνήστε το χρησιμοποιώντας ένα από τα πρόσθετα του <app>Accerciser</app>.</p>
+    </section>
+</page>

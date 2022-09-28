@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="interface_viewer_plugin" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">2. Zásuvný modul pro prohlížení rozhraní</title>
+    <link type="next" xref="validator_plugin"/>
+    <desc>Jak vyzkoušet svoji implementaci přístupnosti.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Zásuvný modul pro prohlížení rozhraní</title>
+
+  <p>Zásuvný modul Prohlížeč rozhraní zobrazuje informace a ovládací prvky poskytované rozhraními AT-SPI přítomné v jednotlivých zpřístupněných položkách ze <link xref="desktop_tree_view">stromového zobrazení aplikací</link>. Po vybrání položky můžete tento zásuvný modul použít k rychlému přehledu, jaká rohraní položka podporuje, získat o rozhraních informace a pracovat s položkou skrze metody těchto rozhraní.</p>
+
+  <figure>
+    <title>Zkoumání položky typu nabídka pomocí zásuvného modulu Prohlížeč rozhraní</title>
+    <desc>Pro položku danou výběrem ve stromovém zobrazení aplikací budou zobrazena všechna rozhraní AT-SPI jako interaktivní v zásuvném modulu Prohlížeč rozhraní. Ta nepodporovaná budou zašedlá, obdobně jako rozhraní Aplikace a Kolekce na obrázku níže.</desc>
+    <media type="image" mime="image/png" width="800" height="450" src="figures/interface_viewer_plugin.png">
+      <p>Pro položku danou výběrem ve stromovém zobrazení aplikací budou zobrazena všechna rozhraní AT-SPI jako interaktivní v zásuvném modulu Prohlížeč rozhraní. Ta nepodporovaná budou zašedlá, obdobně jako rozhraní Aplikace a Kolekce na obrázku níže.</p>
+    </media>
+  </figure>
+
+  <section id="running_interface_viewer">
+    <title>Spuštění zásuvného modulu pro prohlížení rozhraní</title>
+    <p>Prvním krokem ke spuštění zásuvného modulu Prohlížeč rozhraní je vybrat položku ve <link xref="desktop_tree_view">stromové zobrazení aplikací</link>. Až tak učiníte, vypíší se v panelu zásuvného modulu všechna rozhraní AT-SPI, která zásuvný modul rozpozná. Rozhraní implementovaná položkou budou citlivá, takže na ně můžete klikat a získávat tak informace, které poskytují nebo pracovat s jejich metodami. V aplikaci <app>Accerciser</app> můžete prozkoumávat následující rozhraní, samozřejmě za předpokladu, že je vybraná položka implementuje:</p>
+    <list>
+      <item>
+        <p>Zpřístupněný objekt – Toto rozhraní zobrazuje počet potomků vybrané položky (počet synovských widgetů), popis, stav, vztahy a vlastnosti.</p>
+      </item>
+      <item>
+        <p>Akce – Toto rozhraní zobrazuje činnosti, které může provádět vybraná položka. U každého rohraní můžete vidět název, jako je „press“ nebo „click“, následovaný popisem a přidělenou klávesovou zkratkou, pokud nějaká přidělená je. Když některou z akcí vyberete, aktivuje se tlačítko „Provést akci“. Po jeho zmáčknutí uvidíte, jak položka vybranou akci provádí.</p>
+      </item>
+      <item>
+        <p>Aplikace – Toto rozhraní může implementovat položka s rolí „application“. Stojí za to zdůraznit, že položka s rolí „application“ nemusí toto rozhraní mít implementováno nutně. Pokud jej implementováno má, zobrazuje se její ID (pokud nějaké má), nástrojová sada a verze.</p>
+      </item>
+      <item>
+        <p>Komponenta – Toto rozhraní zobrazuje absolutní pozici vybrané položky (vzhledm k systému souřadnic pracovní plochy), relativní pozici (vzhledem k systému souřadnic okna), velikost, typ vrstvy, pořadí MDI-Z (krátké celé číslo určující pořadí v zásobníku komponent v MDI) a průhlednost (pokud je průhlednost použita).</p>
+      </item>
+      <item>
+        <p>Dokument – Toto rohraní zobrazuje atributy a místní popis dokumentu náležejícího vybrané položce, pokud nějaký takový existuje.</p>
+      </item>
+      <item>
+        <p>Hypertext – Toto rozhraní zobrazuje seznam všech hypertextových odkazů vybrané položky. U každého odkazuje je uveden jeho název, adresa URI, začátek (index do místa v textu, ve kterém odkaz začíná) a konec (index do místa v textu, ve kterém odkaz končí).</p>
+      </item>
+      <item>
+        <p>Obrázek – Toto rohraní zobrazuje popis (nebo „bez popisu“ pokud žádný nemá), velikost, pozici (vzhledem k souřadnicovému systému pracovní plochy) a lokalizovaný popis, pokud existuje.</p>
+      </item>
+      <item>
+        <p>Výběr – Toto rozhraní zobrazuje všechny dceřiné položky vybrané položky, které lze vybrat. Pokud je vybranou položkou třeba nabídková lišta s položkami „Soubor“, „Upravit“, „Zobrazit“ a „Nápověda“ a všechny tyto položky jsou vybratelné, budou v tomto rozhraní uvedeny. Když pak kliknete na položku v seznamu, například „Soubor“, a chcete ji vymazat, zmáčkněte tlačítko <gui>Vymazat</gui> pod seznamem.</p>
+      </item>
+      <item>
+        <p>Proud dat – Toto rozhraní zobrazuje typ obsahu u vybrané položky a adresu URI, která k němu přísluší.</p>
+      </item>
+      <item>
+        <p>Tabulka – Toto rozhraní zobrazuje pro vybranou položku nadpis a souhrn, řádky (počet řádků), sloupce (počet sloupců), vybrané řádky (počet vybraných řádků) a vybrané sloupce (počet vybraných sloupců). Pro vybranou buňku rozhraní zobrazuje hlavičku v příslušném řádku a sloupci a rozměry.</p>
+      </item>
+      <item>
+        <p>Text – Toto rozhraní zobrazuje textový obsah, který může být upravitelný, vybrané položky a jeho vlastnosti. Základnímy vlastnostmi jsou posun (počet znaků, které text má) a zarovnání. Pokud chcete vidět i možné vlastnosti CSS, zaškrtněte „Včetně výchozích“.</p>
+      </item>
+      <item>
+        <p>Hodnota – Toto rozhraní zobrazuje aktuální hodnotu vybrané položky, její minimální a maximální dovolenou hodnotu a minimální krok, po kterém může být hodnota měněna (nebou nulu, když tento údaj nelze určit). Aktuální hodnotu můžete ručně změnit pomocí tlačítek číselníku.</p>
+      </item> 
+    </list>
+  </section>
+</page>

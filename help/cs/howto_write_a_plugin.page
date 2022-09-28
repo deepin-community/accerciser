@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_write_a_plugin" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">3. Psaní nových zásuvných modulů</title>
+    <link type="next" xref="preferences"/>
+    <desc>Jak <app>Accerciser</app> rozšířit o svoji požadovanou funkcionalitu.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Psaní zásuvných modulů pro <app>Accerciser</app></title>
+  <p>Rozšíření funkcí aplikace <app>Accerciser</app> pomocí nových zásuvných modulů je teď mnohem snažší díky <link href="https://wiki.gnome.org/Apps/Accerciser/PluginTutorial">tomuto průvodci</link> (odkazovaný text je v angličitně). Vzhledem k tomu, že poskytuje velmi podrobné vysvětlení tématu, vychází tato část v podstatě z jeho původního obsahu – byly provedeny jen drobné úpravy a aktualizace.</p>
+  <p><app>Accerciser</app> podporuje tři hlavní typy zásuvných modulů:</p>
+  <list>
+    <item>
+      <p>Základní zásuvné moduly – Tyto zásuvné moduly jsou odvozeny od základní třídy Plugin. Neposkytují viditelné uživatelské rozhraní, ale mohou v aplikaci <app>Accerciser</app> poskytnout dodatečnou funkcionalitu.</p>
+    </item>
+    <item>
+      <p>Konzolové zásuvné moduly – Tyto zásuvné moduly poskytují jednoduchý konzolový výstup do textové oblasti na kartě zásuvného modulu. Neplést si s balíčkem <link xref="ipython_plugin">Konzolový zásuvný modul IPython</link>.</p>
+    </item>
+    <item>
+      <p>Okenní zásuvné moduly – Většina výchozích zásuvných modulů aplikace <app>Accerciser</app>. Poskytují vlastní grafické rozhraní v kartě.</p>
+    </item>
+  </list>
+
+  <section id="base_plugin">
+    <title>Vytvoření základního zásuvného modulu</title>
+    <p>Vytvoříme zjednodušenou verzi <link xref="quick_select_plugin">zásuvného modulu Rychlý výběr</link>. Tento zásuvný modul bude vybírat poslední zaměřený zpřístupněný objekt pomocí zmáčknutí <keyseq><key>Ctrl</key><key>Alt</key><key>E</key></keyseq>.</p>
+    <p>Nejprve řádky s importy, které budeme používat:</p>
+    <code>
+      from accerciser.plugin import Plugin
+      import gtk
+      import pyatspi
+    </code>
+    <p>Následně odvodíme novou třídu ze základní třídy Plugin a přiřadíme některé její povinné atributy:</p>
+    <code>
+      class FocusSelect(Plugin):
+        plugin_name = 'Focus Select'
+        plugin_description = 'Allows selecting last focused accessible.'
+    </code>
+    <p>Nyní přepíšeme metodu init, ve které budeme nastavovat akci globání klávesové zkratky pro výběr naposledy zaměřené zpřístupněné položky, registrovat naslouchání události pro událost „focus“ a nastavovat instanci proměnné <cmd>last_focused</cmd> na <cmd>None</cmd>.</p>
+    <code>
+      def init(self):
+        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+        self.global_hotkeys = [('Inspect last focused accessible',
+                                self.inspectLastFocused,
+                                gtk.keysyms.e,
+                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]
+        self.last_focused = None
+    </code>
+    <p>Všimněte si, že instance proměnné <cmd>global_hotkeys</cmd> je seznam n-tic. Každou n-ticí je akce globální klávesové zkratky složená z popisu akce, požadovaného volání metody, symbol mačkané klávesy a maska s klávesovými modifikátory.</p>
+    <p>Ve zpětném volání události „focus“ přiřadíme instanci proměnné <cmd>last_focused</cmd> zpřístupněnu položku, která událost „focus“ vyslala.</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if not self.isMyApp(event.source):
+          self.last_focused = event.source
+    </code>
+    <p>Ve zpětném volání akce klávesové zkratky aktualizujeme uzel aplikace s poslední zaměřenou zpřístupněnou položkou (v případě, že ji máme poznačenou):</p>
+    <code>
+      def inspectLastFocused(self):
+        if self.last_focused:
+          self.node.update(self.last_focused)
+    </code>
+  </section>
+  <section id="console_plugin">
+    <title>Vytvoření konzolového zásuvného modulu</title>
+    <p>Vytvoříme konzolový zásuvný modul, který bude zobrazovat změny zaměření vyslané zpřístupněnou položkou pomocí role „push button“. Pamatujte, že zjistit u položky o jakou se jedná roli je pomoci aplikace <app>Accerciser</app> snadné. Můžete to ověřit například ve <link xref="desktop_tree_view">stromovém zobrazení aplikací</link>.</p>
+    <p>Řádky s potřebnými importy jsou:</p>
+    <code>
+      from accerciser.plugin import ConsolePlugin
+      import pyatspi
+    </code>
+    <p>Přidáme definici třídy s názvem a popisem zásuvného modulu:</p> 
+    <code>
+      class PushButtonFocus(ConsolePlugin):
+        plugin_name = 'Push Button Focus'
+        plugin_description = 'Print event when pushbutton get\'s focus.'
+    </code>
+    <p>Přepíšeme metodu init přidáním registrovaného naslouchání:</p>
+    <code>
+       def init(self):
+         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+    </code>
+    <p>V metodě zpětného volání se vypíší všechny události zmáčknutí tlačítka.</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:
+          self.appendText(str(event)+'\n')
+    </code>
+  </section>
+  <section id="viewport_plugin">
+    <title>Vytvoření okenního zásuvného modulu</title>
+    <p>Vytvoříme okenní zásuvný modul, který umožní rychle testovat akci „click“ na zpřístupněné položce, která podporuje rozhraní AT-SPI „Action“ a má akci pojmenovanou „click“. Bude se jedna o prosté tlačítko, na které když se klikne, provede se akce „click“ na zpřístupněné položce.</p>
+    <p>Ze všecho nejdřív uvedeme řádky s povinným importem:</p>
+    <code>
+      import gtk
+      from accerciser.plugin import ViewportPlugin
+    </code>
+    <p>Následně definujeme třídu s názvem a popisem:</p>
+    <code>
+      class Clicker(ViewportPlugin):
+        plugin_name = 'Clicker'
+        plugin_description = 'Test the "click" action in relevant accessibles.'
+    </code>
+    <p>Přepíšeme metodu init kódem pro sestavení uživatelského rozhraní a pro přípojení zpětného volání k signálu pro tlačítko. Použijeme kontejner pro zarovnávní, aby bylo tlačítko na kartě zásuvného modulu umístěno na střed a nezabíralo monstrózně celý prostor zásuvného modulu. Všimněte si, že instance proměnné <cmd>plugin_area</cmd> obsahuje gtk.Frame, který by měl vystupovat ve všech widgetech zásuvného modulu.</p>
+    <code>
+       def init(self):
+         alignment = gtk.Alignment(0.5,0.5,0,0)
+         self.click_button = gtk.Button('Click me!')
+         alignment.add(self.click_button)
+         self.plugin_area.add(alignment)
+
+         self.click_button.connect('clicked', self.onClick)
+
+         self.show_all()
+    </code>
+    <p>Rovněž vytvoříme vhodnou metodu, která vrací seznam podporovaných akcí právě vybrané přístupné položky. V případě, že nepodporuje rozhraní Action, vrátí se prázdný seznam:</p> 
+    <code>
+       def accSupportedActions(self):
+       try:
+         ai = self.node.acc.queryAction()
+       except NotImplementedError:
+         action_names = []
+       else:
+         action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+       return action_names
+    </code>
+    <p>Základní třída zásuvných modulů má metodu nazývanou onAccChanged, které je volána pokaždé, když se vybraná přístupná položka v aplikaci změní. Přepíšeme ji tak, aby se nastavilo tlačítko jako citlivé jen když má aktuální přístupná položka činnost „click“:</p>
+    <code>
+       def onAccChanged(self, acc):
+         has_click = 'click' in self.accSupportedActions()
+         self.click_button.set_sensitive(has_click)
+    </code>
+    <p>Metoda zpětného volání „clicked“ pro tlačítko provádí akci při kliknutí na zpřístupněnou položku. Protože toto zpětné volání může být zavoláno jen když je tlačítko citlivé, nemusíme se starat o kontrolu, jestli má aktuální zpřístupněná položka akci „click“?</p>
+    <code>
+      def onClick(self, button):
+        ai = self.node.acc.queryAction()
+        action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+        ai.doAction(action_names.index('click'))
+    </code>
+   </section>
+</page>

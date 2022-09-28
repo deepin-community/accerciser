@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">3. Das Standardüberprüfungs-Plugin</title>
+    <link type="next" xref="event_monitor_plugin"/>
+    <desc>So prüfen Sie die Barrierefreiheit einer Anwendung</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>Das AT-SPI-Überprüfung-Plugin</title>
+  <p>Das AT-SPI Überprüfung-Plugin erstellt einen Bericht Problem der Barrierefreiheit in Bezug auf die Zielanwendung. Zu jedem Fehler stellt der Bericht den Schweregrad des Fehlers sowie eine kurze Beschreibung zur Verfügung.</p>
+   <figure>
+    <title>Das AT-SPI-Überprüfung-Plugin</title>
+    <desc>Das AT-SPI Überprüfung-Plugin erstellt nützliche Berichte, um die Barrierefreiheit einer Zielanwendung zu überprüfen.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>Das AT-SPI Überprüfung-Plugin erstellt nützliche Berichte, um die Barrierefreiheit einer Zielanwendung zu überprüfen.</p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Das AT-SPI Überprüfung-Plugin ausführen</title>
+      <p>Um das AT-SPI Überprüfung-Plugin auszuführen, wählen Sie ein Objekt in der Anwendungsbaumansicht. Das Plugin wird einen Bericht erstellen, in welchem es das ausgewählte Objekt und alle seiner Unteranwendungen in der Baumhierarchie beachtet.</p>
+
+      <p>Nachdem Sie ein Objekt ausgewählt haben, wählen Sie noch ein Überprüfungsschema in dem Auswahlfeld und klicken Sie auf <cmd>Überprüfen</cmd>, um die Erstellung des Berichts zu starten. Wenn Sie die Ausführung abbrechen wollen, müssen Sie nur wieder auf <cmd>Überprüfen</cmd> klicken.</p>
+
+      <p>Der erstellte Bericht ist interaktiv. Deshalb können Sie auf jeden gefundenen Fehler doppelklicken, um festzustellen, welche Widgets der Zielanwendung für den Fehler verantwortlich sind. Das dazugehörige Widget wird dann automatisch in der <link xref="desktop_tree_view">Anwendungsbaumansicht</link> ausgewählt und in der Zielanwendung aufleuchten.</p>  
+      <p>Wenn Sie den erstellten Bericht auf ihrem System speichern wollen, klicken Sie einfach auf <cmd>Speichern</cmd>. Um das Überprüfungsfenster zu leeren, klicken Sie auf <cmd>Leeren</cmd>.</p>
+      <p>Um mehr Informationen über einen Fehler in dem erstellten Bericht zu erhalten, stellen Sie sicher, dass das dazugehörige Objekt ausgewählt ist und klicken Sie auf <cmd>Hilfe</cmd>. Dadurch öffnet sich eine Hilfeseite in Ihrem Standardbrowser.</p>        
+  </section>
+</page>

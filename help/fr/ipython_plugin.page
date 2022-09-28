@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ipython_plugin" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">2. Le greffon IPython</title>
+    <link type="next" xref="howto_write_a_plugin"/>
+    <desc>Quand tout le reste a échoué</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Le greffon Console IPython</title>
+  <p>Le greffon « Console IPython » permet une interaction en temps réel avec un élément sélectionné dans le <link xref="desktop_tree_view">Panneau de l'arborescence des applications</link>. Comme ce greffon est un terminal interactif Python, vous pouvez importer les modules Python que vous voulez.</p>
+
+  <note style="tip">
+    <p>Assurez-vous que le paquetage autonome IPython est bien installé sur votre système sinon, la « Console IPython » ne fonctionnera pas correctement.</p>
+  </note>
+  
+  <section id="running_ipython_plugin">
+    <title>Exécution du greffon « Console IPython »</title>
+    <p>Pour exécuter le greffon « Console IPython », sélectionnez l'un des éléments affichés dans le Panneau de l'arborescence des applications, une application ou un autre type d'élément. Dans le greffon, l'élément sélectionné correspond à la variable « acc ».</p>
+    <p>Un appui sur la touche <key>Tab</key> affiche les résultats de la commande actuelle dans la console, ce qui peut être utile pour découvrir les méthodes pyatspi.</p>  
+
+  <figure>
+    <title>Investigation des éléments sélectionnés avec le greffon « Console IPython »</title>
+    <desc>Le greffon « Console IPython » permet de vous informer sur les méthodes, constantes et propriétés en rapport avec l'élément sélectionné dans le Panneau de l'arborescence des applications.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/IPython_plugin.png">
+      <p>Le greffon « Console IPython » permet de vous informer sur les méthodes, constantes et propriétés en rapport avec l'élément sélectionné dans le Panneau de l'arborescence des applications.</p>
+    </media>
+  </figure>
+
+  <note style="tip">
+    <p>La commande <cmd>help(acc)</cmd> saisie dans console IPython donne des indications utiles sur l'élément accessible sélectionné correspondant.</p>
+  </note>
+  </section>
+</page>

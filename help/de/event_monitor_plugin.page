@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="event_monitor_plugin" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">4. Ereignisüberwachung-Plugin</title>
+    <link type="next" xref="quick_select_plugin"/>
+    <desc>Überwachung von barrierefreien Ereignissen in Echtzeit</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>Ereignisüberwachung-Plugin</title>
+  <p>Mit dem Ereignisüberwachung-Plugin können Sie <link href="http://accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html">AT-SPI-Ereignisse</link> so sehen, wie sie bei der Anwendung auftreten, und zwar dargestellt in der Anwendungs-Baumansicht von <app>Accerciser</app>. Dieses Plugin ist nützlich, um die Dynamik einer Oberfläche einer Anwendung zu erforschen und zu prüfen, welche barrierefreien Widgets zu dem AT-SPI-Ereignis gehören.</p>
+
+  <figure>
+    <title>Ereignisüberwachung-Plugin</title>
+    <desc>Mit dem Ereignisüberwachung-Plugin können Sie AT-SPI-Ereignisse beobachten und diese mit einem barrierefreien Widget verknüpfen.</desc>
+    <media type="image" mime="image/png" width="700" height="500" src="figures/event_monitor_plugin.png">
+      <p>Mit dem Ereignisüberwachung-Plugin können Sie AT-SPI-Ereignisse beobachten und diese mit einem barrierefreien Widget verknüpfen.</p>
+    </media>
+  </figure>
+
+  <section id="running_event_monitor_plugin">
+    <title>Das Ereignisüberwachung-Plugin ausführen</title>
+    <p>Wenn Sie das Ereignisüberwachung-Plugin starten, sehen Sie ein Liste mit Ankreuzfeldern, welche für alle verschiedenen AT-SPI Ereignisklassen stehen, die das Plugin zur Verfügung stellt.</p>
+
+    <list>
+      <item>
+        <p>document</p>
+      </item>
+      <item>
+        <p>focus</p>
+      </item>
+      <item>
+        <p>mouse</p>
+      </item>
+      <item>
+        <p>object</p>
+      </item>
+      <item>
+        <p>terminal</p>
+      </item>
+      <item>
+        <p>window</p>
+      </item>
+    </list>
+
+    <p>Wenn Sie eine Klasse wählen, werden alle ihre Ereignistypen durch das Plugin überwacht. Die Klassen sind als Baumansicht dargestellt, d.h. Sie können Ihre Auswahl durch Erweiterung und Auswahl relevanter Ereignistypen verfeinern, welche Sie interessieren.</p>
+    <p>Wenn Sie alle möglichen Typen von AT-SPI-Ereignissen überwachen möchten, klicken Sie auf <cmd>Alle auswählen</cmd>. Wenn Sie entsprechend alle gewählten Ereignistypen löschen möchten, so klicken Sie auf den Knopf <cmd>Auswahl löschen</cmd>.</p>
+
+    <note style="tip">
+      <p>Wenn Sie nur wenige Ereignistypen zur Überwachung auswählen, erhalten Sie eine übersichtlichere Ausgabe.</p>
+    </note>
+
+    <p>Ein anderer Weg, um die Ereignisüberwachung zu verfeinern, geht über die Ereignisquelle. Standardmäßig ist die Quelloption <cmd>Alles</cmd> ausgewählt, was aussagt, dass alle AT-SPI-Ereignisse einer Anwendung überwacht werden. Wenn Sie nur eine einzige Anwendung erforschen wollen, wählen Sie diese in der Anwendungs-Baumansicht aus und klicken Sie auf den Quellen-Auswahlknopf <cmd>Ausgewählte Anwendung</cmd>. Genauso verfahren Sie, wenn Sie ein bestimmtes Widget und seine dazugehörigen Unterelemente überwachen wollen. Allerdings müssen Sie hier den Quellen-Auswahlknopf <cmd>Ausgewähltes Accessible</cmd> anklicken.</p>
+
+    <p>Nach dem Auswählen des Ereignistyps und der Festlegung einer Quelloption beginnt das Ereignisüberwachungs-Plugin automatisch die AT-SPI Ereignisse zu überwachen. Dies liegt daran, dass <cmd>Ereignisse anzeigen</cmd> standardmäßig aktiviert ist. Wenn Sie also die Überwachung beenden wollen, klicken Sie auf <cmd>Ereignisse anzeigen</cmd>. Um das Überwachen wieder zu starten, müssen Sie nur wieder darauf klicken.</p>
+    
+    <p>Für jedes auftretende Ereignis zeigt das Ereignisüberwachung-Plugin Quelle und Anwendung an. Durch das Aktivieren des Links von einem der Objekte wird es in der Anwendungs-Baumansicht ausgewählen.</p>
+
+    <p>Wenn Sie die Ausgabe des Ereignisüberwachung-Plugins speichern wollen, müssen Sie nur auf <cmd>Speichern</cmd> klicken. Um den Ausgabe-Bildschirm zu leeren, klicken Sie auf <cmd>Leeren</cmd>.</p>
+  </section>
+</page>

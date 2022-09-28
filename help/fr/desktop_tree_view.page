@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="desktop_tree_view" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">1. Le panneau de l'arborescence des applications</title>
+    <link type="next" xref="interface_viewer_plugin"/>
+    <desc>Explorer la hiérarchie des accessibles de l'ordinateur</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Panneau de l'arborescence des applications</title>
+
+  <p>L'interface <app>Accerciser</app> possède une vue arborescente, appelée <gui>Panneau de l'arborescence des applications</gui> qui couvre toutes les applications accessibles en cours d'exécution sur l'ordinateur. Pour créer cette arborescence, <app>Accerciser</app> utilise le démon de registre de AT-SPI. Ce démon est responsable de la conservation de la trace de toutes les applications accessibles sur le bureau et de l'envoi des événements X sur le D-Bus ST-SPI. Après avoir obtenu toutes les applications accessibles, <app>Accerciser</app> les représentent selon une structure hiérarchique avec des nœuds de développement.</p>
+
+  <figure>
+    <title>Panneau de l'arborescence des applications</title>
+    <desc>Le Panneau de l'arborescence des applications d'<app>Accerciser</app> représente l'interface de chaque application accessible en cours d'exécution sur l'ordinateur selon une structure hiérarchique des composants graphiques.</desc>
+    <media type="image" mime="image/png" width="400" height="600" src="figures/tree_view_accerciser.png">
+      <p>Le Panneau de l'arborescence des applications d'<app>Accerciser</app> représente l'interface de chaque application accessible en cours d'exécution sur l'ordinateur selon une structure hiérarchique des composants graphiques.</p>
+    </media>
+  </figure>
+
+
+  <p>Le premier nœud de chaque application représentée dans l'arborescence est l'application elle-même. Lorsque vous développez un nœud, vous pouvez voir tous ses composants graphiques fils. Pour chaque nœud, <app>Accerciser</app> fournit quelques informations de base comme son nom, son rôle et le nombre de ses fils.</p>
+
+  <note style="caution">
+    <p>Sachez que les nœuds avec de nombreux fils demandent beaucoup de temps pour se développer.</p>
+  </note>
+
+  <section id="bookmarking">
+    <title>Création de signets dans le panneau de l'arborescence des applications</title>
+    <p>
+      <app>Accerciser</app> allows bookmarking items in the Application Tree View for later examining. This is helpful when
+      the target application must be restarted - after rebuilding it, for example. To bookmark an item, select it and do
+      <guiseq><gui>Bookmarks</gui><gui>Add Bookmark</gui></guiseq> or press <keyseq><key>Ctrl</key><key>d</key></keyseq>. 
+    </p>
+    <p>Dans <app>Accerciser</app>, les signets vers les éléments accessibles sont définis par un nom d'application et un « chemin » vers l'élément accessible dans la hiérarchie des éléments accessibles internes à l'application. Quand l'application cible est dans un état différent (par ex. plusieurs fenêtres de niveau supérieur), le chemin peut ne pas être correct. La gestion des signets se fait dans la boîte de dialogue <guiseq><gui>Signets</gui><gui>Modifier les signets</gui></guiseq>.</p>
+  </section>
+
+</page>

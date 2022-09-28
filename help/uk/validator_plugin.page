@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin" xml:lang="uk">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">3. Додаток типового запису перевірки</title>
+    <link type="next" xref="event_monitor_plugin"/>
+    <desc>Тестування програми на доступність</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Додаток перевірки AT-SPI</title>
+  <p>Додаток перевірки AT-SPI створює звіт із проблемами доступності, які пов'язано із цільовою програмою. Для кожної помилки до звіту буде включено дані щодо критичності помилки та короткий опис.</p>
+   <figure>
+    <title>Додаток перевірки AT-SPI</title>
+    <desc>Додаток засобу перевірки AT-SPI створює корисні звіти для перевірки доступності цільової програми.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>Додаток засобу перевірки AT-SPI створює корисні звіти для перевірки доступності цільової програми.</p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Запуск додатка засобу перевірки AT-SPI</title>
+      <p>Щоб запустити додаток «Перевірка AT-SPI», виберіть пункт на панелі перегляду ієрархії програм. Засіб перевірки створить звіт щодо позначеного пункту і усіх його підлеглих віджетів у ієрархії.</p>
+
+      <p>Після вибору пункту виберіть схему перевірки у спадному списку і натисніть кнопку <cmd>Перевірити</cmd>, щоб розпочати створення звіту. Якщо ви хочете перервати виконання перевірки, просто натисніть кнопку <cmd>Перевірити</cmd> ще раз.</p>
+
+      <p>Створений звіт є інтерактивним. Отже, ви можете двічі клацнути на пункті будь-якої знайденої помилки, щоб розібратися із тим, який із віджетів цільової програми її спричинив. Після клацання відповідний віджет буде позначено на панелі <link xref="desktop_tree_view">перегляду ієрархії програм</link> і підсвічено у вікні цільової програми.</p>  
+      <p>Якщо ви хочете зберегти створений звіт у вашій системі, просто натисніть кнопку <cmd>Зберегти</cmd>. Щоб спорожнити екран перевірки, натисніть кнопку <cmd>Очистити</cmd>.</p>
+      <p>Щоб отримати більше даних щодо помилки у створеному звіті, позначте відповідний запис і натисніть кнопку <cmd>Довідка</cmd>. У відповідь програма відкриє сторінку довідки у вашій типовій програмі для перегляду сторінок інтернету.</p>        
+  </section>
+</page>

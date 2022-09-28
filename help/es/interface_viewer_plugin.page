@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="interface_viewer_plugin" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">2. Complemento Visor de interfaces</title>
+    <link type="next" xref="validator_plugin"/>
+    <desc>Examinar su implementación de accesibilidad</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Complemento Visor de interfaces</title>
+
+  <p>El complemento «Visor de interfaces» muestra la información y los controles proporcionados por la interfaz AT-SPI presente en cada elemento accesible de la <link xref="desktop_tree_view">vista en árbol de la aplicación</link>. Después de seleccionar un elemento, puede usar este complemento para revisar rápidamente sus interfaces soportadas, para obtener información sobre cada interfaz y para manipular el elemento mediante los métodos de la interfaz.</p>
+
+  <figure>
+    <title>Examinar un menú con el complemento «Visor de interfaces»</title>
+    <desc>Dado un elemento seleccionado en la vista en árbol de la aplicación, se mostrarán todas sus interfaces AT-SPI como sensitivas en el complemento de «Visor de interfaces». Aquellas no soportadas aparecerán en gris, tales como las interfaces de aplicación de recolección en la figura superior.</desc>
+    <media type="image" mime="image/png" width="800" height="450" src="figures/interface_viewer_plugin.png">
+      <p>Dado un elemento seleccionado en la vista en árbol de la aplicación, se mostrarán todas sus interfaces AT-SPI como sensitivas en el complemento de «Visor de interfaces». Aquellas no soportadas aparecerán en gris, tales como las interfaces de aplicación de recolección en la figura superior.</p>
+    </media>
+  </figure>
+
+  <section id="running_interface_viewer">
+    <title>Ejecutar el complemento Visor de interfaces</title>
+    <p>El primer paso para ejecutar el complemento «Visor de interfaces» es seleccionar un elemento en la <link xref="desktop_tree_view">vista en árbol de la aplicación</link>. Después de esto, todas las interfaces At-SPI cubiertas por el complemento se listarán en el panel de complementos. Las interfaces implementadas por el elemento seleccionado serán sensibles, por lo que podrá pulsar en cada una de ellas para obtener información o para interactuar con los métodos disponibles. Se pueden examinar las siguientes interfaces en <app>Accerciser</app>, asumiendo que el elemento seleccionado las implementa:</p>
+    <list>
+      <item>
+        <p>Accesible: esta interfaz muestra el contador de elementos hijos seleccionados (número de widgets hijos), descripción, estados, relaciones y atributos.</p>
+      </item>
+      <item>
+        <p>Acción: esta interfaz muestra todas las acciones que el elemento seleccionado se pueden realizar. Para cada interfaz verá su nombre, como «presionar» o «pulsar», seguido de una descripción y de una asociación de teclas, si hay alguna. si selecciona una acción, el botón «Realizar acción» se volverá sensible. Pulse este botón para ver al elemento realizar la acción seleccionada.</p>
+      </item>
+      <item>
+        <p>Aplicación: esta interfaz se puede implementar con elementos cuyo rol es «aplicación». Merece la pena señalar que los elementos cuyo rol es «aplicación» no necesariamente implementan esta interfaz. Si el elemento seleccionado la implementa, la interfaz mostrará su ID y, si tiene, su kit de herramientas y su versión.</p>
+      </item>
+      <item>
+        <p>Componente: esta interfaz muestra la posición absoluta del elemento seleccionado (respecto del sistema de coordenadas del escritorio), posición relativa (respecto del sistema de coordenadas de la ventana), tamaño, tipo de capa, orden MDI-Z (un entero corto que indica el orden de apilamiento del componente en la capa MDI) y alfa (si se usa alfa).</p>
+      </item>
+      <item>
+        <p>Documento: esta interfaz muestra los atributos de documento del elemento seleccionado, así como la descripción regional, si existe.</p>
+      </item>
+      <item>
+        <p>Hipertexto: esta interfaz muestra una lista de todos los hiperenlaces de hipertexto de los elementos seleccionados. Para cada hiperenlace la interfaz proporciona su nombre, URI, inicio (el índice en el hipertexto en el que comienza el hiperenlace) y el final (el índice en el hipertexto en el que finaliza el hiperenlace).</p>
+      </item>
+      <item>
+        <p>Imagen: esta interfaz muestra la descripción del elemento seleccionado (o «sin descripción» si está sin especificar), tamaño, posición (respecto del sistema de coordenadas del escritorio), y configuración regional, si existe.</p>
+      </item>
+      <item>
+        <p>Selección: esta interfaz muestra todos los elementos hijos seleccionables del elemento seleccionado. Si el elemento seleccionado es una barra de menú con las opciones «Archivo», «Editar», «Ver» y «Ayuda» y todas ellas se pueden seleccionar, entonces se listarán en esta interfaz. Si pulsa sobre una opción listada —«Archivo», por ejemplo— y quiere limpiarla, simplemente pulse el botón «Limpiar» en la lista de abajo.</p>
+      </item>
+      <item>
+        <p>Contenido secuenciable: esta interfaz muestra el tipo de contenido de los elementos seleccionados y sus URI correspondientes.</p>
+      </item>
+      <item>
+        <p>Tabla: esta interfaz muestra el título y el resumen del elemento seleccionado, filas (número de filas), columnas (número de columnas), filas seleccionadas (número de filas seleccionadas) y columnas seleccionadas (número de columnas seleccionadas). Para una celda seleccionada, la interfaz muestra la cabecera y extensión de sus filas y columnas.</p>
+      </item>
+      <item>
+        <p>Texto: esta interfaz muestra el contenido de los elementos de texto del elemento, que pueden ser editables, y sus atributos. Los atributos básicos son el desplazamiento (el número de caracteres que tiene el texto) y su justificación. Para ver los posibles atributos de CSS, pulse en la casilla «incluir predeterminados».</p>
+      </item>
+      <item>
+        <p>Valor: esta interfaz muestra el valor actual del elemento seleccionado, los valores mínimo y máximo permitidos y el incremento mínimo por el que el valor debe cambiar (o cero si este valor no se puede determinar). El valor actual se puede cambiar manualmente usando un botón incrementable.</p>
+      </item> 
+    </list>
+  </section>
+</page>

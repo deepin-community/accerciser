@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ipython_plugin" xml:lang="uk">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">2. Додаток IPython</title>
+    <link type="next" xref="howto_write_a_plugin"/>
+    <desc>Якщо нічого не помагає</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Додаток консолі IPython</title>
+  <p>За допомогою додатка консолі IPython можна інтерактивно взаємодіяти із вибраним на <link xref="desktop_tree_view">панелі перегляду ієрархії програм</link> об'єктом. Оскільки додаток консолі IPython є інтерактивною командною оболонкою Python, ви можете імпортувати будь-які модулі Python.</p>
+
+  <note style="tip">
+    <p>Переконайтеся, що у вашій системі встановлено окремий пакунок IPython. Якщо такий пакунок не встановлено, додаток консолі IPython не працюватиме належним чином.</p>
+  </note>
+  
+  <section id="running_ipython_plugin">
+    <title>Запуск додатка консолі IPython</title>
+    <p>Щоб запустити додаток консолі IPython, виберіть один із доступних об'єктів зі списку панелі перегляду ієрархії програм — програму або віджет. На панелі додатка вибраному об'єкту відповідатиме змінна «acc».</p>
+    <p>Натискання клавіші <key>Tab</key> призводить до показу варіантів доповнення поточної команди у консолі. Це може бути корисним для вивчення методів pyatspi.</p>  
+
+  <figure>
+    <title>Вивчення позначних об'єктів за допомогою додатка консолі IPython</title>
+    <desc>За допомогою додатка консолі IPython ви зможете вивчати методу, сталі та властивості, які пов'язано із позначеним на панелі перегляду ієрархії програм об'єктом.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/IPython_plugin.png">
+      <p>За допомогою додатка консолі IPython ви зможете вивчати методу, сталі та властивості, які пов'язано із позначеним на панелі перегляду ієрархії програм об'єктом.</p>
+    </media>
+  </figure>
+
+  <note style="tip">
+    <p>Введення команди <cmd>help(acc)</cmd> у додатку консолі IPython призведе до показу корисної документації щодо відповідного позначеного доступного об'єкта.</p>
+  </note>
+  </section>
+</page>

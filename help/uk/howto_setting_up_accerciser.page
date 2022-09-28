@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_setting_up_accerciser" xml:lang="uk">
+<info>
+  <link type="guide" xref="index#getting_started"/>
+  <link type="next" xref="desktop_tree_view"/>
+  <title type="sort">2. Як встановити і запустити <app>Accerciser</app></title>
+  <title type="link">Налаштовування <app>Accerciser</app></title>
+    <desc>Встановлення та запуск <app>Accerciser</app> у вашій системі</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Налаштовування <app>Accerciser</app></title>
+
+    <p>Перевірте, чи є у вашому дистрибутиві готові пакунки <app>Accerciser</app>. Якщо такі пакунки є, ви можете встановити їх за допомогою програми для керування пакунками. Якщо таких пакунків немає, ви можете скористатися порадами із наступного розділу для встановлення <app>Accerciser</app> вручну.</p>
+
+    <section id="installing_accerciser_manually">
+      <title>Встановлення <app>Accerciser</app> вручну</title>
+       <p>Щоб встановити <app>Accerciser</app> вручну, вам слід спочатку отримати початковий код програми. Цей початковий код <app>Accerciser</app> можна отримати або з <link href="http://ftp.gnome.org/pub/GNOME/sources/accerciser/">сайта FTP gnome.org</link>, або клонувати зі <link href="https://gitlab.gnome.org/GNOME/accerciser">сховища Git gnome.org</link>.</p>
+
+      <note style="caution">
+        <p>Якщо ви не користуєтеся GNOME 3, ви можете виявити, що <app>Accerciser</app> версії 3 і новіших версій є несумісним із вашим середовищем.</p>
+      </note>
+
+
+      <p>Після отримання <app>Accerciser</app> встановіть програму за допомогою таких команд:</p>
+      <steps>
+        <item><p><cmd>cd accerciser</cmd></p></item>
+        <item><p><cmd>./autogen.sh # або ./configure для встановлення уперше</cmd></p></item>
+        <item><p><cmd>make</cmd></p></item>
+        <item><p><cmd>sudo make install # або make install від імені root</cmd></p></item>
+      </steps>
+      <p>Якщо ви зіткнулися із проблемами при встановленні <app>Accerciser</app> у вашій системі, ймовірно, не встановлено якісь із залежностей програми. Ознайомтеся із вмістом <link href="https://live.gnome.org/Accerciser/#Requirements">вікі <app>Accerciser</app></link>, щоб переконатися, що усі залежності встановлено належним чином.</p>
+    </section>
+ 
+    <section id="running_accerciser">
+      <title>Запуск <app>Accerciser</app></title>
+        <p>Щоб запустити <app>Accerciser</app>, введіть команду <cmd>accerciser</cmd> у вікні термінала або у діалоговому вікні «Запустити», а потім натисніть клавішу <key>Enter</key>.</p>
+        <p>Після цього ви можете користуватися <app>Accerciser</app> для вивчення будь-якого доступного об'єкта, який показано в ієрархії <link xref="desktop_tree_view">панелі перегляду ієрархії програм</link>. Виберіть об'єкт і ознайомтеся із ним за допомогою одного з додатків до <app>Accerciser</app>.</p>
+    </section>
+</page>

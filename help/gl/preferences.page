@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences" xml:lang="gl">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">4. Preferences</title>
+    <!-- link type="next" xref="event_monitor_plugin" /-->
+    <desc>Personalizando as preferencias de <app>Accerciser</app></desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  </info>
+  <title>Configurar <application>Accerciser</application></title>
+  <p>
+    To configure plugins, hotkeys, and highlighting, do either <keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui>
+    <gui>Preferences</gui></guiseq> to open a dialog.
+  </p>
+
+  <section id="plugin">
+    <title>Configurar engadidos</title>
+    <p>Despois de abrir o diálogo de Preferencias pode atopar unha lista de tódolos engadidos dispoñíbeis cas súas correspondentes caixas de verificación, baixo a lapela «Engadidos». Para activar ou desactivar un engadido troque a súa caixa de verificación. Só os engadidos activado serán accesíbeis desde a interface de <app>Accersicer</app>.</p>
+    <p>Se preme co botón dereito sobre calquera dos engadidos pode seleccionar a súa localizción: «Panel superior», «Panel inferior» e «Nova vista». Se selecciona «Nova vista» crearase unha nova xanela para o engadido.</p>
+
+    <note style="tip">
+      <p>
+        You may bypass the Preferences dialog by using drag and drop to move a plugin from a location to another.
+      </p>
+    </note>
+  </section>
+
+  <section id="global_hotkey">
+    <title>Configurar atallos de teclado globais</title>
+    <p>
+      Some elements in <app>Accerciser</app> may enable certain functionalities via hotkeys. An example is the 
+      <link xref="quick_select_plugin">Quick Select Plugin</link>. The hotkey combination for each functionality
+      can be changed via the Preferences dialog, under the "Global Hotkeys" tab. Under this tab,  you will find a
+      list of all features for which hotkeys can be configured. Use the <cmd>ctrl</cmd>, <cmd>alt</cmd>, and 
+      <cmd>shift</cmd> checkboxes to enable or disable these modifiers.
+    </p>
+
+   </section>
+
+   <section id="highlighting">
+     <title>Configurar o realzado de widgets</title>
+     <p>
+       Some of <app>Accerciser</app>'s elements, such as the global hotkey <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>,
+       highlight a specific widget in a target application. The highlighting duration, border color, and fill color can
+       be customized via the Preferences dialog, under the "Highlighting" tab.
+     </p>
+   </section>
+</page>

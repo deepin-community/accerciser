@@ -1,0 +1,1046 @@
+# Hungarian trasnlation for accerciser.
+# Copyright (C) 2007, 2008, 2009, 2011, 2012, 2013, 2015, 2019 The Free Software Foundation, inc.
+# This file is distributed under the same license as the accerciser package.
+#
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2007, 2008, 2009, 2011, 2012.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2015, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: accerciser master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/accerciser/issues\n"
+"POT-Creation-Date: 2019-07-27 14:57+0000\n"
+"PO-Revision-Date: 2019-08-24 23:05+0200\n"
+"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
+"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 18.12.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accerciser.appdata.xml.in:6 accerciser.desktop.in:3
+msgid "Accerciser"
+msgstr "Accerciser"
+
+#: accerciser.appdata.xml.in:7
+msgid "Accessibility explorer for the GNOME desktop"
+msgstr "Akadálymentesítés-felderítő a GNOME asztalhoz"
+
+#: accerciser.appdata.xml.in:9
+msgid ""
+"Accerciser is an interactive Python accessibility explorer for the GNOME "
+"desktop. It uses AT-SPI to inspect and control widgets, allowing you to "
+"check if an application is providing correct information to assistive "
+"technologies and automated test frameworks."
+msgstr ""
+"Az Accerciser egy interaktív Python akadálymentesítés-felderítő a GNOME "
+"asztalhoz. A felületi elemek vizsgálatához és vezérléséhez AT-SPI-t használ, "
+"amely lehetővé teszi annak ellenőrzését, hogy egy alkalmazás helyes "
+"információkat szolgáltat-e a kisegítő technológiákhoz és az automatizált "
+"teszt keretrendszerekhez."
+
+#: accerciser.appdata.xml.in:14
+msgid ""
+"Accerciser has a simple plugin framework which you can use to create custom "
+"views of accessibility information."
+msgstr ""
+"Az Accerciser egy egyszerű bővítmény keretrendszerrel rendelkezik, amelyet "
+"akadálymentesítési információk egyéni nézeteinek létrehozásához használhat."
+
+#: accerciser.desktop.in:4
+msgid "Give your application an accessibility workout"
+msgstr "Alkalmazások felmérése akadálymentesítési szempontból"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: accerciser.desktop.in:6
+msgid "accessibility;development;test;"
+msgstr "akadálymentesítés;fejlesztés;teszt;"
+
+#: org.a11y.Accerciser.gschema.xml:6
+msgid "A list of plugins that are disabled by default"
+msgstr "Az alapértelmezésben letiltott bővítmények listája"
+
+#: org.a11y.Accerciser.gschema.xml:7
+msgid "A list of plugins that are disabled by default."
+msgstr "Az alapértelmezésben letiltott bővítmények listája."
+
+#: org.a11y.Accerciser.gschema.xml:11
+msgid "Highlight duration"
+msgstr "Kiemelés időtartama"
+
+#: org.a11y.Accerciser.gschema.xml:12
+msgid "The duration of the highlight box when selecting accessible nodes."
+msgstr "A kiemelési doboz időtartama akadálymentes módok kiválasztásakor."
+
+#: org.a11y.Accerciser.gschema.xml:16
+msgid "Highlight fill color"
+msgstr "Kiemelés kitöltőszíne"
+
+#: org.a11y.Accerciser.gschema.xml:17
+msgid "The color and opacity of the highlight fill."
+msgstr "A kiemelés kitöltésének színe és áttetszősége."
+
+#: org.a11y.Accerciser.gschema.xml:21
+msgid "Highlight border color"
+msgstr "Kiemelés szegélyszíne"
+
+#: org.a11y.Accerciser.gschema.xml:22
+msgid "The color and opacity of the highlight border."
+msgstr "A kiemelés szegélyének színe és áttetszősége."
+
+#: org.a11y.Accerciser.gschema.xml:26
+msgid "Horizontal split"
+msgstr "Vízszintes felosztás"
+
+#: org.a11y.Accerciser.gschema.xml:27
+msgid "Position of the horizontal split of the main window."
+msgstr "A főablak vízszintes felosztásának pozíciója."
+
+#: org.a11y.Accerciser.gschema.xml:31
+msgid "Vertical split"
+msgstr "Függőleges felosztás"
+
+#: org.a11y.Accerciser.gschema.xml:32
+msgid "Position of the vertical split of the main window."
+msgstr "A főablak függőleges felosztásának pozíciója."
+
+#: org.a11y.Accerciser.gschema.xml:36
+msgid "Default window height"
+msgstr "Alapértelmezett ablakmagasság"
+
+#: org.a11y.Accerciser.gschema.xml:37
+msgid "The window height value."
+msgstr "Az ablak magasságértéke."
+
+#: org.a11y.Accerciser.gschema.xml:41
+msgid "Default window width"
+msgstr "Alapértelmezett ablakszélesség"
+
+#: org.a11y.Accerciser.gschema.xml:42
+msgid "The window width value."
+msgstr "Az ablak szélességértéke."
+
+#: org.a11y.Accerciser.gschema.xml:51
+msgid "The layout for the bottom panel"
+msgstr "Az alsó panel elrendezése"
+
+#: org.a11y.Accerciser.gschema.xml:52
+msgid "The layout for the bottom panel pluginview."
+msgstr "Az alsó panel bővítménynézetének elrendezése."
+
+#: org.a11y.Accerciser.gschema.xml:56
+msgid "The layout for the top panel"
+msgstr "A felső panel elrendezése"
+
+#: org.a11y.Accerciser.gschema.xml:57
+msgid "The layout for the top panel pluginview."
+msgstr "A felső panel bővítménynézetének elrendezése."
+
+#: org.a11y.Accerciser.gschema.xml:61
+msgid "Single layout view"
+msgstr "Egy elrendezéses nézet"
+
+#: org.a11y.Accerciser.gschema.xml:62
+msgid "View plugins in a single layout."
+msgstr "Bővítmények megjelenítése egyetlen elrendezésben."
+
+#: org.a11y.Accerciser.gschema.xml:66
+msgid "Available new pluginviews"
+msgstr "Elérhető új bővítménynézetek"
+
+#: org.a11y.Accerciser.gschema.xml:67
+msgid "This list contains all the new available pluginviews"
+msgstr "Ez a lista az összes új elérhető bővítménynézetet tartalmazza"
+
+#: org.a11y.Accerciser.gschema.xml:73
+msgid "The pluginview layout"
+msgstr "A bővítménynézet elrendezése"
+
+#: org.a11y.Accerciser.gschema.xml:74
+msgid "The default plugin layout for the top panel."
+msgstr "A felső panel alapértelmezett bővítményelrendezése."
+
+#: org.a11y.Accerciser.gschema.xml:78
+msgid "Window height"
+msgstr "Ablakmagasság"
+
+#: org.a11y.Accerciser.gschema.xml:79
+msgid "Window height value."
+msgstr "Az ablak magasságértéke."
+
+#: org.a11y.Accerciser.gschema.xml:83
+msgid "Window width"
+msgstr "Ablakszélesség"
+
+#: org.a11y.Accerciser.gschema.xml:84
+msgid "Window width value."
+msgstr "Az ablak szélességértéke."
+
+#: org.a11y.Accerciser.gschema.xml:90
+msgid "Hotkey combination"
+msgstr "Gyorsbillentyű-kombináció"
+
+#: org.a11y.Accerciser.gschema.xml:91
+msgid "Hotkey combination for related action."
+msgstr "Gyorsbillentyű-kombináció a kapcsolódó művelethez."
+
+#: plugins/api_view.py:32
+msgid "API Browser"
+msgstr "API böngésző"
+
+#: plugins/api_view.py:35
+msgid "Browse the various methods of the current accessible"
+msgstr "Az aktuális akadálymentes különböző metódusainak böngészése"
+
+#: plugins/api_view.py:66
+msgid "Hide private attributes"
+msgstr "Privát attribútumok elrejtése"
+
+#: plugins/api_view.py:79
+msgid "Method"
+msgstr "Metódus"
+
+#: plugins/api_view.py:88
+msgid "Property"
+msgstr "Tulajdonság"
+
+#: plugins/api_view.py:93
+msgid "Value"
+msgstr "Érték"
+
+#: plugins/console.py:32
+msgid "IPython Console"
+msgstr "IPython konzol"
+
+#: plugins/console.py:35
+msgid "Interactive console for manipulating currently selected accessible"
+msgstr "Interaktív konzol a kiválasztott akadálymentes kezeléséhez"
+
+#: plugins/event_monitor.ui:61
+msgid "Event monitor"
+msgstr "Eseményfigyelő"
+
+#: plugins/event_monitor.ui:114
+msgid "_Monitor Events"
+msgstr "_Események figyelése"
+
+#: plugins/event_monitor.ui:224
+msgid "C_lear Selection"
+msgstr "Kijelölés _törlése"
+
+#: plugins/event_monitor.ui:257
+msgid "Everything"
+msgstr "Minden"
+
+#: plugins/event_monitor.ui:273
+msgid "Selected application"
+msgstr "Kijelölt alkalmazás"
+
+#: plugins/event_monitor.ui:289
+msgid "Selected accessible"
+msgstr "Kijelölt akadálymentes"
+
+#: plugins/event_monitor.ui:310
+msgid "Source"
+msgstr "Forrás"
+
+#. add accessible's name to buffer
+#: plugins/event_monitor.ui:338 plugins/interface_view.ui:615
+#: plugins/interface_view.py:735 plugins/validate.py:295
+#: src/lib/accerciser/accessible_treeview.py:462
+#: src/lib/accerciser/plugin/plugin_manager.py:386
+msgid "Name"
+msgstr "Név"
+
+#: plugins/event_monitor.ui:358
+msgid "Full Name"
+msgstr "Teljes név"
+
+#: plugins/event_monitor.py:51
+msgid "Event Monitor"
+msgstr "Eseményfigyelő"
+
+#: plugins/event_monitor.py:54
+msgid "Shows events as they occur from selected types and sources"
+msgstr ""
+"A kiválasztott típusú és forrású eseményeket a bekövetkezésük sorrendjében "
+"jeleníti meg"
+
+#: plugins/event_monitor.py:64
+msgid "Highlight last event entry"
+msgstr "Utolsó eseménybejegyzés kiemelése"
+
+#: plugins/event_monitor.py:68
+msgid "Start/stop event recording"
+msgstr "Eseményrögzítés indítása/leállítása"
+
+#: plugins/event_monitor.py:72
+msgid "Clear event log"
+msgstr "Eseménynapló törlése"
+
+#: plugins/interface_view.ui:125
+msgid "Child count"
+msgstr "Gyermekek száma"
+
+#: plugins/interface_view.ui:144 plugins/interface_view.ui:1028
+#: plugins/interface_view.ui:1997 plugins/interface_view.ui:2016
+#: plugins/interface_view.ui:2035 plugins/interface_view.ui:2829
+#: plugins/interface_view.ui:2848 plugins/interface_view.ui:2867
+msgid "0"
+msgstr "0"
+
+#: plugins/interface_view.ui:181 plugins/interface_view.ui:1577
+#: plugins/interface_view.py:343 plugins/interface_view.py:863
+msgid "(no description)"
+msgstr "(nincs leírás)"
+
+#. add description to buffer
+#: plugins/interface_view.ui:199 plugins/interface_view.ui:626
+#: plugins/interface_view.ui:1545 plugins/validate.py:230
+#: plugins/validate.py:293
+msgid "Description"
+msgstr "Leírás"
+
+#: plugins/interface_view.ui:233 plugins/interface_view.py:347
+msgid "(no ID)"
+msgstr "(nincs azonosító)"
+
+#: plugins/interface_view.ui:251 plugins/interface_view.ui:757
+msgid "ID"
+msgstr "Azonosító"
+
+#: plugins/interface_view.ui:325
+msgid "States"
+msgstr "Állapotok"
+
+#: plugins/interface_view.ui:397 plugins/interface_view.ui:1242
+#: plugins/interface_view.ui:2739
+msgid "Attributes"
+msgstr "Jellemzők"
+
+#: plugins/interface_view.ui:518 plugins/interface_view.ui:1405
+msgid "Show"
+msgstr "Megjelenítés"
+
+#: plugins/interface_view.ui:551
+msgid "Relations"
+msgstr "Relációk"
+
+#: plugins/interface_view.ui:572
+msgid "_Accessible"
+msgstr "_Akadálymentes"
+
+#: plugins/interface_view.ui:637
+msgid "Key binding"
+msgstr "Billentyűtársítás"
+
+#: plugins/interface_view.ui:691
+msgid "Perform action"
+msgstr "Művelet végrehajtása"
+
+#: plugins/interface_view.ui:724
+msgid "Acti_on"
+msgstr "Mű_velet"
+
+#: plugins/interface_view.ui:772
+msgid "Toolkit"
+msgstr "Eszközkészlet"
+
+#: plugins/interface_view.ui:789
+msgid "Version"
+msgstr "Verzió"
+
+#: plugins/interface_view.ui:865
+msgid "Ap_plication"
+msgstr "_Alkalmazás"
+
+#: plugins/interface_view.ui:884
+msgid "Col_lection"
+msgstr "_Gyűjtemény"
+
+#. Screen coordinates
+#. Component size in pixels
+#. Screen coordinates
+#. Component size
+#: plugins/interface_view.ui:917 plugins/interface_view.ui:954
+#: plugins/interface_view.ui:1102 plugins/interface_view.ui:1505
+#: plugins/interface_view.ui:1525
+msgid "0, 0"
+msgstr "0, 0"
+
+#: plugins/interface_view.ui:937
+msgid "Relative position"
+msgstr "Relatív pozíció"
+
+#: plugins/interface_view.ui:974 plugins/interface_view.ui:1488
+msgid "Size"
+msgstr "Méret"
+
+#: plugins/interface_view.ui:991
+msgid "WIDGET"
+msgstr "GRAFIKAI ELEM"
+
+#: plugins/interface_view.ui:1011
+msgid "Layer"
+msgstr "Réteg"
+
+#: plugins/interface_view.ui:1048
+msgid "MDI-Z-order"
+msgstr "MDI-Z sorrend"
+
+#: plugins/interface_view.ui:1085
+msgid "Alpha"
+msgstr "Alfa"
+
+#: plugins/interface_view.ui:1120
+msgid "Absolute position"
+msgstr "Abszolút pozíció"
+
+#: plugins/interface_view.ui:1139
+msgid "Co_mponent"
+msgstr "_Komponens"
+
+#: plugins/interface_view.ui:1158
+msgid "Des_ktop"
+msgstr "_Asztal"
+
+#: plugins/interface_view.ui:1264
+msgid "Locale:"
+msgstr "Területi beállítás:"
+
+#: plugins/interface_view.ui:1305
+msgid "_Document"
+msgstr "_Dokumentum"
+
+#. add url role to buffer
+#: plugins/interface_view.ui:1326 plugins/validate.py:299
+msgid "Hyperlink"
+msgstr "Hiperlink"
+
+#: plugins/interface_view.ui:1438
+msgid "H_ypertext"
+msgstr "_Hiperszöveg"
+
+#: plugins/interface_view.ui:1471
+msgid "Position"
+msgstr "Pozíció"
+
+#: plugins/interface_view.ui:1560
+msgid "Locale"
+msgstr "Területi beállítás"
+
+#: plugins/interface_view.ui:1622
+msgid "_Image"
+msgstr "_Kép"
+
+#: plugins/interface_view.ui:1641
+msgid "Lo_gin Helper"
+msgstr "Bejelentkezéssegé_d"
+
+#: plugins/interface_view.ui:1712
+msgid "Select All"
+msgstr "Mindent kijelöl"
+
+#: plugins/interface_view.ui:1754
+msgid "_Selection"
+msgstr "_Kijelölés"
+
+#: plugins/interface_view.ui:1792
+msgid "Content type"
+msgstr "Tartalom típusa"
+
+#: plugins/interface_view.ui:1803 plugins/interface_view.py:743
+msgid "URI"
+msgstr "URI"
+
+#: plugins/interface_view.ui:1822
+msgid "St_reamable Content"
+msgstr "S_ugározható tartalom"
+
+#: plugins/interface_view.ui:1863
+msgid "Caption:"
+msgstr "Felirat:"
+
+#: plugins/interface_view.ui:1908
+msgid "Summary:"
+msgstr "Összefoglaló:"
+
+#: plugins/interface_view.ui:2052
+msgid "Selected columns"
+msgstr "Kijelölt oszlopok"
+
+#: plugins/interface_view.ui:2068
+msgid "Selected rows"
+msgstr "Kijelölt sorok"
+
+#: plugins/interface_view.ui:2084
+msgid "Columns"
+msgstr "Oszlopok"
+
+#: plugins/interface_view.ui:2100
+msgid "Rows"
+msgstr "Sorok"
+
+#: plugins/interface_view.ui:2125
+msgid "Table Information"
+msgstr "Táblázatinformációk"
+
+#: plugins/interface_view.ui:2171
+msgid "name (x,y)"
+msgstr "név (x,y)"
+
+#: plugins/interface_view.ui:2225 plugins/interface_view.ui:2344
+msgid "Header:"
+msgstr "Fejléc:"
+
+#: plugins/interface_view.ui:2238 plugins/interface_view.ui:2357
+msgid "<no description>"
+msgstr "<nincs leírás>"
+
+#. How many rows the cell spans.
+#. How many columns the cell spans.
+#: plugins/interface_view.ui:2271 plugins/interface_view.ui:2390
+msgid "Extents:"
+msgstr "Kiterjedések:"
+
+#: plugins/interface_view.ui:2311
+msgid "Row"
+msgstr "Sor"
+
+#: plugins/interface_view.ui:2430
+msgid "Column"
+msgstr "Oszlop"
+
+#: plugins/interface_view.ui:2448
+msgid "Selected Cell"
+msgstr "Kijelölt cella"
+
+#: plugins/interface_view.ui:2472
+msgid "_Table"
+msgstr "_Táblázat"
+
+#: plugins/interface_view.ui:2533
+msgid "Text"
+msgstr "Szöveg"
+
+#: plugins/interface_view.ui:2571
+msgid "Offset"
+msgstr "Eltolás"
+
+#: plugins/interface_view.ui:2609
+msgid "Include defaults"
+msgstr "Alapértelmezések felvétele"
+
+#. Start character offset of text attributes span
+#: plugins/interface_view.ui:2631
+msgid "Start: 0"
+msgstr "Kezdés: 0"
+
+#. End character offset of text attributes span
+#: plugins/interface_view.ui:2649
+msgid "End: 0"
+msgstr "Befejezés: 0"
+
+#: plugins/interface_view.ui:2763
+msgid "Te_xt"
+msgstr "Szöve_g"
+
+#: plugins/interface_view.ui:2818
+msgid "Current value"
+msgstr "Jelenlegi érték"
+
+#: plugins/interface_view.ui:2886
+msgid "Minimum increment"
+msgstr "Minimális növekmény"
+
+#: plugins/interface_view.ui:2901
+msgid "Maximum value"
+msgstr "Maximális érték"
+
+#: plugins/interface_view.ui:2916
+msgid "Minimum value"
+msgstr "Minimális érték"
+
+#: plugins/interface_view.ui:2942
+msgid "Val_ue"
+msgstr "É_rték"
+
+#: plugins/interface_view.ui:2961
+msgid "unknown"
+msgstr "ismeretlen"
+
+#. Translators: this is a plugin name
+#: plugins/interface_view.py:43
+msgid "Interface Viewer"
+msgstr "Felületmegjelenítő"
+
+#. Translators: this is a plugin description
+#: plugins/interface_view.py:46
+msgid "Allows viewing of various interface properties"
+msgstr "Lehetővé teszi különböző felülettulajdonságok megjelenítését"
+
+#: plugins/interface_view.py:236
+msgid "(not implemented)"
+msgstr "(nincs megvalósítva)"
+
+#: plugins/interface_view.py:751
+msgid "Start"
+msgstr "Kezdés"
+
+#: plugins/interface_view.py:759
+msgid "End"
+msgstr "Befejezés"
+
+#: plugins/interface_view.py:921
+msgid "Too many selectable children"
+msgstr "Túl sok kijelölhető gyermek"
+
+#: plugins/interface_view.py:1274 plugins/interface_view.py:1277
+msgid "(Editable)"
+msgstr "(Szerkeszthető)"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "Start" is the character offset where the formatting begins. If
+#. the first four letters of some text is bold, the start offset of
+#. that bold formatting is 0.
+#: plugins/interface_view.py:1424
+#, python-format
+msgid "Start: %d"
+msgstr "Kezdés: %d"
+
+#. Translators: This string appears in Accerciser's Interface Viewer
+#. and refers to a range of characters which has a particular format.
+#. "End" is the character offset where the formatting ends.  If the
+#. first four letters of some text is bold, the end offset of that
+#. bold formatting is 4.
+#: plugins/interface_view.py:1430
+#, python-format
+msgid "End: %d"
+msgstr "Befejezés: %d"
+
+#: plugins/quick_select.py:16
+msgid "Quick Select"
+msgstr "Gyorskiválasztás"
+
+#: plugins/quick_select.py:19
+msgid "Plugin with various methods of selecting accessibles quickly."
+msgstr ""
+"Bővítmény az akadálymentesek gyors kiválasztására szolgáló különböző "
+"metódusokkal."
+
+#: plugins/quick_select.py:25
+msgid "Inspect last focused accessible"
+msgstr "Utoljára fókuszban lévő akadálymentes vizsgálata"
+
+#: plugins/quick_select.py:29
+msgid "Inspect accessible under mouse"
+msgstr "Az egér alatti akadálymentes vizsgálata"
+
+#: plugins/validate.ui:38
+msgid "Sche_ma:"
+msgstr "Sé_ma:"
+
+#: plugins/validate.ui:89
+msgid "V_alidate"
+msgstr "_Ellenőrzés"
+
+#: plugins/validate.ui:174 plugins/validate.py:376 plugins/validate.py:433
+msgid "Idle"
+msgstr "Üresjárat"
+
+#: plugins/validate.py:80
+msgid "No description"
+msgstr "Nincs leírás"
+
+#: plugins/validate.py:167
+msgid "AT-SPI Validator"
+msgstr "AT-SPI ellenőrző"
+
+#: plugins/validate.py:169
+msgid "Validates application accessibility"
+msgstr "Alkalmazások akadálymentesítésének ellenőrzése"
+
+#. log level column
+#. add level to buffer
+#: plugins/validate.py:223 plugins/validate.py:291
+msgid "Level"
+msgstr "Szint"
+
+#. add accessible's role to buffer
+#: plugins/validate.py:297 src/lib/accerciser/accessible_treeview.py:471
+msgid "Role"
+msgstr "Szerep"
+
+#: plugins/validate.py:362
+msgid "Saving"
+msgstr "Mentés"
+
+#: plugins/validate.py:413
+msgid "Validating"
+msgstr "Ellenőrzés"
+
+#: plugins/validate.py:571
+msgid "EXCEPT"
+msgstr "KIVÉTEL"
+
+#: plugins/validate.py:578
+msgid "ERROR"
+msgstr "HIBA"
+
+#: plugins/validate.py:586
+msgid "WARN"
+msgstr "FIGY"
+
+#: plugins/validate.py:593
+msgid "INFO"
+msgstr "INFO"
+
+#: plugins/validate.py:600
+msgid "DEBUG"
+msgstr "HIBAKERESÉS"
+
+#: plugindata/validate/basic.py:8
+msgid "Basic"
+msgstr "Alap"
+
+#: plugindata/validate/basic.py:9
+msgid "Tests fundamental GUI application accessibility"
+msgstr "Alkalmazások alapvető GUI akadálymentesítésének tesztelése"
+
+#: plugindata/validate/basic.py:28
+#, python-format
+msgid "actionable %s is not focusable or selectable"
+msgstr "a(z) %s műveletvégző nem fókuszálható vagy kiválasztható"
+
+#: plugindata/validate/basic.py:46
+#, python-format
+msgid "interactive %s is not actionable"
+msgstr "az interaktív %s nem végezhet műveletet"
+
+#: plugindata/validate/basic.py:61
+msgid "more than one focused widget"
+msgstr "több fókuszban lévő felületi elem"
+
+#: plugindata/validate/basic.py:84
+#, python-format
+msgid "%s has no text interface"
+msgstr "%s nem rendelkezik szöveges felülettel"
+
+#. Translators: The first variable is the role name of the object that has an
+#. index mismatch.
+#.
+#: plugindata/validate/basic.py:104
+#, python-format
+msgid "%s index in parent does not match child index"
+msgstr "%s index a szülőben nem egyezik a gyermek indexszel"
+
+#: plugindata/validate/basic.py:150
+#, python-format
+msgid "Missing reciprocal for %s relation"
+msgstr "A(z) %s kapcsolat ellentéte hiányzik"
+
+#. Translators: The first variable is the role name of the object that is missing
+#. the name or label.
+#.
+#: plugindata/validate/basic.py:199
+#, python-format
+msgid "%s missing name or label"
+msgstr "%s név vagy címke hiányzik"
+
+#: plugindata/validate/basic.py:217
+#, python-format
+msgid "focusable %s has a table interface, but not a selection interface"
+msgstr ""
+"a(z) %s fókuszba hozható elem tábla-, de nem kiválasztási felülettel "
+"rendelkezik"
+
+#. Translators: First variable is an accessible role name, the next two
+#. variables are accessible state names.
+#. For example: "button has focused state without focusable state".
+#.
+#: plugindata/validate/basic.py:246
+#, python-format
+msgid "%s has %s state without %s state"
+msgstr "a(z) %s rendelkezik %s állapottal és nem rendelkezik %s állapottal"
+
+#. Translators: The radio button does not belong to a set, thus it is useless.
+#. The first variable is the object's role name.
+#.
+#: plugindata/validate/basic.py:272
+#, python-format
+msgid "%s does not belong to a set"
+msgstr "%s nem tartozik halmazhoz"
+
+#. Translators: The row or column number retrieved from a table child's
+#. object at a certain index is wrong.
+#. The first variable is the role name of the object, the second is the
+#. given index.
+#.
+#: plugindata/validate/basic.py:307
+#, python-format
+msgid "%(rolename)s index %(num)d does not match row and column"
+msgstr "a(z) %(rolename)s %(num)d indexe nem illeszkedik sorra és oszlopra"
+
+#. Translators: The "parent index" is the order of the child in the parent.
+#. the "row and column index" should be the same value retrieved by the
+#. object's location in the table.
+#. The first variable is the object's role name, the second and third variables
+#. are index numbers.
+#.
+#: plugindata/validate/basic.py:339
+#, python-format
+msgid ""
+"%(rolename)s parent index %(num1)d does not match row and column index "
+"%(num2)d"
+msgstr ""
+"%(rolename)s %(num1)d szülőindexe nem illeszkedik a(z) %(num2)d sor- és "
+"oszlopindexre"
+
+#: plugindata/validate/basic.py:366
+#, python-format
+msgid "%s has no name or description"
+msgstr "%s nem rendelkezik névvel vagy leírással"
+
+#: src/lib/accerciser/accerciser.py:80
+msgid "_Preferences…"
+msgstr "B_eállítások…"
+
+#: src/lib/accerciser/accerciser.py:82
+msgid "_Contents"
+msgstr "_Tartalom"
+
+#: src/lib/accerciser/accessible_treeview.py:415
+msgid "<dead>"
+msgstr "<halott>"
+
+#: src/lib/accerciser/accessible_treeview.py:478
+msgid "Children"
+msgstr "Gyermekek"
+
+#: src/lib/accerciser/accessible_treeview.py:506
+#| msgid "_Hide/Show Applications without children"
+msgid "_Show Applications without children"
+msgstr "_Gyermekek nélküli alkalmazások megjelenítése"
+
+#: src/lib/accerciser/accessible_treeview.py:509
+msgid "_Refresh Registry"
+msgstr "_Nyilvántartás frissítése"
+
+#. Translators: Appears as tooltip
+#.
+#: src/lib/accerciser/accessible_treeview.py:512
+msgid "Refresh all"
+msgstr "Összes frissítése"
+
+#. Translators: Refresh current tree node's children.
+#.
+#: src/lib/accerciser/accessible_treeview.py:515
+msgid "Refresh _Node"
+msgstr "_Csomópont frissítése"
+
+#. Translators: Appears as tooltip
+#.
+#: src/lib/accerciser/accessible_treeview.py:518
+msgid "Refresh selected node’s children"
+msgstr "Kiválasztott csomópont gyermekeinek frissítése"
+
+#: src/lib/accerciser/hotkey_manager.py:247
+msgid "Component"
+msgstr "Komponens"
+
+#: src/lib/accerciser/hotkey_manager.py:254
+msgid "Task"
+msgstr "Feladat"
+
+#: src/lib/accerciser/hotkey_manager.py:261
+msgid "Key"
+msgstr "Billentyű"
+
+#: src/lib/accerciser/hotkey_manager.py:271
+msgid "Alt"
+msgstr "Alt"
+
+#: src/lib/accerciser/hotkey_manager.py:278
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: src/lib/accerciser/hotkey_manager.py:286
+msgid "Shift"
+msgstr "Shift"
+
+#: src/lib/accerciser/main_window.py:43
+msgid "Accerciser Accessibility Explorer"
+msgstr "Accerciser akadálymentesítés-felderítő"
+
+#: src/lib/accerciser/main_window.py:77
+msgid "Top panel"
+msgstr "Felső panel"
+
+#: src/lib/accerciser/main_window.py:78
+msgid "Bottom panel"
+msgstr "Alsó panel"
+
+#: src/lib/accerciser/prefs_dialog.py:38
+msgid "accerciser Preferences"
+msgstr "Az Accerciser beállításai"
+
+#: src/lib/accerciser/prefs_dialog.py:45
+msgid "Plugins"
+msgstr "Bővítmények"
+
+#: src/lib/accerciser/prefs_dialog.py:46
+msgid "Global Hotkeys"
+msgstr "Globális gyorsbillentyűk"
+
+#: src/lib/accerciser/prefs_dialog.py:55
+msgid "Highlighting"
+msgstr "Kiemelés"
+
+#: src/lib/accerciser/prefs_dialog.py:87
+msgid "Highlight duration:"
+msgstr "Kiemelés hossza:"
+
+#: src/lib/accerciser/prefs_dialog.py:94
+msgid "Border color:"
+msgstr "Szegély színe:"
+
+#: src/lib/accerciser/prefs_dialog.py:97
+msgid "The border color of the highlight box"
+msgstr "A kiemelési mező szegélyszíne"
+
+#: src/lib/accerciser/prefs_dialog.py:98
+msgid "Fill color:"
+msgstr "Kitöltőszín:"
+
+#: src/lib/accerciser/prefs_dialog.py:101
+msgid "The fill color of the highlight box"
+msgstr "A kiemelési mező kitöltésének színe"
+
+#: src/lib/accerciser/about_dialog.py:52
+msgid "translator-credits"
+msgstr "Kelemen Gábor <kelemeng at gnome dot hu>"
+
+#: src/lib/accerciser/about_dialog.py:53
+msgid "An interactive Python accessibility explorer"
+msgstr "Interaktív Python akadálymentesítés-felderítő"
+
+#: src/lib/accerciser/about_dialog.py:54
+msgid "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+msgstr "accerciser Copyright © 2006, 2007 IBM Corporation (BSD)"
+
+#: src/lib/accerciser/about_dialog.py:56
+msgid "The New BSD License. See the COPYING and NOTICE files for details."
+msgstr "Az új BSD licenc. A részletekért lásd a COPYING és NOTICE fájlokat."
+
+#: src/lib/accerciser/about_dialog.py:58
+msgid "Web site"
+msgstr "Webhely"
+
+#: src/lib/accerciser/bookmarks.py:66
+msgid "_Add Bookmark…"
+msgstr "_Könyvjelző hozzáadása…"
+
+#: src/lib/accerciser/bookmarks.py:67
+msgid "Bookmark selected accessible."
+msgstr "Könyvjelző a kijelölt akadálymentesre."
+
+#: src/lib/accerciser/bookmarks.py:69
+msgid "_Edit Bookmarks…"
+msgstr "Könyvjelzők s_zerkesztése…"
+
+#: src/lib/accerciser/bookmarks.py:70
+msgid "Manage bookmarks."
+msgstr "Könyvjelzők kezelése."
+
+#: src/lib/accerciser/bookmarks.py:328
+msgid "Edit Bookmarks…"
+msgstr "Könyvjelzők szerkesztése…"
+
+#: src/lib/accerciser/bookmarks.py:434
+msgid "Title"
+msgstr "Cím"
+
+#: src/lib/accerciser/bookmarks.py:442
+msgid "Application"
+msgstr "Alkalmazás"
+
+#: src/lib/accerciser/bookmarks.py:450
+msgid "Path"
+msgstr "Útvonal"
+
+#: src/lib/accerciser/bookmarks.py:519
+msgid "Add Bookmark…"
+msgstr "Könyvjelző hozzáadása…"
+
+#: src/lib/accerciser/bookmarks.py:533
+msgid "Title:"
+msgstr "Cím:"
+
+#: src/lib/accerciser/bookmarks.py:536
+msgid "Application:"
+msgstr "Alkalmazás:"
+
+#: src/lib/accerciser/bookmarks.py:539
+msgid "Path:"
+msgstr "Útvonal:"
+
+#: src/lib/accerciser/plugin/message.py:153
+msgid "Plugin Errors"
+msgstr "Bővítményhibák"
+
+#. Translators: This is the viewport in which the plugin appears,
+#. it is a noun.
+#.
+#: src/lib/accerciser/plugin/plugin_manager.py:395
+msgctxt "viewport"
+msgid "View"
+msgstr "Nézet"
+
+#: src/lib/accerciser/plugin/plugin_manager.py:472
+msgid "No view"
+msgstr "Nincs nézet"
+
+#: src/lib/accerciser/plugin/view.py:377
+msgid "_Single plugins view"
+msgstr "_Egybővítményes nézet"
+
+#: src/lib/accerciser/plugin/view.py:766
+msgid "Plugin View"
+msgstr "Bővítménynézet"
+
+#: src/lib/accerciser/plugin/view.py:769
+#, python-format
+msgid "Plugin View (%d)"
+msgstr "Bővítménynézet (%d)"
+
+#: src/lib/accerciser/plugin/view.py:1074
+msgid "_New view…"
+msgstr "Ú_j nézet…"
+
+#: src/lib/accerciser/plugin/view.py:1130
+msgid "New View…"
+msgstr "Új nézet…"
+
+#: src/lib/accerciser/ui_manager.py:23
+msgid "_File"
+msgstr "_Fájl"
+
+#: src/lib/accerciser/ui_manager.py:24
+msgid "_Edit"
+msgstr "S_zerkesztés"
+
+#: src/lib/accerciser/ui_manager.py:25
+msgctxt "menu"
+msgid "_Bookmarks"
+msgstr "_Könyvjelzők"
+
+#: src/lib/accerciser/ui_manager.py:26
+msgctxt "menu"
+msgid "_View"
+msgstr "_Nézet"
+
+#: src/lib/accerciser/ui_manager.py:27
+msgid "_Help"
+msgstr "_Súgó"

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ipython_plugin" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">2. Πρόσθετο IPython</title>
+    <link type="next" xref="howto_write_a_plugin"/>
+    <desc>Όταν όλα αποτύχουν</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Πρόσθετο κονσόλας IPython </title>
+  <p>Το πρόσθετο κονσόλας IPython σας επιτρέπει να αλληλεπιδράσετε σε πραγματικό χρόνο με ένα επιλεγμένο αντικείμενο στη <link xref="desktop_tree_view"> δενδρική προβολή εφαρμογών</link>. Από τη στιγμή που η κονσόλα IPython είναι ένα διαδραστικό κέλυφος της Python, μπορείτε να εισαγάγετε όσα αρθρώματα της Python θέλετε.</p>
+
+  <note style="tip">
+    <p>Σιγουρευτείτε πως έχετε εγκατεστημένο το πακέτο IPython στο σύστημα σας. Διαφορετικά το πρόσθετο κονσόλας IPython δεν θα λειτουργήσει σωστά.</p>
+  </note>
+  
+  <section id="running_ipython_plugin">
+    <title>Εκτέλεση του πρόσθετου κονσόλας IPython </title>
+    <p>Για να εκτελέσετε το πρόσθετο κονσόλας IPython, επιλέξτε ένα από τα προσβάσιμα αντικείμενα στη δενδρική προβολή εφαρμογών - ή μια εφαρμογή ή ένα γραφικό συστατικό. Στο πρόσθετο, το επιλεγμένο αντικείμενο αντιστοιχεί στη μεταβλητή 'acc'.</p>
+    <p>Πατώντας το <key>Tab</key> εμφανίζονται επιλογές συμπλήρωσης για την τρέχουσα εντολή, κάτι που μπορεί να είναι χρήσιμο στην εύρεση μεθόδων pyatspi.</p>  
+
+  <figure>
+    <title>Εξερευνώντας επιλεγμένα αντικείμενο με το πρόσθετο τερματικού IPython</title>
+    <desc>Το πρόσθετο κονσόλας IPython σας επιτρέπει να εξετάσετε μεθόδους, σταθερές, και ιδιότητες σχετικές με ένα επιλεγμένο αντικείμενο στη δενδρική προβολή της εφαρμογής.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/IPython_plugin.png">
+      <p>Το πρόσθετο κονσόλας IPython σας επιτρέπει να εξετάσετε μεθόδους, σταθερές, και ιδιότητες σχετικές με ένα επιλεγμένο αντικείμενο στη δενδρική προβολή της εφαρμογής.</p>
+    </media>
+  </figure>
+
+  <note style="tip">
+    <p>Πληκτρολογώντας <cmd>help(acc)</cmd> στην κονσόλα IPython εμφανίζεται χρήσιμη τεκμηρίωση σχετικά με το επιλεγμένο προσβάσιμο αντικείμενο.</p>
+  </note>
+  </section>
+</page>

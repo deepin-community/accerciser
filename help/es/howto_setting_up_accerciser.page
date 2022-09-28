@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_setting_up_accerciser" xml:lang="es">
+<info>
+  <link type="guide" xref="index#getting_started"/>
+  <link type="next" xref="desktop_tree_view"/>
+  <title type="sort">2. Cómo instalar y configurar <app>Accerciser</app></title>
+  <title type="link">Configurar <app>Accerciser</app></title>
+    <desc>Instalar y ejecutar <app>Accerciser</app> en su sistema</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Configurar <app>Accerciser</app></title>
+
+    <p>Compruebe si su distribución tiene <app>Accerciser</app> ya empaquetado. En este caso, puede instalarlo mediante su gestor de paquetes. Si no, puede leer la siguiente sección para instalar <app>Accerciser</app> manualmente.</p>
+
+    <section id="installing_accerciser_manually">
+      <title>Instalar <app>Accerciser</app> manualmente</title>
+       <p>Para instalar <app>Accerciser</app> manualmente, primero deberá descargarlo. El código fuente de <app>Accerciser</app> se puede descargar desde el <link href="http://ftp.gnome.org/pub/GNOME/sources/accerciser/">sitio FTP de gnome.org</link> o clonarse desde el <link href="https://gitlab.gnome.org/GNOME/accerciser">repositorio GIT de gnome.org</link>.</p>
+
+      <note style="caution">
+        <p>Si no usa GNOME 3, puede pasar que la versión 3 o superior de <app>Accerciser</app> no es compatible con su entorno.</p>
+      </note>
+
+
+      <p>Después de obtener <application>Accerciser</application> instálelo usando los siguientes comandos:</p>
+      <steps>
+        <item><p><cmd>cd accerciser</cmd></p></item>
+        <item><p><cmd>./autogen.sh # o ./configure para la instalación inicial</cmd></p></item>
+        <item><p><cmd>make</cmd></p></item>
+        <item><p><cmd>sudo make install # o make install como administrador</cmd></p></item>
+      </steps>
+      <p>Si tiene problemas al instalar <app>Accerciser</app> en su sistema, es posible que falte alguna de sus dependencias. Compruebe el <link href="https://live.gnome.org/Accerciser/#Requirements">wiki de <app>Accerciser</app></link> para asegurarse de que tiene todas las dependencias instaladas correctamente.</p>
+    </section>
+ 
+    <section id="running_accerciser">
+      <title>Ejecutar <app>Accerciser</app></title>
+        <p>Para iniciar <app>Accerciser</app>, escriba <cmd>accerciser</cmd> en una ventana de la terminal o en el diálogo «Ejecutar» y pulse <key>Intro</key>.</p>
+        <p>Después de esto puede usar <app>Accerciser</app> para inspeccionar un elemento accesible mostrado en la jerarquía de la <link xref="desktop_tree_view">vista en árbol de la aplicación.</link>. Seleccione un elemento e investíguelo usando uno de los complementos de <app>Accerciser</app>.</p>
+    </section>
+</page>

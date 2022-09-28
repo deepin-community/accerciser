@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="desktop_tree_view" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">1. Vista en árbol de la aplicación</title>
+    <link type="next" xref="interface_viewer_plugin"/>
+    <desc>Explorar la jerarquía accesible del escritorio</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Vista en árbol de la aplicación</title>
+
+  <p>La interfaz de <app>Accerciser</app> contiene una vista de árbol llamada vista de árbol de la aplicación, que cubre todas las aplicaciones accesibles actualmente en ejecución en el escritorio. Para crear esta vista de árbol <app>Accerciser</app> usa el demonio de registro de AT-SPI. Este demonio es el responsable de mantener el seguimiento de todas las aplicaciones accesibles en el escritorio y reenviar los eventos X sobre el D-Bus de AT-SPI. Después de obtener todas las aplicaciones accesibles, <app>Accerciser</app> representa cada una de ellas en una estructura jerárquica con nodos expandidos.</p>
+
+  <figure>
+    <title>Vista en árbol de la aplicación</title>
+    <desc>La vista en árbol de la aplicación de <app>Accerciser</app> representa la interfaz de cada aplicación accesible en ejecución en el escritorio como una estructura jerárquica de widget.</desc>
+    <media type="image" mime="image/png" width="400" height="600" src="figures/tree_view_accerciser.png">
+      <p>La vista en árbol de la aplicación de <app>Accerciser</app> representa la interfaz de cada aplicación accesible en ejecución en el escritorio como una estructura jerárquica de widget.</p>
+    </media>
+  </figure>
+
+
+  <p>El primer nodo de cada aplicación representada en esta vista de árbol es la aplicación en sí. Cuando expande un nodo puede ver todos sus widgets hijos, lo que permite una vista jerárquica de la interfaz de la aplicación. Para cada nodo, <app>Accerciser</app> proporciona alguna información básica, tal como su nombre, rol y número de hijos.</p>
+
+  <note style="caution">
+    <p>Tenga en cuenta que los nodos con muchos hijos puede tardar en expandirse.</p>
+  </note>
+
+  <section id="bookmarking">
+    <title>Marcar elementos en la vista en árbol de la aplicación</title>
+    <p><app>Accerciser</app> permite marcar elementos en la vista en árbol de la aplicación, para examinarlos posteriormente. Esto puede ser útil si la aplicación objetivo debe reiniciarse, por ejemplo, después de reconstruirla. Para marcar un elemento, selecciónelo y pulse <guiseq><gui>Marcadores</gui><gui>Añadir marcador</gui></guiseq> o pulse <keyseq><key>Ctrl</key><key>d</key></keyseq>.</p>
+    <p>Los marcadores a accesibles en <app>Accerciser</app> están definidos por el nombre de la aplicación y una «ruta» en la jerarquía interna del accesible de la aplicación al accesible marcado. Cuando la aplicación objetivo está en un estado diferente (ej. múltiples marcos de nivel superior) puede que la ruta no sea correcta. Se pueden gestionar los marcadores accediendo al diálogo de edición de marcadores a través de <guiseq><gui>Marcadores</gui><gui>Editar marcadores</gui></guiseq>.</p>
+  </section>
+
+</page>

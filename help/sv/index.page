@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="sv">
+  <info>
+    <title type="text">Accerciser</title>
+    <title type="link">Introduktion till <app>Accerciser</app></title>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title><media type="image" mime="image/png" its:translate="no" src="figures/accerciser-logo.png">
+      <span its:translate="yes">Logo för <app>Accerciser</app></span>
+    </media> <app>Accerciser</app></title>
+  <note style="important">
+    <title>Innan du börjar</title>
+    <p>Läs <link xref="help:gnome-help/a11y">hjälpen för hjälpmedel</link></p>
+  </note>
+  <section id="getting_started" style="2column">
+    <title>Komma igång</title>
+  </section>
+  <section id="examining_a11y" style="2column">
+    <title>Undersök ett programs behov av hjälpmedel</title>
+  </section>
+  <section id="advanced" style="2column">
+    <title>Avancerade ämnen</title>
+  </section>
+</page>

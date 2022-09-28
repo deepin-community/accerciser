@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="api_browser_plugin" xml:lang="uk">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">1. Додаток навігатора програмного інтерфейсу (API)</title>
+    <link type="next" xref="ipython_plugin"/>
+    <desc>Перевірка інтерфейсів, методів та властивостей</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Додаток навігатора програмного інтерфейсу (API)</title>
+  <p>Якщо позначено доступний віджет на <link xref="desktop_tree_view">панелі ієрархії програм</link>, додаток навігатора програмним інтерфейсом покаже його реалізовані інтерфейси AT-SPI разом з їхніми методами та властивостями.</p>
+
+  <figure>
+    <title>Додаток навігатора програмного інтерфейсу (API)</title>
+    <desc>За допомогою додатка навігатора програмним інтерфейсом ви можете вивчати інтерфейси, методи та властивості цільового доступного віджета у програмі.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/api_browser.png">
+      <p>За допомогою додатка навігатора програмним інтерфейсом ви можете вивчати інтерфейси, методи та властивості цільового доступного віджета у програмі.</p>
+    </media>
+  </figure>
+
+  <section id="running_api_browser_plugin">
+    <title>Робота із додатком навігації програмним інтерфейсом</title>
+    <p>Щоб запустити додаток навігатора програмним інтерфейсом, виберіть доступний віджет на панелі ієрархії програм. Подвійне клацання на віджеті підсвітить його у інтерфейсі програми, отже ви зможете бути певні, що певний віджет є саме тим, який ви шукаєте.</p>
+    <p>Після цього виберіть один із інтерфейсів віджета зі спадного списку. У найлівішому стовпчику панелі додатка буде показано список усіх відкритих (piublic) методів вибраного інтерфейсу. Усі відкриті властивості, разом із їхніми відповідними значеннями, буде показано у списку найправішого стовпчика панелі додатка.</p>  
+    <p>Типово, додаток навігації програмним інтерфейсом приховує закриті (private) методи і властивості. Щоб переглянути їхній список, зніміть позначку з пункту <cmd>Приховувати внутрішні атрибути</cmd>. Щоб приховати їх знову, знову позначте цей пункт.</p>
+  </section>
+</page>

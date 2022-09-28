@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">4. Předvolby</title>
+    <!-- link type="next" xref="event_monitor_plugin" /-->
+    <desc>Jak si přizpůsobit předvolby aplikace <app>Accerciser</app>.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Nastavení aplikace <app>Accerciser</app></title>
+  <p>Když chcete nastavit zásuvné moduly, klávesové zkratky nebo zvýrazňování, buď zmáčkněte <keyseq><key>Ctrl</key><key>P</key></keyseq> nebo zvolte <guiseq><gui>Upravit</gui><gui>Předvolby</gui></guiseq> a otevře se dialogové okno.</p>
+
+  <section id="plugin">
+    <title>Nastavení zásuvných modulů</title>
+    <p>Po otevření dialogového okna Předvolby uvidíte na kartě „Zásuvné moduly“ seznam všech dostupných zásuvných modulů, přičemž u každého z nich je zaškrtávací políčko. Jeho zaškrtnutím, případně zrušením zaškrtnutí, zásuvný modul povolíte, respektive zakážete. V uživatelském rozhraní aplikace <app>Accerciser</app> jsou pak přístupné jen ty povolené.</p>
+    <p>Po kliknutí pravým tlačítkem na zásuvný modul můžete zvolit jeho umístění: „Horní panel“, „Spodní panel“ a „Nové zobrazení“. Pří volbě „Nové zobrazení“ se pro zásuvný moduly vytvoří nové okno.</p>
+
+    <note style="tip">
+      <p>Mimo dialogové okno předvoleb můžete použít postup „táhni a upusť“ k přesunu zásuvného modulu na jiné místo.</p>
+    </note>
+  </section>
+
+  <section id="global_hotkey">
+    <title>Nastavení globálních klávesových zkratek</title>
+    <p>Některé prvky aplikace <app>Accerciser</app> mohou zapínat určité funkce pomocí klávesových zkratek. Příkladem je <link xref="quick_select_plugin">zásuvný modul Rychlý výběr</link>. Kombinace klávesových zkratek pro jednotlivé funkce můžete měnit v dialogovém okně Předvolby na kartě „Globální klávesové zkratky“. Na této kartě najdete seznam všech funkcí, pro které je možné klávesové zkratky nastavit. Pro zapnutí nebo vypnutí příslušných modifikátorů použijte zaškrtávátka <gui>Ctrl</gui>, <gui>Alt</gui> a <gui>Shift</gui>.</p>
+
+   </section>
+
+   <section id="highlighting">
+     <title>Nastavení zvýrazňování widgetů</title>
+     <p>Některé prvky aplikace <app>Accerciser</app>, například globální klávesová zkratka <keyseq><key>Ctrl</key><key>Alt</key><key>/</key></keyseq>, zvýrazní určený widget v cílové aplikaci. Dobu trvání zvýraznění, barvu okraje a barvu výplně si můžete přizpůsobit v dialogovém okně Předvolby na kartě „Zvýrazňování“.</p>
+   </section>
+</page>

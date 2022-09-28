@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="api_browser_plugin" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">1. API-bläddrarinstick</title>
+    <link type="next" xref="ipython_plugin"/>
+    <desc>Verifiera gränssnitt, metoder och egenskaper</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>API-bläddrarinstick</title>
+  <p>Givet en åtkomlig komponent markerad i <link xref="desktop_tree_view">programträdvyn</link> visar API-bläddrarinsticket dess implementerade AT-SPI-gränssnitt tillsammans med dess metoder och egenskaper.</p>
+
+  <figure>
+    <title>API-bläddrarinstick</title>
+    <desc>Insticket API-bläddrare låter dig verifiera gränssnitt, metoder och egenskaper för en åtkomlig målkomponent i ett program.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/api_browser.png">
+      <p>Insticket API-bläddrare låter dig verifiera gränssnitt, metoder och egenskaper för en åtkomlig målkomponent i ett program.</p>
+    </media>
+  </figure>
+
+  <section id="running_api_browser_plugin">
+    <title>Köra insticket API-bläddrare</title>
+    <p>För att köra insticket API-bläddrare, välj en åtkomlig komponent i programträdvyn. Att dubbelklicka på en komponent färgmarkerar den i programmets gränssnitt så att du kan vara säker på att en viss komponent var den som du letade efter.</p>
+    <p>Välj efter det en av komponentens gränssnitt i kombinationsrutan. Alla publika metoder för det valda gränssnittet kommer att listas i instickets vänstra kolumn. Alla publika egenskaper, tillsammans med deras värden, kommer att listas i instickets högra kolumn.</p>  
+    <p>Som standard döljer insticket API-bläddrare privata metoder och egenskaper. För att se dem listade avmarkerar du kryssrutan <cmd>Dölj privata attribut</cmd>. Markera kryssrutan på nytt för att dölja dem igen.</p>
+  </section>
+</page>

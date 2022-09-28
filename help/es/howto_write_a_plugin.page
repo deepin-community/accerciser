@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_write_a_plugin" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">3. Escribir complementos nuevos</title>
+    <link type="next" xref="preferences"/>
+    <desc>Ampliar <app>Accerciser</app> con nuevas funcionalidades</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Escribir complementos para <application>Accerciser</application></title>
+  <p>Extender <app>Accerciser</app> con complementos nuevos se convirtió en algo muy sencillo desde que se escribió <link href="https://wiki.gnome.org/Apps/Accerciser/PluginTutorial">este tutorial</link>. Proporciona una explicación muy detallada sobre el tema; esta sección consta básicamente del contenido original (sólo se han hecho pequeñas ediciones y actualizaciones).</p>
+  <p><app>Accerciser</app> soporta tres tipos de complementos básicos:</p>
+  <list>
+    <item>
+      <p>Complementos base: estos complementos se derivan de la clase base «Plugin». No proporcionan una interfaz visible, pero pueden proporcionar funcionalidad adicional a <app>Accerciser</app>.</p>
+    </item>
+    <item>
+      <p>Complementos de consola: estos complementos proporcionan una sencilla consola de entrada en una área de texto en la pestaña de un complemento. No se confunda con el <link xref="ipython_plugin">complemento de la Consola IPython</link> incluido.</p>
+    </item>
+    <item>
+      <p>Complementos visuales: la mayoría de los complementos predeterminados de <app>Accerciser</app>. Proporcionan una interfaz gráfica en una pestaña.</p>
+    </item>
+  </list>
+
+  <section id="base_plugin">
+    <title>Crear un complemento base</title>
+    <p>Se creará una versión simplificada del <link xref="quick_select_plugin">complemento de selección rápida</link>. este complemento seleccionará el último accesible con el foco al pulsar <keyseq><key>Ctrl</key><key>Alt</key><key>e</key></keyseq>.</p>
+    <p>Lo primero, las líneas de importación que se usarán son:</p>
+    <code>
+      from accerciser.plugin import Plugin
+      import gtk
+      import pyatspi
+    </code>
+    <p>Lo siguiente será derivar una clase nueva de la clase base de complementos, y asignar algunos atributos obligatorios de clase:</p>
+    <code>
+      class FocusSelect(Plugin):
+        plugin_name = 'Focus Select'
+        plugin_description = 'Allows selecting last focused accessible.'
+    </code>
+    <p>Ahora se sobrescribirá el método «init», en el que se establecerá una acción de clave global para seleccionar el último elemento accesible con el foco, registrar un «listener» de eventos para el evento «focus», y establecer la variable de instancia <cmd>last_focused</cmd> a <cmd>None</cmd>.</p>
+    <code>
+      def init(self):
+        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+        self.global_hotkeys = [('Inspect last focused accessible',
+                                self.inspectLastFocused,
+                                gtk.keysyms.e,
+                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]
+        self.last_focused = None
+    </code>
+    <p>Note que la variable de instancia <cmd>global_hotkeys</cmd> es una lista de tuplas. Cada tupla es una acción de tecla rápida global, compuesta por una descripción de la acción, un método al que llamar, un símbolo de tecla de pulsación y una máscara modificadora.</p>
+    <p>En el evento de retorno de llamada de «focus», se asigna la variable de instancia <cmd>last_focused</cmd> con el elemento accesible que acaba de emitir el evento «focus».</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if not self.isMyApp(event.source):
+          self.last_focused = event.source
+    </code>
+    <p>En el retorno de llamada de la acción de la tecla rápida se actualiza el nodo amplio de la aplicación con el último elemento que tuvo el foco, si se guardó:</p>
+    <code>
+      def inspectLastFocused(self):
+        if self.last_focused:
+          self.node.update(self.last_focused)
+    </code>
+  </section>
+  <section id="console_plugin">
+    <title>Crear un complemento de consola</title>
+    <p>Se creará un complemento de consola para mostrar los cambios de foco emitidos por un elemento accesible con un rol de «pulsar botón»; recuerde que es muy fácil comprobar el rol de cualquier elemento en <app>Accerciser</app>, puede comprobarlo en la <link xref="desktop_tree_view">vista en árbol de la aplicación</link>, por ejemplo.</p>
+    <p>Las líneas de importaciones necesarias son:</p>
+    <code>
+      from accerciser.plugin import ConsolePlugin
+      import pyatspi
+    </code>
+    <p>Se añade entonces una definición de clase, con un nombre para el complemento y una descripción:</p> 
+    <code>
+      class PushButtonFocus(ConsolePlugin):
+        plugin_name = 'Push Button Focus'
+        plugin_description = 'Imprimir evento cuando el pulsador obtiene el foco.'
+    </code>
+    <p>Se sobrescribe el método «init» añadiendo un registro de «listener»:</p>
+    <code>
+       def init(self):
+         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+    </code>
+    <p>En el método de retorno de llamada se imprimen todos los eventos de pulsaciones de botones.</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:
+          self.appendText(str(event)+'\n')
+    </code>
+  </section>
+  <section id="viewport_plugin">
+    <title>Crear un complemento de punto de vista</title>
+    <p>Se creará un complemento de puerto de vista que permite una prueba rápida de la acción de pulsación sobre elementos accesibles que soportan la interfaz AT-SPI Action y tienen una acción llamada «click». Será un botón simple que, una vez pulsado, realiza la acción de pulsación sobre el accesible.</p>
+    <p>En primer lugar, algunas líneas de importación obligatorias:</p>
+    <code>
+      import gtk
+      from accerciser.plugin import ViewportPlugin
+    </code>
+    <p>Lo siguiente es una definición de clase, con un nombre y una descripción:</p>
+    <code>
+      class Clicker(ViewportPlugin):
+        plugin_name = 'Clicker'
+        plugin_description = 'Test the "click" action in relevant accessibles.'
+    </code>
+    <p>Se sobrescribirá el método «init» con una construcción de IU y conectando el retorno de la llamada a una señal para el botón. Se usará el contenedor de alineamiento para permitir que el botón esté centrado en la pestaña del complemento, y que no ocupe monstruosamente todo el espacio disponible. Note que la variable de instancia <cmd>plugin_area</cmd> gontiene un gtk.Frame que se puede llenar con todos los widgets del complemento.</p>
+    <code>
+       def init(self):
+         alignment = gtk.Alignment(0.5,0.5,0,0)
+         self.click_button = gtk.Button('Púlseme')
+         alignment.add(self.click_button)
+         self.plugin_area.add(alignment)
+
+         self.click_button.connect('clicked', self.onClick)
+
+         self.show_all()
+    </code>
+    <p>También se ha creado un método de conveniencia que devuelve una lista de las acciones soportadas por el elemento accesible actualmente seleccionado; si no soporta la acción de la interfaz, entonces devuelve una lista vacía:</p> 
+    <code>
+       def accSupportedActions(self):
+       try:
+         ai = self.node.acc.queryAction()
+       except NotImplementedError:
+         action_names = []
+       else:
+         action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+       return action_names
+    </code>
+    <p>Esta clase de complemento base tiene una llamada de método onAccChanged a la que se llama cada vez que el elemento accesible seleccionado de la aplicación objetivo cambia. Se sobrescribirá ajustando el botón para ser sensible sólo cuando el elemento accesible actual tiene la acción «click».</p>
+    <code>
+       def onAccChanged(self, acc):
+         has_click = 'click' in self.accSupportedActions()
+         self.click_button.set_sensitive(has_click)
+    </code>
+    <p>El método del retorno de llamada para el botón pulsado realiza la acción de pulsación en el elemento accesible. Ya que a este retorno de llamada sólo se le puede llamar cuando el botón es sensible, no se debe preocupar acerca de comprobar si el accesible actual tiene la acción «cick».</p>
+    <code>
+      def onClick(self, button):
+        ai = self.node.acc.queryAction()
+        action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+        ai.doAction(action_names.index('click'))
+    </code>
+   </section>
+</page>

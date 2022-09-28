@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_setting_up_accerciser" xml:lang="de">
+<info>
+  <link type="guide" xref="index#getting_started"/>
+  <link type="next" xref="desktop_tree_view"/>
+  <title type="sort">2. <app>Accerciser</app> installieren und ausführen</title>
+  <title type="link"><app>Accerciser</app> einrichten</title>
+    <desc><app>Accerciser</app> auf Ihrem System installieren und ausführen</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title><app>Accerciser</app> einrichten</title>
+
+    <p>Prüfen Sie, ob Ihre Distribution <app>Accerciser</app> schon als Paket hat. Wenn dies der Fall sein sollte, können Sie es über die Paketverwaltung Ihrer Distribution installieren. Andernfalls können Sie den folgenden Abschnitt befolgen, um <app>Accerciser</app> manuell zu installieren.</p>
+
+    <section id="installing_accerciser_manually">
+      <title><app>Accerciser</app> manuell installieren</title>
+       <p>
+        To install <app>Accerciser</app> manually, you will need to download it first. <app>Accerciser</app>'s
+        source code can either be downloaded from <link href="http://ftp.gnome.org/pub/GNOME/sources/accerciser/">the gnome.org 
+        FTP site</link> or cloned from <link href="https://gitlab.gnome.org/GNOME/accerciser">the gnome.org GIT repository</link>.
+      </p>
+
+      <note style="caution">
+        <p>Wenn Sie nicht GNOME 3 verwenden, sind Version 3 und alle nachfolgenden Versionen von <app>Accerciser</app> nicht kompatibel mit Ihrer Umgebung.</p>
+      </note>
+
+
+      <p>Nachdem Sie <app>Accerciser</app> besorgt haben, installieren Sie es mit den folgenden Befehlen:</p>
+      <steps>
+        <item><p><cmd>cd accerciser</cmd></p></item>
+        <item><p><cmd>./autogen.sh # oder ./configure für die Erstinstallation</cmd></p></item>
+        <item><p><cmd>make</cmd></p></item>
+        <item><p><cmd>sudo make install # oder make install als Root</cmd></p></item>
+      </steps>
+      <p>Wennn Sie irgendwelche Probleme beim Installieren von <app>Accerciser</app> auf Ihrem System haben, liegt es vermutlich daran, dass einige der Teile des Betriebsystem fehlen, welche Accerciser benötigt. Schauen Sie dann auch in das <link href="https://live.gnome.org/Accerciser/#Requirements">Wiki von <app>Accerciser</app></link>, um sicher zu stellen, dass alle benötigten Teile richtig installiert sind.</p>
+    </section>
+ 
+    <section id="running_accerciser">
+      <title><app>Accerciser</app> ausführen</title>
+        <p>Um <app>Accerciser</app> zu starten, geben Sie <cmd>accerciser</cmd> in einem Terminalfenster oder im Ausführen-Dialog ein und drücken Sie die <key>Eingabetaste</key>.</p>
+        <p>Danach können Sie <app>Accerciser</app> dazu verwenden, ein beliebiges barrierefreies Objekt zu untersuchen, welches in der Hierarchie der <link xref="desktop_tree_view">Anwendungs-Baumansicht</link> angezeigt wird. Dazu wählen Sie ein Objekt aus und untersuchen es, indem Sie eines der Plugins von <app>Accerciser</app> verwenden.</p>
+    </section>
+</page>

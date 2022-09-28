@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_accerciser"/>
+    <title type="sort">1. Was ist Accerciser?</title>
+    <desc>Ein Untersucher für interaktive Barrierfreiheit</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>Was ist <app>Accerciser</app>?</title>
+  <p><app>Accerciser</app> ist ein interaktiver Barrierefreiheits-Untersucher. Dabei kommt AT-SPI zum Inspizieren und Steuern von Widgets zum Einsatz, wodurch Sie überprüfen können, ob eine Anwendung korrekte Informationen für Hilfstechnologien und automatisierte Testumgebungen bereitstellt. <app>Accerciser</app> verfügt über eine einfache Plugin-Umgebung, welche Sie zur Erstellung benutzerdefinierter Ansichten der Informationen für Hilfstechnologien nutzen können.</p>
+
+  <p>
+    By default, <app>Accerciser</app>'s main interface is comprised of three sections:
+    a tree view of the entire desktop accessible hierarchy, namely <link xref="desktop_tree_view">
+    Application Tree View</link>, and two plugin areas. If you prefer to see all plugins in a single
+    area, dividing <app>Accerciser</app>'s interface in two sections instead of three, press <keyseq><key>ctrl
+    </key><key>t</key></keyseq>. To re-divide it in three sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again.
+  </p>
+
+  <note style="tip">
+    <p>Stellen Sie sicher, dass die Unterstützung für Hilfstechnologien in Ihrer Arbeitsumgebung aktiviert ist. Falls nicht, wird <app>Accerciser</app> nicht wie erwartet funktionieren.</p>
+  </note>
+
+  <figure>
+    <title><app>Accerciser</app></title>
+    <desc>Die Standard-Benutzeroberfläche von <app>Accerciser</app>.</desc>
+    <media type="image" mime="image/png" src="figures/accerciser-view.png">
+      <p>Die Standard-Benutzeroberfläche von <app>Accerciser</app>.</p>
+    </media>
+  </figure>
+
+  <section id="intended_audience">
+    <title>Beabsichtigte Nutzer von <app>Accerciser</app></title>
+    <p><app>Accerciser</app> wird vielen verschiedenen Anforderungen gerecht. Entwickler von Benutzeroberflächen nutzen <app>Accerciser</app> um sicherzustellen, dass alle ihre Anwendungen alle deren Funktionen über AT-SPI zur Verfügung stellen. Entwickler von Unterstützungstechnologien können sehen, was AT-SPI für ihre Anwendungen bietet. Testentwickler von automatisierten Benutzeroberflächen finden <app>Accerciser</app> hilfreich, weil es verschiedene Ereignisse aufdeckt, welche von ihrer Zielanwendung erwartet werden könnten.</p>
+  </section>
+
+  <section id="accerciser_plugin_architecture">
+    <title>Die Plugin-Architektur von <app>Accerciser</app></title>
+    <p><app>Accerciser</app> hat eine erweiterbare, pluginbasierte Architektur. Sein Kerncode ist sehr klein und die meisten seiner Funktionen sind Teil von Standard-Plugins:</p>
+    <list>
+      <item>
+        <p>
+          <link xref="interface_viewer_plugin">Interface Viewer</link> - A plugin that lets you explore the AT-SPI 
+          interfaces provided by each accessible widget of a target application.
+        </p>
+      </item>
+      <item>
+        <p><link xref="validator_plugin">AT-SPI-Überprüfungsplugin</link> - Ein Plugin, welches Tests anwendet, um die Barrierefreiheit einer Zielanwendung zu überprüfen.</p>
+      </item>
+      <item>
+        <p><link xref="event_monitor_plugin">Ereignisüberwachungs-Plugin</link> - Ein Plugin, welches AT-SPI-Ereignisse, welche in Zielanwendungen auftreten, so anzeigt, wie sie auftreten.</p>
+      </item>
+      <item>
+        <p><link xref="quick_select_plugin">Schnellauswahl-Plugin</link> - Ein Plugin, welches globale Tastenkombinationen zur Verfügung stellt, um schnell barrierefreie Widgets in der Anwendungsbaumansicht von <app>Accerciser</app> auszuwählen.</p>
+      </item>
+      <item>
+        <p><link xref="api_browser_plugin">API-Browser-Plugin</link> - Ein Plugin, welches die Schnittstellen, Funktionen und Attribute zeigt, welche bei einer verfügbaren Funktion einer Zielanwendung vorhanden sind.</p>
+      </item>
+      <item>
+        <p><link xref="ipython_plugin">IPython-Konsole-Plugin</link> - Ein Plugin, welches eine komplette, interaktive Python-Shell mit Zugang zu ausgewählten Funktionen einer Zielanwendung zur Verfügung stellt.</p>
+      </item>
+    </list>
+  </section>
+
+
+  <section id="more_about_gnome_accessibility">
+    <title>Informationen über Barrierefreiheit</title>
+    <p>Barrierefreiheit ist einer der Grundwerte, welche alle Aspekte einer Arbeitsumgebung betreffen sollte. Um das in GNOME zu erreichen, wurden einige Bibliotheken entwickelt, wie z.B. ATK und AT-SPI. Obwohl eigentlich in GNOME beheimatet, werden diese Bibliotheken nun auch bei anderen Arbeitsumgebungen verwendet. Um mehr über die Barrierefreiheitsbibliotheken für GNU/UNIX-Systeme zu erfahren, können Sie folgende Seite besuchen:</p>
+    <list>
+      <item>
+        <p>
+          <link href="http://developer.gnome.org/atk/">ATK Accessibility Toolkit</link> - 
+          ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications.
+          Using the ATK interfaces, accessibility tools have full access to view and control running applications.
+        </p>
+      </item>
+      <item>
+        <p>
+          <link href="http://developer.gnome.org/at-spi-cspi/stable/">AT-SPI</link> - 
+          AT-SPI is the primary service interface by which assistive technologies query and receive 
+          notifications from running applications. Additional material is available from the 
+          <link href="http://accessibility.kde.org/developer/atk.php#coreclasses">KDE Accessibility Development Community</link>.  
+        </p>
+      </item>
+      <item>
+        <p>
+          <link href="https://help.gnome.org/users/gnome-help/stable/a11y.html">GNOME Desktop Accessibility Guide</link> -
+          A guide for anyone interested in how the GNOME Desktop supports the needs of users with disabilities.
+        </p>
+      </item>
+      <item>
+        <p>
+          <link href="http://developer.gnome.org/accessibility-devel-guide/stable/">GNOME Accessibility Developer's Guide</link> - 
+          A guide for developers who want to ensure their applications are accessible to the widest audience of users. 
+        </p>
+      </item>
+      <item>
+        <p>
+          <link href="https://wiki.gnome.org/Accessibility">GNOME Accessibility Project</link> - 
+          The GNOME Accessibility Project includes the guides listed above along with many other useful links
+          for users, developers and system administrators.
+        </p>
+      </item>
+    </list>
+  </section>
+
+</page>

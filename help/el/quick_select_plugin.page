@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="quick_select_plugin" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">5. Πρόσθετο γρήγορης επιλογής</title>
+    <link type="next" xref="api_browser_plugin"/>
+    <desc>Εντοπισμός αρχείου που θέλετε</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Πρόσθετο γρήγορης επιλογής</title>
+  <p>Το πρόσθετο της γρήγορης επιλογής δεν παρέχει μια ορατή διεπαφή όπως τα άλλα πρόσθετα του <app>Accerciser</app> - αντ' αυτού, προσθέτει ευκολίες στη <link xref="desktop_tree_view">δενδρική προβολή εφαρμογών</link> για την επιλογή αντικειμένων μέσω συντομεύσεων. Αρχικά, αυτές οι συντομεύσεις ήταν μέρος του πυρήνα κώδικα του <app>Accerciser</app>, αλλά αργότερα εξελίχθηκαν στο πρόσθετο γρήγορης επιλογής.</p>
+  <p>
+    The Quick Select Plugin provides two global hotkeys. Pressing <keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq>
+    selects the last focused accessible widget in the Application Tree View. Pressing <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>
+    selects the accessible widget under the pointer in the Application Tree View and highlights it in the target application.
+  </p> 
+</page>

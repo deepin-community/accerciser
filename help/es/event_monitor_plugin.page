@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="event_monitor_plugin" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">4. Complemento Monitor de eventos</title>
+    <link type="next" xref="quick_select_plugin"/>
+    <desc>Monitorizar eventos accesibles cuando ocurren</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Complemento Monitor de eventos</title>
+  <p>El complemento «Monitor de eventos» le permite ver los <link href="http://accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html">eventos AT-SPI</link> a medida que suceden en la aplicación expuesta en la <link xref="desktop_tree_view">vista en árbol de la aplicación</link> de <app>Accerciser</app>. El complemento es útil para examinar la dinámica de la interfaz de una aplicación y verificar qué widgets accesibles están relacionados con eventos de AT-SPI.</p>
+
+  <figure>
+    <title>Complemento Monitor de eventos</title>
+    <desc>El complemento Monitor de eventos le permite ver los eventos AT-SPI y asociarlos con widgets accesibles.</desc>
+    <media type="image" mime="image/png" width="700" height="500" src="figures/event_monitor_plugin.png">
+      <p>El complemento Monitor de eventos le permite ver los eventos AT-SPI y asociarlos con widgets accesibles.</p>
+    </media>
+  </figure>
+
+  <section id="running_event_monitor_plugin">
+    <title>Ejecutar el complemento Monitor de eventos</title>
+    <p>Cuando abre el complemento del Monitor de eventos, verá una lista de casillas de verificación representando todas las clases diferentes de AT-SPI que el complemento cubre:</p>
+
+    <list>
+      <item>
+        <p>documento</p>
+      </item>
+      <item>
+        <p>foco</p>
+      </item>
+      <item>
+        <p>ratón</p>
+      </item>
+      <item>
+        <p>objeto</p>
+      </item>
+      <item>
+        <p>terminal</p>
+      </item>
+      <item>
+        <p>ventana</p>
+      </item>
+    </list>
+
+    <p>Si selecciona una clase, el complemento monitorizará todos sus tipos de eventos. Las clases se exponen como estructuras en árbol; por ello, puede refinar su selección expandiéndolas y seleccionando solo los tipos de eventos que realmente le importan.</p>
+    <p>Si quiere monitorizar todos los tipos posibles de eventos AT-SPI, pulse el botón <cmd>Seleccionar todos</cmd>. De forma similar, si quiere limpiar todos los tipos de eventos actualmente seleccionados, pulse el botón <cmd>Limpiar selección</cmd>.</p>
+
+    <note style="tip">
+      <p>Seleccionar sólo unos pocos tipos de eventos para monitorizar proporciona una salida más limpia.</p>
+    </note>
+
+    <p>Otra forma de refinar la monitorización de eventos es a través del origen del evento. De forma predeterminada la opción <cmd>Todo</cmd>, como fuente, está seleccionada, indicando que se monitorizarán todos los eventos AT-SPI de todas las aplicaciones. Si quiere investigar una sola aplicación, selecciónela en la vista de árbol de la aplicación y pulse en el botón de radio Fuente <cmd>Aplicación seleccionada</cmd>. De la misma forma, si quiere monitorizar un solo widget accesible y sus correspondientes descendientes, selecciónelo en la vista de árbol de la aplicación y pulse en el botón de radio Fuente <cmd>Accesible seleccionado</cmd>.</p>
+
+    <p>Después de seleccionar los tipos de evento y especificar una opción para la fuente, el complemento de monitorización de eventos comienza automáticamente a monitorizar los eventos AT-SPI, ya que el botón <cmd>Monitorizar eventos</cmd> está pulsado de forma predeterminada. Cuando quiera dejar de monitorizar eventos, pulse el botón <cmd>Monitorizar eventos</cmd>. Pulse el botón de nuevo para reiniciar la monitorización.</p>
+    
+    <p>Para cada evento entrante, el complemento del Monitor de eventos indica la fuente y la aplicación. Activar el enlace para alguno de esos elementos hará que se seleccione en la vista en árbol de la aplicación.</p>
+
+    <p>Si quiere guardar la salida generada por el complemento de Monitor de eventos, simplemente pulse el botón <cmd>Guardar</cmd>. Para limpiar la salida de la pantalla, simplemente pulse el botón <cmd>Limpiar</cmd>.</p>
+  </section>
+</page>

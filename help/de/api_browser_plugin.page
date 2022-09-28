@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="api_browser_plugin" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">1. API-Browser-Plugin</title>
+    <link type="next" xref="ipython_plugin"/>
+    <desc>Prüfen von Ansichten, Funktionen und Eigenschaften</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>API-Browser-Plugin</title>
+  <p>Wenn man ein barrierefreies Widget in der Anwendungs-Baumansicht auswählt, zeigt das API-Browser-Plugin ihre AT-SPI-Oberflächen sowie ihre Funktionen und Eigenschaften an.</p>
+
+  <figure>
+    <title>API-Browser-Plugin</title>
+    <desc>Mit dem API-Browser-Plugin können Sie Oberflächen, Funktionen und auch Eigenschaften eines barrierefreien Widgets einer Anwendung prüfen.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/api_browser.png">
+      <p>Mit dem API-Browser-Plugin können Sie Oberflächen, Funktionen und auch Eigenschaften eines barrierefreien Widgets einer Anwendung prüfen.</p>
+    </media>
+  </figure>
+
+  <section id="running_api_browser_plugin">
+    <title>Das Schnittstellenbrowser-Plugin ausführen</title>
+    <p>Um das API-Browser-Plugin zu starten, wählen Sie ein barrierefreies Widget in der Anwendungs-Baumansicht aus. Durch einen Doppelklick darauf wird das Widget in der Oberfläche der Anwendung hervorgehoben, sodass Sie sicher sagen können, ob ein bestimmtes Widget jenes ist, nach dem Sie suchen.</p>
+    <p>Danach können Sie eine der Widget-Oberflächen in der Auswahlbox auswählen. Alle öffentlichen Methoden der ausgewählten Oberfläche werden dann in der Spalte ganz links beim Plugin angezeigt. Alle öffentlichen Eigenschaften, mit ihren dazugehörigen Werten, werden dann in der Spalte ganz rechts beim Plugin gelistet.</p>  
+    <p>Standardmäßig verbirgt das API-Browser-Plugin private Funktionen und Eigenschaften. Um sie angezeigt zu bekommen, müssen Sie das Ankreuzfeld <cmd>Private Attribute verbergen</cmd> abwählen. Um sie wieder zu verstecken, müssen Sie einfach nur das Ankreuzfeld wieder auswählen.</p>
+  </section>
+</page>

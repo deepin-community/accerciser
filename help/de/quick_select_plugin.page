@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="quick_select_plugin" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">5. Schnellauswahl-Plugin</title>
+    <link type="next" xref="api_browser_plugin"/>
+    <desc>Das gewünschte Objekt lokalisieren</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title>Schnellauswahl-Plugin</title>
+  <p>Das Schnellauswahl-Plugin stellt keine sichtbare Oberfläche wie die anderen Standard-<app>Accerciser</app>-Plugins zur Verfügung - stattdessen aber Möglichkeiten, um Objekte in der <link xref="desktop_tree_view">Anwendungsbaumansicht </link> über globale Tastenkürzel schnell auszuwählen. Übersprünglich waren diese Tastenkürzel Teil von <app>Accerciser</app>s Kern, später wurden sie zum Schnellauswahl-Plugin.</p>
+  <p>
+    The Quick Select Plugin provides two global hotkeys. Pressing <keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq>
+    selects the last focused accessible widget in the Application Tree View. Pressing <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>
+    selects the accessible widget under the pointer in the Application Tree View and highlights it in the target application.
+  </p> 
+</page>

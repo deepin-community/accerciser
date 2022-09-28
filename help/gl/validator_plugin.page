@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin" xml:lang="gl">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">3. Validator Default Plugin</title>
+    <link type="next" xref="event_monitor_plugin"/>
+    <desc>Comprobar a accesibilidade dun aplicativo</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  </info>
+  <title>Engadido de validación de AT-SPI</title>
+  <p>O engadido de validación de AT-SPI xera un informe con problemas relacionados coa accesibilidade do aplicativo. Para cada erro, o informe inclúe o nivel de importancia e unha breve descrición.</p>
+   <figure>
+    <title>Engadido de validación de AT-SPI</title>
+    <desc>O engadido de validación de AT-SPI xera informes moi útiles para verificar a accesibilidade dun aplicativo.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>O engadido de validación de AT-SPI xera informes moi útiles para verificar a accesibilidade dun aplicativo.</p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Executar o engadido de validación de AT-SPI</title>
+      <p>Para executar o engadido de validación de AT-SPI seleccione un elemento na Vista de árbore do aplicativo. O validador xerará o informe respecto ao elemento seleccionado e todos os seus widgets descencentes na árbore xerárquica.</p>
+
+      <p>Despois de selecionar un elemento seleccione o esquema de validación desde a caixa de despregábel e prema o botón <cmd>Validar</cmd> para iniciar a xeración do informe. Se quere cancelar a execución simplemente prema o botón <cmd>Validar</cmd> de novo.</p>
+
+      <p>O informe xerado é interactivo. Pode premer dúas veces sobre calquera erro para marcar no aplicativo que widgets están causando dito erro. Deste xeito o widget aparecerá seleccionado no <link xref="desktop_tree_view">Vista de árbore do aplicativo</link> e realzado no aplicativo.</p>  
+      <p>Se desexa gardar o informe xerado no seu sistema prema o botón <cmd>Gardar</cmd>. Para limpar a pantalla de validación prema o botón <cmd>Limpar</cmd>.</p>
+      <p>Para obter máis información sobre un erro no informe xerado asegúrese que o elemento correspondente está seleccoinado e prema o botón <cmd>Axuda</cmd>. Abrirase a páxina de axuda no seu navegador web.</p>        
+  </section>
+</page>

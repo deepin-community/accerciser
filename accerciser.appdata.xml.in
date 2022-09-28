@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Daniel Mustieles <daniel.mustieles@gmail.com> -->
+<component type="desktop-application">
+  <id type="desktop">accerciser.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Accerciser</name>
+  <summary>Accessibility explorer for the GNOME desktop</summary>
+  <description>
+    <p>
+      Accerciser is an interactive Python accessibility explorer for the GNOME desktop.
+      It uses AT-SPI to inspect and control widgets, allowing you to check if an application
+      is providing correct information to assistive technologies and automated test frameworks.
+    </p>
+    <p>
+      Accerciser has a simple plugin framework which you can use to create custom views of
+      accessibility information.
+    </p>
+  </description>
+  <url type="homepage">https://wiki.gnome.org/action/show/Apps/Accerciser</url>
+  <screenshots>
+  <screenshot type="default">https://gitlab.gnome.org/GNOME/accerciser/raw/master/help/C/figures/api_browser.png</screenshot>
+  </screenshots>
+  <updatecontact>daniel.mustieles@gmail.com</updatecontact>
+  <project_group>GNOME</project_group>
+  <translation type="gettext">accerciser</translation>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="3.38.0" date="2020-09-10"/>
+    <release version="3.36.3" date="2020-08-06"/>
+    <release version="3.36.2" date="2020-07-04"/>
+    <release version="3.36.1" date="2020-04-24"/>
+    <release version="3.36.0" date="2020-03-05"/>
+    <release version="3.34.6" date="2020-07-04"/>
+    <release version="3.34.5" date="2020-04-24"/>
+    <release version="3.34.4" date="2020-02-11"/>
+    <release version="3.34.3" date="2020-01-01"/>
+    <release version="3.34.2" date="2019-11-21"/>
+    <release version="3.34.1" date="2019-10-07"/>
+  </releases>
+</component>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">3. Complemento validador predeterminado</title>
+    <link type="next" xref="event_monitor_plugin"/>
+    <desc>Comprobar la accesibilidad de una aplicación</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Complemento de validación AT-SPI</title>
+  <p>El complemento de validación AT-SPI genera un informe con los errores de accesibilidad de una aplicación objetivo. El informe incluye el nivel de gravedad y una breve descripción para cada error.</p>
+   <figure>
+    <title>Complemento de validación AT-SPI</title>
+    <desc>El complemento de validación AT-SPI genera informes útiles para verificar la accesibilidad de una aplicación objetivo.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>El complemento de validación AT-SPI genera informes útiles para verificar la accesibilidad de una aplicación objetivo.</p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Ejecutar el complemento de validación AT-SPI</title>
+      <p>Para ejecutar el complemento de validación AT-SPI seleccione un elemento en la vista en árbol de la aplicación. El validador generará el informe correspondiente al elemento seleccionado y de todos sus widgets hijos en la jerarquía del árbol.</p>
+
+      <p>Después de seleccionar un elemento, elija un esquema de validación en la caja combinada y pulse el botón <cmd>Validar</cmd> para empezar a generar el informe. Si quiere cancelar la ejecución, simplemente pulse el botón <cmd>Validar</cmd> otra vez.</p>
+
+      <p>El informe generado es interactivo. Por lo tanto, puede hacer una doble pulsación en cualquier error encontrado para comprobar qué aplicación objetivo lo está causando. El widget correspondiente aparecerá seleccionado en la <link xref="desktop_tree_view">vista en árbol de la aplicación</link> y resaltado en la aplicación objetivo.</p>  
+      <p>Si quiere guardar en informe generado en su equipo, simplemente pulse el botón <cmd>Guardar</cmd>. Para limpiar la pantalla de validación, pulse el botón <cmd>Limpiar</cmd>.</p>
+      <p>Para obtener más información sobre un error en el informe generado, asegúrese de que el elemento correspondiente está seleccionado y pulse el botón <cmd>Ayuda</cmd>. Se abrirá una página de ayuda en su explorador predeterminado.</p>        
+  </section>
+</page>

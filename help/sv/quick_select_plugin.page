@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="quick_select_plugin" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">5. Snabbväljarinstick</title>
+    <link type="next" xref="api_browser_plugin"/>
+    <desc>Att hitta objektet du behöver</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>Snabbväljarinstick</title>
+  <p>Insticket Snabbväljare tillhandahåller inte ett synligt gränssnitt som de övriga <app>Accerciser</app>-insticken - istället lägger det till funktioner för att snabbt välja objekt i <link xref="desktop_tree_view">programträdvyn</link> via allmänna snabbtangenter. Från början var dessa snabbtangenter en del av <app>Accerciser</app>s kärnkod, men separerades senare ut i insticket Snabbväljare.</p>
+  <p>Insticket Snabbväljare tillhandahåller två allmänna snabbtangenter. Genom att trycka på <keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> markeras den senast fokuserade åtkomliga komponenten i programträdvyn. Genom att trycka på <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> markeras den åtkomliga komponenten under markören i programträdvyn och färgmarkeras i målprogrammet.</p> 
+</page>

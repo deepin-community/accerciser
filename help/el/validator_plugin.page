@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">3. Πρόσθετο επικύρωσης AT-SPI</title>
+    <link type="next" xref="event_monitor_plugin"/>
+    <desc>Δοκιμή μιας συσκευής για προσβασιμότητα </desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Πρόσθετο επικύρωσης AT-SPI</title>
+  <p>Το πρόσθετο επικύρωσης AT-SPI δημιουργεί μια αναφορά για τα προβλήματα προσβασιμότητας μιας εφαρμογής. Για κάθε σφάλμα, η αναφορά περιλαμβάνει το επίπεδο της σοβαρότητας και μια σύντομη περιγραφή.</p>
+   <figure>
+    <title>Πρόσθετο επικύρωσης AT-SPI</title>
+    <desc>Το πρόσθετο επικύρωσης AT-SPI δημιουργεί χρήσιμες αναφορές για τα προβλήματα προσβασιμότητας μιας εφαρμογής.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>Το πρόσθετο επικύρωσης AT-SPI δημιουργεί χρήσιμες αναφορές για τα προβλήματα προσβασιμότητας μιας εφαρμογής.</p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Εκτέλεση του πρόσθετου επικύρωσης AT-SPI</title>
+      <p>Για να εκτελέσετε το πρόσθετο επικύρωσης AT-SPI, επιλέξτε ένα αντικείμενο από τη δενδρική προβολή εφαρμογών. Ο επικυρωτής θα δημιουργήσει την αναφορά σε σχέση με το επιλεγμένο αντικείμενο και όλα τα γραφικά συστατικά που βρίσκονται στην ιεραρχία του δέντρου.</p>
+
+      <p>Αφού επιλέξετε ένα αντικείμενο, επιλέξτε τη μέθοδο επικύρωσης από το κουτί επιλογών και πατήστε το κουμπί <cmd>Επικύρωση</cmd> για να ξεκινήσει η παραγωγή της αναφοράς. Αν θέλετε να ακυρώσετε την εκτέλεση, πατήστε ξανά το κουμπί <cmd>Επικύρωση</cmd>.</p>
+
+      <p>Οι δημιουργημένες αναφορές είναι διαδραστικές. Επομένως, μπορείτε να κάνετε διπλό κλικ σε οποιοδήποτε σφάλμα και να ελέγξετε πιο γραφικό συστατικό το προκαλεί. Θα εμφανιστεί το αντίστοιχο γραφικό συστατικό επιλεγμένο στη <link xref="desktop_tree_view"> δενδρική προβολής εφαρμογών</link> και επισημασμένο στην εφαρμογή.</p>  
+      <p>Αν θέλετε να αποθηκεύσετε την δημιουργημένη αναφορά στο σύστημα σας, κάντε κλικ στο κουμπί <cmd>Αποθήκευση</cmd>. Για να καθαρίσετε την οθόνη, πατήστε το κουμπί <cmd>Εκκαθάριση</cmd></p>
+      <p>Για να πάρετε περισσότερες πληροφορίες για σφάλματα που δημιουργήθηκαν στην αναφορά, σιγουρευτείτε πως είναι επιλεγμένο το αντίστοιχο αντικείμενο και πατήστε το κουμπί <cmd>Βοήθεια</cmd>. Θα ανοίξει μια σελίδα βοήθειας στον προεπιλεγμένο σας περιηγητή.</p>        
+  </section>
+</page>

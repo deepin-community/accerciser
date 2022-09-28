@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="ipython_plugin" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">2. Complemento IPython</title>
+    <link type="next" xref="howto_write_a_plugin"/>
+    <desc>Cuando todo falla</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  </info>
+  <title>Complemento de la Consola IPython</title>
+  <p>El complemento de la Consola IPython permite interacción en tiempo real con el elemento seleccionado en la <link xref="desktop_tree_view">vista en árbol de la aplicación</link>. Ya que el complemento de la Consola IPython es una shell Python interactiva, puede importar cualquier módulo Python que quiera.</p>
+
+  <note style="tip">
+    <p>Asegúrese de que tiene el paquete autónomo de IPython instalado en su sistema. De otra forma, el complemento de la Consola IPython no funcionará correctamente. </p>
+  </note>
+  
+  <section id="running_ipython_plugin">
+    <title>Ejecutar el complemento de la consola IPython</title>
+    <p>Para ejecutar el complemento de la Consola IPython, seleccione uno de los elementos accesibles listados en la vista en árbol de la aplicación; ya sea una aplicación o un widget. En el complemento, el elemento seleccionado corresponderá a la variable «acc».</p>
+    <p>Pulsar <key>Tab</key> muestra sugerencias para completar el comando actual en la consola, lo que puede ser útil para descubrir métodos pyatspi.</p>  
+
+  <figure>
+    <title>Investigar elementos seleccionados con el complemento de la consola IPython</title>
+    <desc>El complemento de la consola IPython le permite investigar métodos, constantes y propiedades relativas a un elemento seleccionado en la vista en árbol de la aplicación.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/IPython_plugin.png">
+      <p>El complemento de la consola IPython le permite investigar métodos, constantes y propiedades relativas a un elemento seleccionado en la vista en árbol de la aplicación.</p>
+    </media>
+  </figure>
+
+  <note style="tip">
+    <p>Escribir <cmd>help(acc)</cmd> en el complemento de la consola de IPython muestra cierta documentación útil sobre el correspondiente elemento accesible seleccionado.</p>
+  </note>
+  </section>
+</page>

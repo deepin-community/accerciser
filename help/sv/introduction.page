@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_accerciser"/>
+    <title type="sort">1. Vad är Accerciser?</title>
+    <desc>En interaktiv hjälpmedelsutforskare</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>Vad är <app>Accerciser</app>?</title>
+  <p><app>Accerciser</app> är en interaktiv hjälpmedelsundersökare i Python. Det använder AT-SPI-biblioteket för att inspektera, undersöka och interagera med komponenter, vilket låter dig kontrollera om ett program tillhandahåller korrekt information till hjälpmedelsteknologier och automatiserade testningsramverk. <app>Accerciser</app> kommer med en mängd instick som du kan använda för att skapa anpassade vyer av hjälpmedelsinformation.</p>
+
+  <p>Som standard består <app>Accerciser</app>s gränssnitt av tre delar: en fullständig trädvy över skrivbordets åtkomliga hierarki, det vill säga <link xref="desktop_tree_view"> programträdvyn</link>, samt två insticksytor. Om du föredrar att se alla instick i en enda yta, dela då upp <app>Accerciser</app>s gränssnitt i två delar istället för tre genom att trycka <keyseq><key>ctrl </key><key>t</key></keyseq>. För att åter dela det i tre delar, tryck åter på <keyseq><key>ctrl</key><key>t</key></keyseq>.</p>
+
+  <note style="tip">
+    <p>Säkerställ att hjälpmedelsstöd är aktivera på ditt skrivbord - annars kommer <app>Accerciser</app> inte att fungera som förväntat.</p>
+  </note>
+
+  <figure>
+    <title><app>Accerciser</app></title>
+    <desc><app>Accerciser</app>s standardgränssnitt.</desc>
+    <media type="image" mime="image/png" src="figures/accerciser-view.png">
+      <p><app>Accerciser</app>s standardgränssnitt.</p>
+    </media>
+  </figure>
+
+  <section id="intended_audience">
+    <title><app>Accerciser</app>s avsedda målgrupp</title>
+    <p><app>Accerciser</app> passar behovet för många olika användare. Användargränssnittsutvecklare använder det för att försäkra att program tillhandahåller alla funktioner via AT-SPI. Hjälpmedelsutvecklare kan se vad AT-SPI tillhandahåller till deras program. För utvecklare av automatiserade test för gränssnitt är <app>Accerciser</app> fördelaktigt då det exponerar olika händelser som kan förväntas från deras målprogram.</p>
+  </section>
+
+  <section id="accerciser_plugin_architecture">
+    <title><app>Accerciser</app>s arkitektur för instick</title>
+    <p><app>Accerciser</app> har en utökningsbar, insticksbaserad arkitektur. Dess kärnkod är ganska liten och de flesta av dess funktioner är del av standardinstick:</p>
+    <list>
+      <item>
+        <p>
+          <link xref="interface_viewer_plugin">Interface Viewer</link> - A plugin that lets you explore the AT-SPI 
+          interfaces provided by each accessible widget of a target application.
+        </p>
+      </item>
+      <item>
+        <p><link xref="validator_plugin">AT-SPI-validerare</link> - Ett instick som tillämpar tester för att verifiera att ett målprogram fungerar med hjälpmedel.</p>
+      </item>
+      <item>
+        <p><link xref="event_monitor_plugin">Händelseövervakare</link> - Ett instick som visar AT-SPI-händelser som skickas ut av ett målprogram när de uppstår.</p>
+      </item>
+      <item>
+        <p><link xref="quick_select_plugin">Snabbväljare</link> - Ett instick som tillhandahåller allmänna snabbtangenter för att snabbt välja åtkomliga komponenter i <app>Accerciser</app>s programträdvy.</p>
+      </item>
+      <item>
+        <p><link xref="api_browser_plugin">API-bläddrare</link> - Ett instick som visar de gränssnitt, metoder och attribut som finns för varje åtkomlig komponent i ett målprogram.</p>
+      </item>
+      <item>
+        <p><link xref="ipython_plugin">IPython-konsol</link> - Ett instick som tillhandahåller ett fullständigt, interaktivt Python-skal med tillgång till valda åtkomliga komponenter i ett målprogram.</p>
+      </item>
+    </list>
+  </section>
+
+
+  <section id="more_about_gnome_accessibility">
+    <title>Mer om Hjälpmedel</title>
+    <p>Åtkomlighet är ett kärnvärde som borde beröra alla aspekter i en skrivbordsmiljö. För att hjälpa till att åstadkomma detta i GNOME har vissa bibliotek utvecklats så som ATK och AT-SPI. Även om deras ursprung är GNOME används dessa bibliotek numera även i andra skrivbordsmiljöer. För att lära dig mer om hjälpmedelsbibliotek för GNU/UNIX-system kan du konsultera:</p>
+    <list>
+      <item>
+        <p><link href="http://developer.gnome.org/atk/">ATK Accessibility Toolkit</link> - ATK tillhandahåller en uppsättning av hjälpmedelsgränssnitt som implementeras av andra verktygslådor och program. Genom att använda ATK-gränssnitten kan hjälpmedelsverktyg få fullständig tillgång för att visa och kontrollera körande program.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/at-spi-cspi/stable/">AT-SPI</link> - AT-SPI är det primära servicegränssnittet genom vilket teknologier frågar efter och får aviseringar från körande program. Ytterligare material är tillgängligt från <link href="http://accessibility.kde.org/developer/atk.php#coreclasses">KDE:s utvecklargemenskap för hjälpmedel</link>.</p>
+      </item>
+      <item>
+        <p><link href="https://help.gnome.org/users/gnome-help/stable/a11y.html">GNOME:s guide för skrivbordshjälpmedel</link> - En guide för de som är intresserade av hur GNOME:s skrivbord ger stöd till användare med nedsatt funktionsförmåga.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/accessibility-devel-guide/stable/">GNOME:s hjälpmedelsguide för utvecklare </link> - En guide för utvecklare som vill säkerställa att deras program är tillgängliga för bredaste möjliga publik av användare.</p>
+      </item>
+      <item>
+        <p><link href="https://wiki.gnome.org/Accessibility">GNOME Hjälpmedelsprojekt</link> - GNOME Hjälpmedelsprojekt inkluderar guiderna som listas ovan tillsammans med många andra användbara länkar för användare, utvecklare och systemadministratörer.</p>
+      </item>
+    </list>
+  </section>
+
+</page>

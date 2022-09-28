@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="event_monitor_plugin" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">4. Händelseövervakarinstick</title>
+    <link type="next" xref="quick_select_plugin"/>
+    <desc>Övervaka åtkomliga händelser medan de sker</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>Händelseövervakarinstick</title>
+  <p>Insticket Händelseövervakare låter dig visa <link href="http://accessibility.linuxfoundation.org/a11yspecs/atspi/adoc/atspi-events.html">AT-SPI-händelser</link> medan de inträffar för programmen som exponeras i <app>Accerciser</app>s <link xref="desktop_tree_view">programträdvy</link>. Insticket är användbart för att utforska dynamiken hos ett programs gränssnitt och verifiera vilka åtkomliga komponenter som är relaterade till vilka AT-SPI-händelser.</p>
+
+  <figure>
+    <title>Händelseövervakarinstick</title>
+    <desc>Insticket Händelseövervakare låter dig visa AT-SPI-händelser och matcha dem med åtkomliga komponenter.</desc>
+    <media type="image" mime="image/png" width="700" height="500" src="figures/event_monitor_plugin.png">
+      <p>Insticket Händelseövervakare låter dig visa AT-SPI-händelser och matcha dem med åtkomliga komponenter.</p>
+    </media>
+  </figure>
+
+  <section id="running_event_monitor_plugin">
+    <title>Köra insticket Händelseövervakare</title>
+    <p>Då du öppnar insticket Händelseövervakare kommer du att se en lista över kryssrutor som motsvarar alla olika AT-SPI-händelseklasser som täcks av insticket:</p>
+
+    <list>
+      <item>
+        <p>dokument</p>
+      </item>
+      <item>
+        <p>fokus</p>
+      </item>
+      <item>
+        <p>mus</p>
+      </item>
+      <item>
+        <p>objekt</p>
+      </item>
+      <item>
+        <p>terminal</p>
+      </item>
+      <item>
+        <p>fönster</p>
+      </item>
+    </list>
+
+    <p>Om du kryssar i en klass kommer alla dess händelsetyper att övervakas av insticket. Klasserna exponeras som trädstrukturer. Du kan därför förfina din markering genom att expandera dem och kryssa i endast de händelsetyper som du är intresserad av.</p>
+    <p>Om du vill övervaka alla möjliga typer av AT-SPI-händelser, tryck på knappen <cmd>Markera allt</cmd>. Om du vill tömma alla aktuellt markerade händelsetyper trycker du på samma sätt på knappen <cmd>Töm markering</cmd>.</p>
+
+    <note style="tip">
+      <p>Att välja bara några få händelsetyper per övervakning ger dig mer lättlästa utdata.</p>
+    </note>
+
+    <p>Ett annat sätt att förfina händelseövervakning är per händelsekälla. Som standard är källalternativet <cmd>Allting</cmd> valt, vilket indikerar att AT-SPI-händelser för alla program kommer att övervakas. Om du vill undersöka ett enskilt program väljer du det i programträdvyn och klickar på källradioknappen <cmd>Markerat program</cmd>. Om du vill övervaka en enskild åtkomlig komponent och dess motsvarande ättlingar väljer du på samma sätt den i programträdvyn och klickar på källradioknappen <cmd>Markerad åtkomlig komponent</cmd>.</p>
+
+    <p>Efter att ha valt händelsetyper och angivit ett källalternativ börjar insticket Händelseövervakare att övervaka AT-SPI-händelser automatiskt, eftersom knappen <cmd>Övervaka händelser</cmd> är nedtryckt som standard. Då du vill sluta övervaka klickar du på knappen <cmd>Övervaka händelser</cmd>. För att börja övervaka igen, tryck på knappen igen.</p>
+    
+    <p>För varje inkommande händelse indikerar insticket Händelseövervakare källan och programmet. Att aktivera länken för endera av dessa poster kommer få det att vara markerat i programträdvyn.</p>
+
+    <p>Om du vill spara utdata genererat av insticket Händelseövervakare trycker du bara på knappen <cmd>Spara</cmd>. För att tömma skärmen med utdata behöver du bara klicka på knappen <cmd>Töm</cmd>.</p>
+  </section>
+</page>

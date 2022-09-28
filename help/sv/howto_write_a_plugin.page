@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_write_a_plugin" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">3. Skriva nya instick</title>
+    <link type="next" xref="preferences"/>
+    <desc>Utöka <app>Accerciser</app> med dina önskade funktioner</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>Skriva instick för <app>Accerciser</app></title>
+  <p>Att utöka <app>Accerciser</app> med nya instick blev mycket lättare sedan <link href="https://wiki.gnome.org/Apps/Accerciser/PluginTutorial">denna guide</link> skrevs. Eftersom den tillhandahåller en väldigt detaljerad förklaring av ämnet så består detta avsnitt praktiskt taget av dess ursprungliga innehåll - endast enkla redigeringar och uppdateringar har gjorts.</p>
+  <p><app>Accerciser</app> har stöd för tre grundläggande typer av instick:</p>
+  <list>
+    <item>
+      <p>Basinstick - Dessa instick härleds från basklassen Plugin. De tillhandahåller inte ett synligt gränssnitt, men kan tillhandahålla ytterligare funktionalitet för <app>Accerciser</app>.</p>
+    </item>
+    <item>
+      <p>Konsolinstick - Dessa instick tillhandahåller enkla konsolutdata till ett textområde i en flik för instick. Ej att förväxla med det paketerade insticket <link xref="ipython_plugin">IPython-konsol</link>.</p>
+    </item>
+    <item>
+      <p>Visningsområdesinstick - Majoriteten av <app>Accerciser</app>s standardinstick. De tillhandahåller ett anpassat grafiskt gränssnitt i en flik.</p>
+    </item>
+  </list>
+
+  <section id="base_plugin">
+    <title>Skapa ett basinstick</title>
+    <p>Vi kommer att skapa en förenklad version av insticket <link xref="quick_select_plugin">Snabbväljare</link>. Detta instick kommer att välja den senast fokuserade åtkomliga komponenten när du trycker på <keyseq><key>ctrl</key><key>alt</key><key>e</key></keyseq>.</p>
+    <p>Först och främst är de importrader vi kommer att använda:</p>
+    <code>
+      from accerciser.plugin import Plugin
+      import gtk
+      import pyatspi
+    </code>
+    <p>Härnäst kommer vi härleda en ny klass från basklassen Plugin, och tilldela några obligatoriska klassattribut:</p>
+    <code>
+      class FocusSelect(Plugin):
+        plugin_name = 'Focus Select'
+        plugin_description = 'Allows selecting last focused accessible.'
+    </code>
+    <p>Vi kommer nu att åsidosätta init-metoden, i vilken vi kommer att sätta en global tangentåtgärd för att välja det senaste fokuserade, åtkomliga objektet, registrera en händelselyssnare för ”fokus”-händelser och sätta instansvariabeln <cmd>last_focused</cmd> till <cmd>None</cmd>.</p>
+    <code>
+      def init(self):
+        pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+        self.global_hotkeys = [('Inspect last focused accessible',
+                                self.inspectLastFocused,
+                                gtk.keysyms.e,
+                                gtk.gdk.CONTROL_MASK | gtk.gdk.MOD1_MASK)]
+        self.last_focused = None
+    </code>
+    <p>Notera att instansvariabeln <cmd>global_hotkeys</cmd> är en lista av tupler. Varje tupel är en global snabbknappsåtgärd, bestående av en åtgärdsbeskrivning, en önskad metod att anropa, en tangentsymbol för ett tangentnedslag samt en mask för tangentmodifierare.</p>
+    <p>I återanropet för ”fokus”-händelser, tilldelar vi instansvariabeln <cmd>last_focused</cmd> det åtkomliga objekt som just skickade ut ”fokus”-händelsen.</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if not self.isMyApp(event.source):
+          self.last_focused = event.source
+    </code>
+    <p>I återanropet för snabbtangentsåtgärden uppdaterar vi den programomfattande noden med det senast fokuserade åtkomliga objektet om vi har sparat det:</p>
+    <code>
+      def inspectLastFocused(self):
+        if self.last_focused:
+          self.node.update(self.last_focused)
+    </code>
+  </section>
+  <section id="console_plugin">
+    <title>Skapa en konsolinstick</title>
+    <p>Vi kommer att skapa ett konsolinstick för att visa fokusändringar som skickas ut av ett åtkomligt objekt med en ”tryckknapps”-roll - kom ihåg att det är enkelt att kontrollera vilken roll ett objekt har med <app>Accerciser</app>; du kan till exempel verifiera det i <link xref="desktop_tree_view">programträdvyn</link>.</p>
+    <p>Import-rader som krävs:</p>
+    <code>
+      from accerciser.plugin import ConsolePlugin
+      import pyatspi
+    </code>
+    <p>Sedan lägger vi till en klassdefinition med ett insticksnamn och beskrivning:</p> 
+    <code>
+      class PushButtonFocus(ConsolePlugin):
+        plugin_name = 'Push Button Focus'
+        plugin_description = 'Print event when pushbutton get\'s focus.'
+    </code>
+    <p>Vi åsidosätter init-metoden som lägger till en registerlyssnare:</p>
+    <code>
+       def init(self):
+         pyatspi.Registry.registerEventListener(self.accEventFocusChanged, 'focus')
+    </code>
+    <p>I återanropsmetoden skrivs alla tryckknappshändelser ut.</p>
+    <code>
+      def accEventFocusChanged(self, event):
+        if event.source.getRole() == pyatspi.ROLE_PUSH_BUTTON:
+          self.appendText(str(event)+'\n')
+    </code>
+  </section>
+  <section id="viewport_plugin">
+    <title>Skapa ett Visningsområdes-instick</title>
+    <p>Vi kommer att skapa ett visningsområdesinstick som tillåter snabbtestning av ”klick”-åtgärden för åtkomliga objekt som har stöd för AT-SPI-åtgärdsgränssnittet och har en åtgärd som heter ”click”. Det kommer att vara en enkel knapp som, när den klickas på, utför ”klick”-åtgärden i det åtkomliga objektet.</p>
+    <p>Först några nödvändiga import-rader:</p>
+    <code>
+      import gtk
+      from accerciser.plugin import ViewportPlugin
+    </code>
+    <p>Sedan en klassdefinition med ett namn och beskrivning:</p>
+    <code>
+      class Clicker(ViewportPlugin):
+        plugin_name = 'Clicker'
+        plugin_description = 'Test the "click" action in relevant accessibles.'
+    </code>
+    <p>Vi åsidosätter init-metoden med lite användargränssnittsbyggande och ansluter ett återanrop till en signal för knappen. Vi använder justeringsbehållaren för att låta knappen centreras i insticksfliken och inte monstruöst ta upp hela insticksutrymmet. Notera att instansvariabeln <cmd>plugin_area</cmd> innehåller en gtk.Frame som kan fyllas med alla instickets komponenter.</p>
+    <code>
+       def init(self):
+         alignment = gtk.Alignment(0.5,0.5,0,0)
+         self.click_button = gtk.Button('Click me!')
+         alignment.add(self.click_button)
+         self.plugin_area.add(alignment)
+
+         self.click_button.connect('clicked', self.onClick)
+
+         self.show_all()
+    </code>
+    <p>Vi skapade också en bekvämlighetsmetod som returnerar en lista över åtgärder som stöds för det aktuellt markerade åtkomliga objektet - om det inte har stöd för Action-gränssnittet returnerar det en tom lista:</p> 
+    <code>
+       def accSupportedActions(self):
+       try:
+         ai = self.node.acc.queryAction()
+       except NotImplementedError:
+         action_names = []
+       else:
+         action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+       return action_names
+    </code>
+    <p>Basklassen för instick har ett metodanrop onAccChanged som anropas varje gång målprogrammets markerade åtkomliga objekt ändras. Vi kommer att åsidosätta den och sätta knappen så att den endast är känslig när det aktuella åtkomliga objektet har en ”klick”-åtgärd:</p>
+    <code>
+       def onAccChanged(self, acc):
+         has_click = 'click' in self.accSupportedActions()
+         self.click_button.set_sensitive(has_click)
+    </code>
+    <p>Återanropsmetoden för knapp-”tryck” utför ”klick”-åtgärden på det åtkomliga objektet. Då detta återanrop endast kan anropas när knappen är känslig behöver vi inte oroa oss för att kontrollera om det aktuella åtkomliga objektet har ”klick”-åtgärden.</p>
+    <code>
+      def onClick(self, button):
+        ai = self.node.acc.queryAction()
+        action_names = [ai.getName(i) for i in xrange(ai.nActions)]
+        ai.doAction(action_names.index('click'))
+    </code>
+   </section>
+</page>

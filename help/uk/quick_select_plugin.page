@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="quick_select_plugin" xml:lang="uk">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">5. Додаток швидкого вибору</title>
+    <link type="next" xref="api_browser_plugin"/>
+    <desc>Пошук потрібного об'єкта</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Додаток швидкого вибору</title>
+  <p>Додаток «Швидке виділення» не надає видимого інтерфейсу, на відміну від інших типових додатків <app>Accerciser</app>. Замість цього, він надає можливості для швидкого вибору об'єктів на панелі <link xref="desktop_tree_view">перегляду ієрархії програм</link> за допомогою загальних клавіатурних скорочень. Від початку, ці клавіатурні скорочення були частиною програмного коду <app>Accerciser</app>, але згодом їх було виокремлено у додаток «Швидке виділення».</p>
+  <p>У додатку швидкого вибору передбачено два загальних клавіатурних скорочення. Натискання <keyseq><key>ctrl</key><key>alt</key><key>a</key></keyseq> вибирає останній фокусованих віджет доступності на панелі ієрархії програм. Натискання <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq> вибирає доступних віджет під вказівником на панелі ієрархії програм і підсвічує його у програмі призначення.</p> 
+</page>

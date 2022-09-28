@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="api_browser_plugin" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">1. Πρόσθετο περιηγητή API</title>
+    <link type="next" xref="ipython_plugin"/>
+    <desc>Επικύρωση διεπαφών, μεθόδων, και ιδιοτήτων</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Πρόσθετο περιηγητή API</title>
+  <p>Επιλέγοντας ένα προσιτό γραφικό συστατικό στη <link xref="desktop_tree_view">δενδρική προβολή εφαρμογών</link>, ο περιηγητής API θα εμφανίσει όλες τις διεπαφές AT-SPI μαζί με τις μεθόδους και τις ιδιότητες τους.</p>
+
+  <figure>
+    <title>Πρόσθετο περιηγητή API</title>
+    <desc>Ο περιηγητής API σας επιτρέπει να επικυρώσετε τις διεπαφές, τις μεθόδους και τις ιδιότητες του προσιτού γραφικού συστατικού σε μια εφαρμογή.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/api_browser.png">
+      <p>Ο περιηγητής API σας επιτρέπει να επικυρώσετε τις διεπαφές, τις μεθόδους και τις ιδιότητες του προσιτού γραφικού συστατικού σε μια εφαρμογή.</p>
+    </media>
+  </figure>
+
+  <section id="running_api_browser_plugin">
+    <title>Εκτέλεση του περιηγητή API</title>
+    <p>Για να εκτελέσετε τον περιηγητή API, επιλέξτε ένα γραφικό συστατικό από τη δενδρική προβολή εφαρμογών. Κάνοντας διπλό κλικ σε ένα γραφικό συστατικό επισημαίνεται η διεπαφή της εφαρμογής, ώστε να σιγουρευτείτε αν το συγκεκριμένο γραφικό συστατικό είναι αυτό που ψάχνετε.</p>
+    <p>Μετά από αυτό, επιλέξτε μια από τις διεπαφές του γραφικού συστατικού. Όλες οι δημόσιες μέθοδοι της επιλεγμένης διεπαφής θα εισαχθούν στην αριστερή στήλη του πρόσθετου. Όλες οι δημόσιες ιδιότητες, με τις αντίστοιχες τους τιμές, θα εισαχθούν στη δεξιά στήλη.</p>  
+    <p>Από προεπιλογή, το πρόσθετο περιήγησης API κρύβει τις ιδιωτικές μεθόδους και ιδιότητες. Για να δείτε, αποεπιλέξτε το κουτί επιλογής <cmd>Hide Private Attributes</cmd>. Για να κρύψετε ξανά, ξαναεπιλέξτε το κουτί επιλογής.</p>
+  </section>
+</page>

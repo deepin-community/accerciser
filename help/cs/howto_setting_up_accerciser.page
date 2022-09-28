@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_setting_up_accerciser" xml:lang="cs">
+<info>
+  <link type="guide" xref="index#getting_started"/>
+  <link type="next" xref="desktop_tree_view"/>
+  <title type="sort">2. Instalace a spuštění aplikace <app>Accerciser</app></title>
+  <title type="link">Pořízení aplikace <app>Accerciser</app></title>
+    <desc>Jak nainstalovat a spustit <app>Accerciser</app> na vašem počítači.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Pořízení aplikace <app>Accerciser</app></title>
+
+    <p>Podívejte se, jestli nemá vaše distribuce <app>Accerciser</app> připravený jako balíček. Pokud ano, nainstalujte jej pomocí správy balíčků vaší distribuce. V opačném případě postupujte ručně podle popisu níže.</p>
+
+    <section id="installing_accerciser_manually">
+      <title>Ruční instalace aplikace <app>Accerciser</app></title>
+       <p>Abyste mohli <app>Accerciser</app> nainstalovat ručně, musíte si jej nejprve stáhnot. Zdrojové kódy aplikace <app>Accerciser</app> můžete stánout buď ze <link href="http://ftp.gnome.org/pub/GNOME/sources/accerciser/">serveru FTP na gnome.org</link> nebo je naklonovat z <link href="https://gitlab.gnome.org/GNOME/accerciser">repozitáře GIT na gnome.org</link>.</p>
+
+      <note style="caution">
+        <p>Pokud nepoužíváte GNOME 3, můžete narazit na to, že <app>Accerciser</app> verze 3 a novější nebude kompatibilní s vaším pracovním prostředím.</p>
+      </note>
+
+
+      <p>Po získání aplikace <app>Accerciser</app> ji nainstalujte pomocí následujících příkazů:</p>
+      <steps>
+        <item><p><cmd>cd accerciser</cmd></p></item>
+        <item><p><cmd>./configure</cmd> nebo <cmd>./autogen.sh</cmd> při první instalaci</p></item>
+        <item><p><cmd>make</cmd></p></item>
+        <item><p><cmd>sudo make install</cmd> nebo <cmd>make install</cmd> jako superuživatel root</p></item>
+      </steps>
+      <p>Pokud při instalaci narazíte na nějaké problémy, může to být obvykle tím, že schází některé závislosti. Zkontrolujte si podle <link href="https://live.gnome.org/Accerciser/#Requirements">wiki aplikace <app>Accerciser</app></link>, jestli máte všechny potřebné závislosti nainstalovány.</p>
+    </section>
+ 
+    <section id="running_accerciser">
+      <title>Spuštění aplikace <app>Accerciser</app></title>
+        <p>Pro spuštění aplikace <app>Accerciser</app> napište <cmd>accerciser</cmd> v terminálovém okně nebo v dialogovém okně <gui>Spuštění</gui> a zmáčkněte <key>Enter</key>.</p>
+        <p>Nyní již můžete <app>Accerciser</app> používat ke zkoumání libovolné zpřístupněné položky zobrazené v hierarchii <link xref="desktop_tree_view">stromového zobrazení aplikací</link>. Vyberte položku a prozkoumejte ji pomocí některého ze zásuvných modulů.</p>
+    </section>
+</page>

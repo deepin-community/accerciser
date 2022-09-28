@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences" xml:lang="de">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">4. Einstellungen</title>
+    <!-- link type="next" xref="event_monitor_plugin" /-->
+    <desc>Anpassen der Einstellungen von <app>Accerciser</app></desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Max Orxy</mal:name>
+      <mal:email>maxorxy@googlemail.com</mal:email>
+      <mal:years>2012, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012, 2013, 2016</mal:years>
+    </mal:credit>
+  </info>
+  <title><app>Accerciser</app> einrichten</title>
+  <p>
+    To configure plugins, hotkeys, and highlighting, do either <keyseq><key>ctrl</key><key>p</key></keyseq> or <guiseq><gui>Edit</gui>
+    <gui>Preferences</gui></guiseq> to open a dialog.
+  </p>
+
+  <section id="plugin">
+    <title>Einrichten von Plugins</title>
+    <p>Nachdem Sie die Einstellungen geöffnet haben, finden Sie eine Liste aller vorhandenen Plugins, mit den dazugehörigen Ankreuzfeldern, unter dem Reiter »Plugins«. Um ein Plugin zu aktivieren oder zu deaktivieren, schalten Sie das Ankreuzfeld um. Nur aktive Plugins können Sie über die Oberfläche von <app>Accerciser</app> ansprechen.</p>
+    <p>Indem Sie auf ein Plugin mit der rechten Maustaste klicken, können Sie seine Position festlegen: »Oberes Fenster«,»Unteres Fenster« und »Neues Fenster«. Wenn Sie »Neues Fenster« auswählen, erstellen Sie ein neues Fenster für das Plugin.</p>
+
+    <note style="tip">
+      <p>Sie können den Einstellungsdialog umgehen, indem Sie ein Plugin von einem an einen anderen Ort ziehen.</p>
+    </note>
+  </section>
+
+  <section id="global_hotkey">
+    <title>Einrichten globaler Tastenkürzel</title>
+    <p>Ein paar der Elemente von <app>Accerciser</app> aktivieren bestimmte Funktionalitäten über Tastenkürzel. Ein Beispiel hierfür ist das <link xref="quick_select_plugin">Schnellauswahl-Plugin</link>. Die Tastenkombination für jede dieser Funktionalitäten können Sie bei den Einstellungen, unter dem Reiter »Globale Tastenkombinationen« ändern. Bei diesem Reiter, finden Sie auch eine Liste aller Funktionen, für die Tastenkürzel konfiguriert werden können. Drücken Sie <cmd>Strg</cmd>-, <cmd>Alt</cmd>- und <cmd>Umschalttaste</cmd>-Ankreuzfelder, um diese zu aktivieren oder zu deaktivieren.</p>
+
+   </section>
+
+   <section id="highlighting">
+     <title>Einstellungen für Widget-Hervorhebungen</title>
+     <p>
+       Some of <app>Accerciser</app>'s elements, such as the global hotkey <keyseq><key>ctrl</key><key>alt</key><key>/</key></keyseq>,
+       highlight a specific widget in a target application. The highlighting duration, border color, and fill color can
+       be customized via the Preferences dialog, under the "Highlighting" tab.
+     </p>
+   </section>
+</page>

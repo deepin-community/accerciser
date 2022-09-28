@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="preferences" xml:lang="uk">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">4. Параметри</title>
+    <!-- link type="next" xref="event_monitor_plugin" /-->
+    <desc>Налаштовування параметрів <app>Accerciser</app></desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Wanderlust</mal:name>
+      <mal:email>wanderlust@ukr.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Налаштовування <app>Accerciser</app></title>
+  <p>Щоб налаштувати додатки, клавіатурні скорочення та підсвічування або натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>P</key></keyseq>, або виберіть пункт меню <guiseq><gui>Зміни</gui> <gui>Параметри</gui></guiseq>.</p>
+
+  <section id="plugin">
+    <title>Налаштовування додатків</title>
+    <p>Після відкриття діалогового вікна «Параметри» ви побачите список усіх доступних додатків із пунктами для позначки перед кожним із записів на вкладці «Додатки». Щоб увімкнути або вимкнути додаток, позначте пункт або зніміть з нього позначку. Доступ з інтерфейсу <app>Accerciser</app> буде відкрито лише для активних додатків.</p>
+    <p>Клацанням правою кнопкою на будь-якому додатку можна вибрати розташування його панелі: «Верхня панель», «Нижня панель» і «Створити панель». Вибір варіанта «Створити панель» призводить до створення нового вікна для додатка.</p>
+
+    <note style="tip">
+      <p>Ви можете обійтися без діалогового вікна «Параметри», скориставшись простим перетягуванням зі скиданням для пересування панелі додатка з одного місця на екрані у інше.</p>
+    </note>
+  </section>
+
+  <section id="global_hotkey">
+    <title>Налаштовування загальних клавіатурних скорочень</title>
+    <p>У деяких елементах <app>Accerciser</app> передбачено можливість доступу до функціональних можливостей за допомогою клавіатурних скорочень. Прикладом є <link xref="quick_select_plugin">додаток швидкого вибору</link>. Комбінацію клавіш для доступу до кожної функціональної можливості можна змінити за допомогою діалогового вікна «Параметри», вкладка «Глобальні швидкі клавіші». На цій вкладці показано список усіх можливостей програми, з якими можна пов'язати клавіатурні скорочення. Скористайтеся пунктами <cmd>ctrl</cmd>, <cmd>alt</cmd> і <cmd>shift</cmd> для вмикання або вимикання відповідних модифікаторів.</p>
+
+   </section>
+
+   <section id="highlighting">
+     <title>Налаштовування підсвічування віджетів</title>
+     <p>Використання деяких можливостей <app>Accerciser</app>, зокрема загального клавіатурного скорочення <keyseq><key>Ctrl</key><key>Alt</key><key>/</key></keyseq>, призводить до підсвічування певного віджета у цільовій програмі. Тривалість підсвічування, колір рамки та колір заповнення можна налаштувати за допомогою діалогового вікна «Параметри», вкладка «Підсвічування».</p>
+   </section>
+</page>

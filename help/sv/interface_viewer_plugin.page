@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="interface_viewer_plugin" xml:lang="sv">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">2. Gränssnittsvisarinstick</title>
+    <link type="next" xref="validator_plugin"/>
+    <desc>Undersök din hjälpmedelsimplementation</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  </info>
+  <title>Gränssnittsvisarinstick</title>
+
+  <p>Gränssnittsvisarinsticket visar informationen och inställningar som tillhandahålls av AT-SPI-gränssnitt som finns för varje åtkomligt objekt från <link xref="desktop_tree_view">programträdvyn</link>. Efter att ett objekt valts kan du använda detta instick för att snabbt granska de gränssnitt som det har stöd för, hämta information om gränssnitt och manipulera objektet via alla gränssnittsmetoderna.</p>
+
+  <figure>
+    <title>Att undersöka en meny med Gränssnittsvisarinsticket</title>
+    <desc>Givet ett markerat objekt i programträdvyn, kommer alla dess AT-SPI-gränssnitt att visas som känsliga i Gränssnittsvisarinsticket. De som inte stöds kommer att visas som utgråade, så som Application- och Collection-gränssnitten i figuren ovan.</desc>
+    <media type="image" mime="image/png" width="800" height="450" src="figures/interface_viewer_plugin.png">
+      <p>Givet ett markerat objekt i programträdvyn, kommer alla dess AT-SPI-gränssnitt att visas som känsliga i Gränssnittsvisarinsticket. De som inte stöds kommer att visas som utgråade, så som Application- och Collection-gränssnitten i figuren ovan.</p>
+    </media>
+  </figure>
+
+  <section id="running_interface_viewer">
+    <title>Köra insticket Gränssnittsvisare</title>
+    <p>Det första steget för att köra Gränssnittsvisarinsticket är att välja ett objekt i <link xref="desktop_tree_view">programträdvyn</link>. Efter det kommer alla AT-SPI-gränssnitt som hanteras av insticket att listas i instickets panel. Gränssnitten som är implementerade av det valda objektet kommer att vara känsliga, så du kan klicka på vart och ett av dem, för att antingen hämta informationen de tillhandahåller eller interagera med tillgängliga metoder. Följande gränssnitt kan utforskas i <app>Accerciser</app>, förutsatt att det valda objektet implementerar dem:</p>
+    <list>
+      <item>
+        <p>Accessible - Detta gränssnitt visar det markerade objektets antal underobjekt, beskrivning, tillstånd, relationer och attribut.</p>
+      </item>
+      <item>
+        <p>Action - Detta gränssnitt visar alla åtgärder som kan utföras av det valda objektet. För varje gränssnitt kommer att du att se dess namn, så som ”tryck” eller ”klick”, följt av en beskrivning och en tangentbindning, om en sådan finns. Om du väljer en åtgärd kommer en knapp ”Genomför åtgärd” att bli känslig. Tryck på denna knapp för att se objektet utföra den valda åtgärden.</p>
+      </item>
+      <item>
+        <p>Application - Detta gränssnitt kan implementeras av objekt med rollen ”program”. Det är värt att påpeka att objekt med rollen ”program” inte nödvändigtvis implementerar detta gränssnitt. Om det valda objektet implementerar det kommer gränssnittet att visa sitt ID och, om det finns, dess verktygslåda och version.</p>
+      </item>
+      <item>
+        <p>Component - Detta gränssnitt visa det valda objektets absoluta position (i förhållande till skrivbordets koordinatsystem), relativa position (i förhållande till fönstrets koordinatsystem), storlek, lagertyp, MDI-Z-ordning (ett kort heltal som indikerar stackningsordningen för komponenten i MDI-lagret), och alfa (om alfatoningseffekt används).</p>
+      </item>
+      <item>
+        <p>Document - Detta gränssnitt visar det valda objektets dokumentattribut och lokalbeskrivning, om sådan finns.</p>
+      </item>
+      <item>
+        <p>Hypertext - Detta gränssnitt visar en lista över ett markerat objekts alla hypertextlänkar. För varje hyperlänk tillhandahåller gränssnittet dess namn, URI, början (indexet i hypertexten vid vilket hyperlänken börjar), och slut (indexet i hypertexten vid vilket hyperlänken slutar).</p>
+      </item>
+      <item>
+        <p>Image - Detta gränssnitt visar det valda objektets beskrivning (eller ”ingen beskrivning” om inte angivet), storlek, position (i förhållande till skrivbordets koordinatsystem) och lokal, om det finns någon.</p>
+      </item>
+      <item>
+        <p>Selection - Detta gränssnitt visar alla valbara underobjekt för det valda objektet. Om det valda objektet är ett menyfält med alternativen ”Arkiv”, ”Redigera”, ”Visa” och ”Hjälp” och alla är valbara så kommer de att listas i detta gränssnitt. Om du klickar på ett listat alternativ - t.ex. ”Arkiv” - och vill rensa det, tryck på knappen ”Töm” under listan.</p>
+      </item>
+      <item>
+        <p>Streamable Content - Detta gränssnitt innehåller det valda objektets innehållstyper och deras motsvarande URI:er.</p>
+      </item>
+      <item>
+        <p>Table - Detta gränssnitt visar det valda objektets text och sammanfattning, rader (antal rader), kolumner (antal kolumner), valda rader (antal valda rader), och valda kolumner (antal valda kolumner). För en vald cell visar gränssnittet dess rads och kolumns rubriker och utsträckningar.</p>
+      </item>
+      <item>
+        <p>Text - Detta gränssnitt visar det valda objektets textinnehåll, som kan redigeras, och dess attribut. De grundläggande attributen är position (antalet tecken som texten har) och justering. För att se möjliga CSS-attribut, klicka på kryssrutan ”Inkludera standardvärden”.</p>
+      </item>
+      <item>
+        <p>Value - Detta gränssnitt visar det valda objektets aktuella värde, minsta tillåtna värde, största tillåtna värde, och minsta ökning med vilket det kan förändras (eller noll om detta värde inte kan bestämmas). Det aktuella värdet kan ändras manuellt via en snurrknapp.</p>
+      </item> 
+    </list>
+  </section>
+</page>

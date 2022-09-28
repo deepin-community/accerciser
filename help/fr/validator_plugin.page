@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">3. Greffon par défaut « Validateur »</title>
+    <link type="next" xref="event_monitor_plugin"/>
+    <desc>Tester l'accessibilité d'une application</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert-André Mauchin</mal:name>
+      <mal:email>zebob.m@pengzone.org</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Greffon Validateur AT-SPI</title>
+  <p>Le greffon « Validateur AT-SPI » produit un rapport contenant les problèmes d'accessibilité concernant une application cible. Pour chaque erreur, le rapport donne le niveau de sécurité et une brève description.</p>
+   <figure>
+    <title>Greffon Validateur AT-SPI</title>
+    <desc>Le greffon « Validateur AT-SPI » génère d'utiles rapports pour vérifier l'accessibilité d'une application cible.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>Le greffon « Validateur AT-SPI » génère d'utiles rapports pour vérifier l'accessibilité d'une application cible.</p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Exécution du greffon « Validateur AT-SPI »</title>
+      <p>Pour exécuter le greffon « Validateur AT-SPI », sélectionnez un élément dans le volet de l'arborescence des applications actives. Le validateur produira le rapport sur l'élément sélectionné et tous ses descendants dans la hiérarchie de son arborescence.</p>
+
+      <p>Après avoir sélectionné un élément, choisissez un schéma de validation dans la liste déroulante et cliquez sur le bouton <cmd>Valider</cmd> pour lancer la production du rapport. Pour interrompre l'exécution, cliquez à nouveau sur le bouton <cmd>Valider</cmd>.</p>
+
+      <p>Le rapport produit est interactif. Vous pouvez donc faire un double-clic sur n'importe quelle erreur trouvée pour déterminer l'élément de l'application cible qui en est la cause. L'élément correspondant apparaît alors sélectionné dans le <link xref="desktop_tree_view">Panneau de l'arborescence des applications</link> et en surbrillance dans l'application cible.</p>  
+      <p>Pour enregistrer le rapport produit dans votre système, cliquez sur le bouton <cmd>Enregistrer</cmd>. Pour effacer l'écran de validation, cliquez sur le bouton <cmd>Effacer</cmd>.</p>
+      <p>Pour obtenir plus d'informations sur une erreur dans le rapport produit, assurez-vous que l'élément correspondant est sélectionné et appuyez sur le bouton <cmd>Aide</cmd>. Une page d'aide s'affiche alors dans votre navigateur par défaut.</p>        
+  </section>
+</page>

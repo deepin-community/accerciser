@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="howto_setting_up_accerciser" xml:lang="ca">
+<info>
+  <link type="guide" xref="index#getting_started"/>
+  <link type="next" xref="desktop_tree_view"/>
+  <title type="sort">2. How to install and run <app>Accerciser</app></title>
+  <title type="link">Configuració de l'<app>Accerciser</app></title>
+    <desc>Instal·lació i execució de l'<app>Accerciser</app> en el sistema</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Joan Duran</mal:name>
+      <mal:email>jodufi@gmail.com</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  </info>
+  <title>Configuració de l'<app>Accerciser</app></title>
+
+    <p>
+      Check if your distribution has <app>Accerciser</app> already packaged.
+      If this is the case, you can install it via its package manager. Otherwise,
+      you can follow the section below to install <app>Accerciser</app> manually.  
+    </p>
+
+    <section id="installing_accerciser_manually">
+      <title>Instal·lació manual de l'<app>Accerciser</app></title>
+       <p>
+        To install <app>Accerciser</app> manually, you will need to download it first. <app>Accerciser</app>'s
+        source code can either be downloaded from <link href="http://ftp.gnome.org/pub/GNOME/sources/accerciser/">the gnome.org 
+        FTP site</link> or cloned from <link href="https://gitlab.gnome.org/GNOME/accerciser">the gnome.org GIT repository</link>.
+      </p>
+
+      <note style="caution">
+        <p>
+         If you are not using GNOME 3, you may find that <app>Accerciser</app> version 3 or later is not compatible with your
+         environment.
+       </p>
+      </note>
+
+
+      <p>Després d'obtenir l'<app>Accerciser</app>, instal·leu-lo amb les ordres següents:</p>
+      <steps>
+        <item><p><cmd>cd accerciser</cmd></p></item>
+        <item><p><cmd>./autogen.sh # o ./configure si és la primera vegada que l'instal·leu</cmd></p></item>
+        <item><p><cmd>make</cmd></p></item>
+        <item><p><cmd>sudo make install # o make install com a usuari primari</cmd></p></item>
+      </steps>
+      <p>
+        If you find any problems installing <app>Accerciser</app> on your system, it is likely that some 
+        of its dependencies are missing. Check <link href="https://live.gnome.org/Accerciser/#Requirements">
+        <app>Accerciser</app>'s wiki</link> to make sure you have all dependencies properly installed.
+      </p>
+    </section>
+ 
+    <section id="running_accerciser">
+      <title>Execució de l'<app>Accerciser</app></title>
+        <p>
+          To start <app>Accerciser</app>, type <cmd>accerciser</cmd> in a terminal window or
+          within the Run dialog and then press <key>Return</key>.
+        </p>
+        <p>
+          After that, you can use <app>Accerciser</app> to inspect any accessible item shown in the
+          <link xref="desktop_tree_view">Application Tree View</link>'s hierarchy. Select an item and investigate
+          it using one of <app>Accerciser</app>'s plugins.
+        </p>
+    </section>
+</page>

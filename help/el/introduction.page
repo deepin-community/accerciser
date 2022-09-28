@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#getting_started"/>
+    <link type="next" xref="howto_setting_up_accerciser"/>
+    <title type="sort">1. Τι είναι το Accerciser;</title>
+    <desc>Ένας διαδραστικός περιηγητής προσβασιμότητας </desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  <title>Τι είναι το <app>Accerciser</app>?</title>
+  <p>Το <app>Accerciser</app> είναι ένας διαδραστικός περιηγητής προσβασιμότητας για το περιβάλλον επιφάνειας εργασίας GNOME, γραμμένο σε Python. Χρησιμοποιεί το AT-SPI για να επιθεωρήσει και να χειριστεί γραφικά συστατικά, επιτρέποντάς σας να ελέγξετε αν μια εφαρμογή παρέχει σωστές πληροφορίες σε βοηθητικές τεχνολογίες και σε αυτοματοποιημένα πλαίσια δοκιμών. Το <app>Accerciser</app> έχει ένα απλό πλαίσιο ανάπτυξης πρόσθετων που μπορείτε να χρησιμοποιήσετε για να δημιουργήσετε εξατομικευμένες απόψεις των πληροφοριών προσβασιμότητας.</p>
+
+  <p>
+    By default, <app>Accerciser</app>'s main interface is comprised of three sections:
+    a tree view of the entire desktop accessible hierarchy, namely <link xref="desktop_tree_view">
+    Application Tree View</link>, and two plugin areas. If you prefer to see all plugins in a single
+    area, dividing <app>Accerciser</app>'s interface in two sections instead of three, press <keyseq><key>ctrl
+    </key><key>t</key></keyseq>. To re-divide it in three sections, press <keyseq><key>ctrl</key><key>t</key></keyseq> again.
+  </p>
+
+  <note style="tip">
+    <p>Σιγουρευτείτε ότι η υποστήριξη προσβασιμότητας είναι ενεργοποιημένη στον υπολογιστή σας - αλλιώς, το <app>Accerciser</app> δεν θα λειτουργήσει.</p>
+  </note>
+
+  <figure>
+    <title><app>Accerciser</app></title>
+    <desc>Προεπιλεγμένη διεπαφή του <app>Accerciser</app>.</desc>
+    <media type="image" mime="image/png" src="figures/accerciser-view.png">
+      <p>Προεπιλεγμένη διεπαφή του <app>Accerciser</app>.</p>
+    </media>
+  </figure>
+
+  <section id="intended_audience">
+    <title>Το κοινό που προορίζεται το <app>Accerciser</app></title>
+    <p>Το <app>Accerciser</app> καλύπτει τις ανάγκες πολλών διαφορετικών κοινών. Προγραμματιστές διεπαφών χρήστη το χρησιμοποιούν για να διασφαλίσουν ότι οι εφαρμογές τους παρέχουν όλες τις λειτουργίες τους μέσω AT-SPI. Προγραμματιστές βοηθητικών τεχνολογιών  μπορούν να δουν τι παρέχει το AT-SPI  στις εφαρμογές τους. Οι προγραμματιστές δοκιμαστικών διεπαφών χρήστη βρίσκουν ευεργετικό το <app>Accerciser</app> δεδομένου ότι εκθέτει διάφορα γεγονότα που θα μπορούσαν να αναμένονται από την εφαρμογή τους.</p>
+  </section>
+
+  <section id="accerciser_plugin_architecture">
+    <title>Αρχιτεκτονική πρόσθετων του <app>Accerciser</app></title>
+    <p>Το <app>Accerciser</app> έχει μια επεκτάσιμη αρχιτεκτονική βασισμένη σε πρόσθετα. Ο κύριος κώδικας του είναι αρκετά μικρός και τα περισσότερα χαρακτηριστικά του είναι μέρος των προεπιλεγμένων πρόσθετων.</p>
+    <list>
+      <item>
+        <p>
+          <link xref="interface_viewer_plugin">Interface Viewer</link> - A plugin that lets you explore the AT-SPI 
+          interfaces provided by each accessible widget of a target application.
+        </p>
+      </item>
+      <item>
+        <p><link xref="validator_plugin">Εφαρμογή επικύρωσης AT-SPI</link> - Ένα πρόσθετο που κάνει δοκιμές για να επαληθεύσει την προσβασιμότητα της εφαρμογής.</p>
+      </item>
+      <item>
+        <p><link xref="event_monitor_plugin">Παρακολούθηση γεγονότων</link> - Ένα πρόσθετο που εμφανίζει τα γεγονότα AT-SPI της επιλεγμένης εφαρμογής καθώς αυτά συμβαίνουν. </p>
+      </item>
+      <item>
+        <p><link xref="quick_select_plugin">Γρήγορη επιλογή</link> -  Ένα πρόσθετο που παρέχει καθολικές συντομεύσεις για γρήγορη επιλογή προσβάσιμων γραφικών συστατικών στη δενδρική προβολή του <app>Accerciser</app>.</p>
+      </item>
+      <item>
+        <p><link xref="api_browser_plugin">Περιηγητής API</link> - Ένα πρόσθετο που δείχνει τις διεπαφές, τις μεθόδους και τα χαρακτηριστικά σε κάθε επιλεγμένο γραφικό συστατικό της εφαρμογής.</p>
+      </item>
+      <item>
+        <p><link xref="ipython_plugin">Κονσόλα IPython </link> - Ένα πρόσθετο που παρέχει ένα πλήρη, διαδραστικό κέλυφος Python με πρόσβαση στα επιλεγμένα γραφικά συστατικά της εφαρμογής.</p>
+      </item>
+    </list>
+  </section>
+
+
+  <section id="more_about_gnome_accessibility">
+    <title>Περισσότερα σχετικά με τη Προσιτότητα</title>
+    <p>Η Προσιτότητα είναι μια βασική αξία που πρέπει να αγγίξει όλες τις πτυχές του περιβάλλοντος εργασίας. Για να επιτευχθεί αυτό στο GNOME, έχουν αναπτυχθεί κάποιες βιβλιοθήκες, όπως η ATK και η AT-SPI. Αν και προέρχονται από το GNOME, αυτές οι βιβλιοθήκες χρησιμοποιούνται επίσης και σε άλλα περιβάλλοντα επιφάνειας εργασίας. Για να μάθετε περισσότερα σχετικά με τις βιβλιοθήκες προσιτότητα των συστημάτων GNU/UNIX, μπορείτε να λάβετε υπόψιν:</p>
+    <list>
+      <item>
+        <p><link href="http://developer.gnome.org/atk/">Εργαλειοθήκη προσιτότητας ATK</link> - Το ATK προσφέρει μια ομάδα από διεπαφές προσιτότητας που έχουν υλοποιηθεί από άλλες εργαλειοθήκες και εφαρμογές. Χρησιμοποιώντας τις διεπαφές του ATK, τα εργαλεία προσιτότητας έχουν πλήρη έλεγχο για να δουν και να ελέγξουν τις εφαρμογές που εκτελούνται.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/at-spi-cspi/stable/">AT-SPI</link> - Το AT-SPI είναι η κύρια υπηρεσία στην οποία βοηθητικές τεχνολογίες αποστέλλουν και αποδέχονται ειδοποιήσεις από τις εφαρμογές που εκτελούνται. Επιπλέον υλικό μπορείτε να βρείτε <link href="http://accessibility.kde.org/developer/atk.php#coreclasses">KDE Accessibility Development Community</link>.</p>
+      </item>
+      <item>
+        <p><link href="https://help.gnome.org/users/gnome-help/stable/a11y.html">Οδηγός προσιτότητας επιφάνειας εργασίας GNOME</link> -  Ένας οδηγός για όσους ενδιαφέρονται να μάθουν πως η επιφάνεια εργασίας του GNOME υποστηρίζει τις ανάγκες των χρηστών με αναπηρίες.</p>
+      </item>
+      <item>
+        <p><link href="http://developer.gnome.org/accessibility-devel-guide/stable/index.html.el">Οδηγός προσιτότητας GNOME για προγραμματιστές</link> - Ένας οδηγός για προγραμματιστές που θέλουν να εξασφαλίσουν πως οι εφαρμογές τους θα είναι προσιτές στο ευρύτερο κοινό των χρηστών.</p>
+      </item>
+      <item>
+        <p><link href="https://wiki.gnome.org/Accessibility">Έργο προσιτότητας GNOME</link> - Το έργο προσιτότητας του GNOME περιέχει που παραπάνω οδηγούς με αρκετούς συνδέσμους για χρήστες, προγραμματιστές και διαχειριστές συστημάτων.</p>
+      </item>
+    </list>
+  </section>
+
+</page>

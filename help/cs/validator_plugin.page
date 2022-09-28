@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="validator_plugin" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#examining_a11y"/>
+    <title type="sort">3. Výchozí zásuvný modul pro ověřování</title>
+    <link type="next" xref="event_monitor_plugin"/>
+    <desc>Jak otestovat přístupnost aplikace.</desc>
+    <credit type="author">
+      <name>Eitan Isaacson</name>
+      <email>eitan@ascender.com</email>
+    </credit>
+    <credit type="author">
+      <name>Peter Parente</name>
+      <email>pparent@us.ibm.com</email>
+    </credit>
+    <credit type="author">
+      <name>Aline Bessa</name>
+      <email>alibezz@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lucas Lommer</mal:name>
+      <mal:email>llommer@svn.gnome.org</mal:email>
+      <mal:years>2008, 2010.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2015.</mal:years>
+    </mal:credit>
+  </info>
+  <title>Zásuvný modul pro ověřování přes AT-SPI</title>
+  <p>Zásuvný modul Ověřování přes AT-SPI generuje výstupní sestavy s problémy v přístupnosti vztahujícími se k cílové aplikaci. U každé chyby je uvedena její závažnost a stručný popis.</p>
+   <figure>
+    <title>Zásuvný modul pro ověřování přes AT-SPI</title>
+    <desc>Zásuvný modul Ověřování přes AT-SPI generuje užitečné výstupní sestavy sloužící k ověření přístupnosti cílové aplikace.</desc>
+    <media type="image" mime="image/png" width="800" height="500" src="figures/validator_report.png">
+      <p>Zásuvný modul Ověřování přes AT-SPI generuje užitečné výstupní sestavy sloužící k ověření přístupnosti cílové aplikace.</p>
+    </media>
+  </figure>
+
+  <section id="running_at_spi_validator">
+      <title>Spuštění zásuvného modulu Ověřování přes AT-SPI</title>
+      <p>Zásuvný modul Ověřování přes AT-SPI spusíte tak, že vyberete položku ve stromovém zobrazení aplikací. Zásuvný modul vygeneruje výstupní sestavu vůči vybrané položce a všem jejím synovským widgetům ve stromové hierarchii.</p>
+
+      <p>Po výběru položky zvolte ověřovací schéma v rozbalovacím seznamu a zmáčkněte tlačítko <gui>Ověřit</gui>. Spustí se generování výstupní sestavy. Pokud jej chcete zrušit, stačí tlačítko <gui>Ověřit</gui> zmáčknout znovu.</p>
+
+      <p>Vygenerovaná zpráva je interaktivní. Díky tomu můžete dvojitě kliknout na nalezenou chybu, abyste zjistili, který widget v cílové aplikaci ji způsobil. Příslušný widget se objeví vybraný ve <link xref="desktop_tree_view">stromovém zobrazení aplikací</link> a zvýrazní se v cílové aplikaci.</p>  
+      <p>Pokud chcete vygenerovanou zprávu ve svém počítači uložit, stačí kliknout na tlačítko <cmd>Uložit</cmd>. Tlačítkem <cmd>Smazat</cmd> vymažete obrazovku s ověřením.</p>
+      <p>Když chcete získat o chybě ve vygenerované zprávě více informací, ujistěte se, že je vybrána příslušná položka a zmáčkněte tlačítko <gui>Nápověda</gui>. Otevře se stránka s nápovědou ve vašem výchozím prohlížeči.</p>        
+  </section>
+</page>
